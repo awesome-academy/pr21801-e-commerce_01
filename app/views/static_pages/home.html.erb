@@ -1,174 +1,260 @@
-<div class="wrapper">
-  <div class="clearfix"></div>
-  <div class="hom-slider">
-    <div class="container">
-      <div id="sequence">
-        <div class="sequence-prev"><i class="fa fa-angle-left"></i></div>
-        <div class="sequence-next"><i class="fa fa-angle-right"></i></div>
-        <ul class="sequence-canvas">
-          <li class="animate-in">
-            <div class="flat-caption caption1 formLeft delay300 text-center"><span class="suphead"></span></div>
-            <div class="flat-caption caption2 formLeft delay400 text-center">
-              <h1></h1>
-            </div>
-            <div class="flat-caption caption3 formLeft delay500 text-center">
-              <p></p>
-            </div>
-            <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#"><%= t ".more_detail" %></a></div>
-            <div class="flat-image formBottom delay200" data-duration="5" data-bottom="true"><%= link_to image_tag "slider-image-01.png" %></div>
-          </li>
-          <li>
-            <div class="flat-caption caption2 formLeft delay400">
-              <h1></h1>
-            </div>
-            <div class="flat-caption caption3 formLeft delay500">
-              <h2></h2>
-            </div>
-            <div class="flat-button caption5 formLeft delay600"><a class="more" href="#"><%= t ".more_detail" %></a></div>
-            <div class="flat-image formBottom delay200" data-bottom="true"><%= link_to image_tag "slider-image-02.png" %></div>
-          </li>
-          <li>
-            <div class="flat-caption caption2 formLeft delay400 text-center">
-              <h1></h1>
-            </div>
-            <div class="flat-caption caption3 formLeft delay500 text-center">
-              <p></p>
-            </div>
-            <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#"><%= t ".more_detail" %></a></div>
-            <div class="flat-image formBottom delay200" data-bottom="true"><%= link_to image_tag "slider-image-03.png" %></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="promotion-banner">
+<body id="home">
+  <div class="wrapper">
+    <div class="clearfix"></div>
+    <div class="hom-slider">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class="promo-box"><%= link_to image_tag "promotion-01.png" %></div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class="promo-box"><%= link_to image_tag "promotion-02.png" %></div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <div class="promo-box"><%= link_to image_tag "promotion-03.png" %></div>
+        <div id="sequence">
+          <div class="sequence-prev"><i class="fa fa-angle-left"></i></div>
+          <div class="sequence-next"><i class="fa fa-angle-right"></i></div>
+          <ul class="sequence-canvas">
+            <li class="animate-in">
+              <div class="flat-caption caption1 formLeft delay300 text-center">
+                <span class="suphead"></span>
+              </div>
+              <div class="flat-caption caption2 formLeft delay400 text-center">
+                <h1></h1>
+              </div>
+              <div class="flat-caption caption3 formLeft delay500 text-center">
+                <p></p>
+              </div>
+              <div class="flat-button caption4 formLeft delay600 text-center">
+                <a class="more" href="#"><%= t ".more_detail" %></a>
+              </div>
+              <div class="flat-image formBottom delay200" data-duration="5"
+                data-bottom="true">
+                <%= link_to image_tag "slider-image-01.png" %>
+              </div>
+            </li>
+            <li>
+              <div class="flat-caption caption2 formLeft delay400">
+                <h1></h1>
+              </div>
+              <div class="flat-caption caption3 formLeft delay500">
+                <h2></h2>
+              </div>
+              <div class="flat-button caption5 formLeft delay600">
+                <a class="more" href="#"><%= t ".more_detail" %></a>
+              </div>
+              <div class="flat-image formBottom delay200" data-bottom="true">
+                <%= link_to image_tag "slider-image-02.png" %>
+              </div>
+            </li>
+            <li>
+              <div class="flat-caption caption2 formLeft delay400 text-center">
+                <h1></h1>
+              </div>
+              <div class="flat-caption caption3 formLeft delay500 text-center">
+                <p></p>
+              </div>
+              <div class="flat-button caption4 formLeft delay600 text-center">
+                <a class="more" href="#"><%= t ".more_detail" %></a>
+              </div>
+              <div class="flat-image formBottom delay200" data-bottom="true">
+                <%= link_to image_tag "slider-image-03.png" %>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="promotion-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+              <div class="promo-box">
+                <%= link_to image_tag "promotion-01.png" %>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+              <div class="promo-box">
+                <%= link_to image_tag "promotion-02.png" %>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+              <div class="promo-box">
+                <%= link_to image_tag "promotion-03.png" %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div> <!-- end hom-slider -->
-  <div class="clearfix"></div>
-  <div class="container_fullwidth">
-    <div class="container">
-      <div class="hot-products">
-        <h3 class="title"><strong><%= t ".hot" %></strong><%= t ".product" %></h3>
-        <div class="control"><a id="prev_hot" class="prev" href="#">&lt;</a><a id="next_hot" class="next" href="#">&gt;</a></div>
-        <ul id="hot">
-          <li>
-            <div class="row">
-              <div class="col-md-3 col-sm-6">
-                <div class="products">
-                  <div class="rating">
-                    <input type="hidden" class="rating" data-filled="fa fa-star fa-2x" data-empty="fa fa-star-o fa-2x" />
+    </div> <!-- end hom-slider -->
+    <div class="clearfix"></div>
+    <div class="container_fullwidth">
+      <div class="container">
+        <div class="hot-products">
+          <h3 class="title">
+            <strong><%= t ".hot" %></strong><%= t ".product" %>
+          </h3>
+          <div class="control">
+            <a id="prev_hot" class="prev" href="#">&lt;</a>
+            <a id="next_hot" class="next" href="#">&gt;</a>
+          </div>
+          <ul id="hot">
+            <li>
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <div class="products">
+                    <div class="rating">
+                      <input type="hidden" class="rating"
+                        data-filled="fa fa-star fa-2x"
+                        data-empty="fa fa-star-o fa-2x" />
+                    </div>
+                    <div class="offer">- %20</div>
+                    <div class="thumbnail">
+                      <%= link_to image_tag "products/small/products-01.png" %>
+                    </div>
+                    <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
+                    <h4 class="price">$451.00</h4>
+                    <div class="button_group">
+                      <button class="button add-cart" type="button">
+                        <%= t ".add" %>
+                      </button>
+                      <button class="button compare" type="button">
+                        <i class="fa fa-exchange"></i>
+                      </button>
+                      <button class="button wishlist" type="button">
+                        <i class="fa fa-heart-o"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="offer">- %20</div>
-                  <div class="thumbnail"><%= link_to image_tag "products/small/products-01.png" %></div>
-                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                  <h4 class="price">$451.00</h4>
-                  <div class="button_group">
-                    <button class="button add-cart" type="button">
-                      <%= t ".add" %>
-                    </button>
-                    <button class="button compare" type="button">
-                      <i class="fa fa-exchange"></i>
-                    </button>
-                    <button class="button wishlist" type="button">
-                      <i class="fa fa-heart-o"></i>
-                    </button>
+                </div>
+              </div> <!-- end row -->
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <div class="products">
+                    <div class="rating">
+                      <input type="hidden" class="rating"
+                        data-filled="fa fa-star fa-2x"
+                        data-empty="fa fa-star-o fa-2x" />
+                    </div>
+                    <div class="offer">- %20</div>
+                    <div class="thumbnail">
+                      <%= link_to image_tag "products/small/products-01.png" %>
+                    </div>
+                    <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
+                    <h4 class="price">$451.00</h4>
+                    <div class="button_group">
+                      <button class="button add-cart" type="button">
+                        <%= t ".add" %>
+                      </button>
+                      <button class="button compare" type="button">
+                        <i class="fa fa-exchange"></i>
+                      </button>
+                      <button class="button wishlist" type="button">
+                        <i class="fa fa-heart-o"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div> <!-- end row -->
-          </li>
-          <li>
-            <div class="row">
-              <div class="col-md-3 col-sm-6">
-                <div class="products">
-                  <div class="rating">
-                    <input type="hidden" class="rating" data-filled="fa fa-star fa-2x" data-empty="fa fa-star-o fa-2x" />
+            </li>
+          </ul>
+        </div> <!-- end hot-product -->
+        <div class="clearfix"></div>
+        <div class="featured-products">
+          <h3 class="title">
+            <strong><%= t ".featured" %></strong><%= t ".product" %>
+          </h3>
+          <div class="control">
+            <a id="prev_featured" class="prev" href="#">&lt;</a>
+            <a id="next_featured" class="next" href="#">&gt;</a>
+          </div>
+          <ul id="featured">
+            <li>
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <div class="products">
+                    <div class="rating">
+                      <input type="hidden" class="rating"
+                        data-filled="fa fa-star fa-2x"
+                        data-empty="fa fa-star-o fa-2x" />
+                    </div>
+                    <div class="thumbnail">
+                      <%= link_to image_tag "products/small/products-05.png" %>
+                    </div>
+                    <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
+                    <h4 class="price">$451.00</h4>
+                    <div class="button_group">
+                      <button class="button add-cart" type="button">
+                        <%= t ".add" %>
+                      </button>
+                      <button class="button compare" type="button">
+                        <i class="fa fa-exchange"></i>
+                      </button>
+                      <button class="button wishlist" type="button">
+                        <i class="fa fa-heart-o"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="offer">- %20</div>
-                  <div class="thumbnail"><%= link_to image_tag "products/small/products-01.png" %></div>
-                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                  <h4 class="price">$451.00</h4>
-                  <div class="button_group"><button class="button add-cart" type="button"><%= t ".add" %></button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
                 </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div> <!-- end hot-product -->
-      <div class="clearfix"></div>
-      <div class="featured-products">
-        <h3 class="title"><strong><%= t ".featured" %></strong><%= t ".product" %></h3>
-        <div class="control"><a id="prev_featured" class="prev" href="#">&lt;</a><a id="next_featured" class="next" href="#">&gt;</a></div>
-        <ul id="featured">
-          <li>
-            <div class="row">
-              <div class="col-md-3 col-sm-6">
-                <div class="products">
-                  <div class="rating">
-                    <input type="hidden" class="rating" data-filled="fa fa-star fa-2x" data-empty="fa fa-star-o fa-2x" />
+              </div> <!-- end row -->
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <div class="products">
+                    <div class="rating">
+                      <input type="hidden" class="rating"
+                        data-filled="fa fa-star fa-2x"
+                        data-empty="fa fa-star-o fa-2x" />
+                    </div>
+                    <div class="thumbnail">
+                      <%= link_to image_tag "products/small/products-05.png" %>
+                    </div>
+                    <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
+                    <h4 class="price">$451.00</h4>
+                    <div class="button_group">
+                      <button class="button add-cart" type="button">
+                        <%= t ".add" %>
+                      </button>
+                      <button class="button compare" type="button">
+                        <i class="fa fa-exchange"></i>
+                      </button>
+                      <button class="button wishlist" type="button">
+                        <i class="fa fa-heart-o"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="thumbnail"><%= link_to image_tag "products/small/products-05.png" %></div>
-                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                  <h4 class="price">$451.00</h4>
-                  <div class="button_group"><button class="button add-cart" type="button"><%= t ".add" %></button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
                 </div>
-              </div>
-            </div> <!-- end row -->
-          </li>
-          <li>
-            <div class="row">
-              <div class="col-md-3 col-sm-6">
-                <div class="products">
-                  <div class="rating">
-                    <input type="hidden" class="rating" data-filled="fa fa-star fa-2x" data-empty="fa fa-star-o fa-2x" />
-                  </div>
-                  <div class="thumbnail"><%= link_to image_tag "products/small/products-05.png" %></div>
-                  <div class="productname">Iphone 5s Gold 32 Gb 2013</div>
-                  <h4 class="price">$451.00</h4>
-                  <div class="button_group"><button class="button add-cart" type="button"><%= t ".add" %></button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
-                </div>
-              </div>
-            </div> <!-- end row -->
-          </li>
-        </ul>
-      </div> <!-- end feature-product -->
-      <div class="clearfix"></div>
-      <div class="our-brand">
-        <h3 class="title"><strong><%= t ".our" %></strong><%= t ".brand" %></h3>
-        <div class="control"><a id="prev_brand" class="prev" href="#">&lt;</a><a id="next_brand" class="next" href="#">&gt;</a></div>
-        <ul id="braldLogo">
-          <li>
-            <ul class="brand_item">
-              <li>
-                <a href="#">
-                  <div class="brand-logo"><%= link_to image_tag "samsung.png" %></div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul class="brand_item">
-              <li>
-                <a href="#">
-                  <div class="brand-logo"><%= link_to image_tag "samsung.png" %></div>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div> <!-- end our-brand -->
-    </div> <!-- end container(213) -->
-  </div> <!-- end container-fullwidth(212) -->
-</div> <!-- end wrapper -->
+              </div> <!-- end row -->
+            </li>
+          </ul>
+        </div> <!-- end feature-product -->
+        <div class="clearfix"></div>
+        <div class="our-brand">
+          <h3 class="title"><strong><%= t ".our" %></strong><%= t ".brand" %></h3>
+          <div class="control">
+            <a id="prev_brand" class="prev" href="#">&lt;</a>
+            <a id="next_brand" class="next" href="#">&gt;</a>
+          </div>
+          <ul id="braldLogo">
+            <li>
+              <ul class="brand_item">
+                <li>
+                  <a href="#">
+                    <div class="brand-logo">
+                      <%= link_to image_tag "samsung.png" %>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul class="brand_item">
+                <li>
+                  <a href="#">
+                    <div class="brand-logo">
+                      <%= link_to image_tag "samsung.png" %>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div> <!-- end our-brand -->
+      </div> <!-- end container(213) -->
+    </div> <!-- end container-fullwidth(212) -->
+  </div> <!-- end wrapper -->
+</body>
