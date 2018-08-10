@@ -1,0 +1,29 @@
+<div class="container">
+  <h2 class="title mt-30"><%= t ".new_category" %></h2>
+  <%= simple_form_for(@category) do |f| %>
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-6 mt-10 mb-30">
+        <%= f.input :parent_id, label: t(".category"),
+          collection: options(Category) %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-6 mb-20">
+        <%= f.input :name, label: t(".category_name") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-6 mb-20">
+        <%= f.input :description, label: t(".category_description") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-6 mt-10 mb-30">
+        <%= f.submit t(".create"), class: "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+</div>
