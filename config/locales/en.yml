@@ -1,4 +1,6 @@
 en:
+  add_success_category: "Add new category successed!"
+  add_failed_category: "An error occurred while adding new category"
   layouts:
     header:
       address: "Handico Tower, Pham Hung, Me Tri, Nam Tu Liem, Ha Noi"
@@ -37,12 +39,24 @@ en:
       characters_minimum: "characters minimum"
       login: "Login"
       sign_up: "Sign up"
-  static_pages:
-    home:
+    product:
       add: "Add To Cart"
-      brand: "Brand"
       featured: "Featured "
       hot: "Hot "
       more_detail: "More Details"
       our: "Our "
       product: "products"
+  static_pages:
+    home:
+      add: "Add To Cart"
+      brand: "Brand"
+      amount: "Total Price"
+      brand: "Brand"
+  categories:
+    new:
+      new_category: "New Category"
+    form:
+      category: "Category"
+      category_description: "Category description:"
+      category_name: "Category name:"
+      create: "Create"

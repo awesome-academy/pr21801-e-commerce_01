@@ -1,0 +1,49 @@
+<div class="container_fullwidth">
+  <nav class="navbar navbar-default nav-category" role="navigation">
+    <div class="containe-fluid">
+      <ul class="nav navbar-nav">
+        <% @categories.each do |category| %>
+          <% if root(@category) == category %>
+            <li class="active"><%= link_to category.name, category %></li>
+            <% if @category.children.present? || @category == category %>
+              <% @category.children.each do |child| %>
+                <li class="sub-category"><%= link_to child.name, child %></li>
+              <% end %>
+            <% else %>
+              <% Category.roots(@category.parent_id).each do |parent| %>
+                <li class="sub-category"><%= link_to parent.name, parent %></li>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="mb-30">
+    <ol class="breadcrumb title">
+      <% ancestors(@category).each do |category| %>
+        <li>
+          <%= link_to category.name, category %>
+        </li>
+      <% end %>
+      <li>
+        <strong><%= @category.name %></strong>
+      </li>
+    </ol>
+  </div>
+  <div class="clearfix"></div>
+  <div class="container_fullwidth">
+    <div class="container">
+      <div class="hot-products">
+        <ul id="hot">
+          <li>
+            <div class="row">
+              <%= render "shared/product" %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
