@@ -14,7 +14,9 @@ gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "jquery-rails"
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
+gem "awesome_nested_set"
+gem "simple_form"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
