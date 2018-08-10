@@ -8,7 +8,6 @@
         <div class="col-md-10 col-sm-10">
           <div class="header_top">
             <div class="row">
-
               <div class="col-md-8">
                 <ul class="usermenu contact">
                   <li>
@@ -21,29 +20,51 @@
               </div>
               <div class="col-md-4">
                 <ul class="usermenu">
-                  <li><a href="checkout.html" class="log"><%= t ".login" %></a></li>
-                  <li><a href="checkout2.html" class="reg"><%= t ".signup" %></a></li>
+                  <% if user_signed_in? %>
+                    <li>
+                      <%= link_to current_user.name,
+                        edit_user_registration_path, class: "user" %>
+                    </li>
+                    <li>
+                      <%= link_to t(".logout"), destroy_user_session_path,
+                        method: :delete, class: "logout" %>
+                    </li>
+                  <% else %>
+                    <li>
+                      <%= link_to t(".sign_up"), "#",
+                        data: {toggle: "modal", target: "#signupModal"},
+                        class: "reg" %>
+                      <%= render "shared/sign_up" %>
+                    </li>
+                    <li>
+                      <%= link_to t(".login"), "#",
+                        data: {toggle: "modal", target: "#loginModal"},
+                        class: "login" %>
+                      <%= render "shared/login" %>
+                    </li>
+                  <% end %>
                 </ul>
                 <ul class="option_nav">
                   <li class="dorpdown">
                     <a href="#">Eng</a>
                     <ul class="subnav">
                       <li><a href="#">Eng</a></li>
-                      <li><a href="#">Vns</a></li>
+                      <li><a href="#">Vie</a></li>
                     </ul>
                   </li>
                 </ul>
               </div>
-
             </div> <!-- end row -->
           </div> <!-- end header top -->
           <div class="clearfix"></div>
           <div class="header_bottom">
             <ul class="option">
               <li id="search" class="search">
-                <form><input class="search-submit" type="submit" value="">
+                <form>
+                  <input class="search-submit" type="submit" value="">
                   <input class="search-input" placeholder="<%= t ".search" %>"
-                    type="text" value="" name="search"></form>
+                    type="text" value="" name="search">
+                </form>
               </li>
               <li class="option-cart">
                 <a href="#" class="cart-icon" data-toggle="modal"
@@ -77,8 +98,8 @@
                       </div>
                     </div>
                   </div>
-                <li class="dropdown-white"><a href="">Iphone</a></li>
-                <li class="dropdown-white"><a href="">Samsung</a></li>
+                  <li class="dropdown-white"><a href="">Iphone</a></li>
+                  <li class="dropdown-white"><a href="">Samsung</a></li>
                 </li>
               </ul>
             </div> <!-- end collapse -->
