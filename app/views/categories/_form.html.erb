@@ -1,5 +1,6 @@
 <div class="container">
   <%= simple_form_for(@category) do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
     <div class="form-group">
       <div class="col-md-offset-4 col-md-6 mt-10 mb-30">
         <%= f.input :parent_id, label: t(".category"), collection: options %>
@@ -20,7 +21,7 @@
 
     <div class="form-group">
       <div class="col-md-offset-4 col-md-6 mt-10 mb-30">
-        <%= f.submit t(".create"), class: "btn btn-success" %>
+        <%= f.submit yield(:button_text), class: "btn btn-success" %>
       </div>
     </div>
   <% end %>
