@@ -3,6 +3,9 @@ en:
   add_failed_category: "An error occurred while adding new category"
   update_success: "Update Successful!"
   update_failed: "An error has occurred while updating!"
+  delete_success: "Delete Successful!"
+  delete_failed: "An error has occurred while deleting!"
+  delete_warning: "Can't delete because exist of product in category"
   layouts:
     header:
       address: "Handico Tower, Pham Hung, Me Tri, Nam Tu Liem, Ha Noi"
@@ -48,6 +51,9 @@ en:
       more_detail: "More Details"
       our: "Our "
       product: "products"
+    error_messages:
+      the_form_contains: "The form contains"
+      error: "errors"
   static_pages:
     home:
       add: "Add To Cart"
@@ -59,9 +65,33 @@ en:
       new_category: "New Category"
       create: "Create"
     form:
-      category: "Category"
+      category: "Select Category"
       category_description: "Category description:"
       category_name: "Category name:"
+      status: "Status"
+      none: "None"
     edit:
       edit_category: "Edit Category"
       update: "Update"
+    index:
+      list: List Category
+      not_found_categories: "Not found categories"
+      details: "Details"
+      delete: "Delete"
+      sure: "Are you sure?"
+      action: "Action"
+      search_user: "Search"
+      name: "Name"
+      parent_category: "Parent Category"
+      search: "Search"
+    show:
+      sel_cate: "Select orther Category"
+      del_continue: "Delete Category: "
+      sub: "Submit"
+      delete: "Delete Category"
+      new: "Add new category"
+      edit: "Edit name category"
+    category:
+      description: "Description"
+      status: "Status"
+

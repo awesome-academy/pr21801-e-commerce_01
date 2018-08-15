@@ -3,7 +3,8 @@
     <%= render "shared/error_messages", object: f.object %>
     <div class="form-group">
       <div class="col-md-offset-4 col-md-6 mt-10 mb-30">
-        <%= f.input :parent_id, label: t(".category"), collection: options %>
+        <%= f.input :parent_id, label: t(".category"), collection: options,
+          selected: params[:parent_id], include_blank: t(".none") %>
       </div>
     </div>
 
