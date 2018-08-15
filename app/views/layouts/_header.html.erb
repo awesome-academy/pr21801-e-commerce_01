@@ -1,111 +1,112 @@
-<div class="wrapper">
-  <div class="header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2 col-sm-2">
-          <div class="logo"><%= link_to image_tag "logo.png" %></div>
-        </div>
-        <div class="col-md-10 col-sm-10">
-          <div class="header_top">
-            <div class="row">
-              <div class="col-md-8">
-                <ul class="usermenu contact">
-                  <li>
-                    <p class="add"><%= t ".address" %></p>
-                  </li>
-                  <li>
-                    <p class="hotline"><%= t ".hotline" %></p>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="usermenu">
-                  <% if user_signed_in? %>
+<body id="home">
+  <div class="wrapper">
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-sm-2">
+            <div class="logo"><%= link_to(image_tag("logo.png"), root_path) %></div>
+          </div>
+          <div class="col-md-10 col-sm-10">
+            <div class="header_top">
+              <div class="row">
+                <div class="col-md-8">
+                  <ul class="usermenu contact">
                     <li>
-                      <%= link_to current_user.name,
-                        edit_user_registration_path, class: "user" %>
+                      <p class="add"><%= t ".address" %></p>
                     </li>
                     <li>
-                      <%= link_to t(".logout"), destroy_user_session_path,
-                        method: :delete, class: "logout" %>
+                      <p class="hotline"><%= t ".hotline" %></p>
                     </li>
-                  <% else %>
-                    <li>
-                      <%= link_to t(".sign_up"), "#",
-                        data: {toggle: "modal", target: "#signupModal"},
-                        class: "reg" %>
-                      <%= render "shared/sign_up" %>
+                  </ul>
+                </div>
+                <div class="col-md-4">
+                  <ul class="usermenu">
+                    <% if user_signed_in? %>
+                      <li>
+                        <%= link_to current_user.name,
+                          edit_user_registration_path, class: "user" %>
+                      </li>
+                      <li>
+                        <%= link_to t(".logout"), destroy_user_session_path,
+                          method: :delete, class: "logout" %>
+                      </li>
+                    <% else %>
+                      <li>
+                        <%= link_to t(".sign_up"), "#",
+                          data: {toggle: "modal", target: "#signupModal"},
+                          class: "reg" %>
+                        <%= render "shared/sign_up" %>
+                      </li>
+                      <li>
+                        <%= link_to t(".login"), "#",
+                          data: {toggle: "modal", target: "#loginModal"},
+                          class: "login" %>
+                        <%= render "shared/login" %>
+                      </li>
+                    <% end %>
+                  </ul>
+                  <ul class="option_nav">
+                    <li class="dorpdown">
+                      <a href="#">Eng</a>
+                      <ul class="subnav">
+                        <li><a href="#">Eng</a></li>
+                        <li><a href="#">Vie</a></li>
+                      </ul>
                     </li>
-                    <li>
-                      <%= link_to t(".login"), "#",
-                        data: {toggle: "modal", target: "#loginModal"},
-                        class: "login" %>
-                      <%= render "shared/login" %>
-                    </li>
-                  <% end %>
-                </ul>
-                <ul class="option_nav">
-                  <li class="dorpdown">
-                    <a href="#">Eng</a>
-                    <ul class="subnav">
-                      <li><a href="#">Eng</a></li>
-                      <li><a href="#">Vie</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div> <!-- end row -->
-          </div> <!-- end header top -->
-          <div class="clearfix"></div>
-          <div class="header_bottom">
-            <ul class="option">
-              <li id="search" class="search">
-                <form>
-                  <input class="search-submit" type="submit" value="">
-                  <input class="search-input" placeholder="<%= t ".search" %>"
-                    type="text" value="" name="search">
-                </form>
-              </li>
-              <li class="option-cart">
-                <a href="#" class="cart-icon" data-toggle="modal"
-                  data-target="#myModal"><span class="cart_no">02</span></a>
-                <%= render "shared/cart" %>
-              </li>
-            </ul>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="dropdown-white">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <%= t ".home" %>
-                  </a>
+                  </ul>
+                </div>
+              </div> <!-- end row -->
+            </div> <!-- end header top -->
+            <div class="clearfix"></div>
+            <div class="header_bottom">
+              <ul class="option">
+                <li id="search" class="search">
+                  <form>
+                    <input class="search-submit" type="submit" value="">
+                    <input class="search-input" placeholder="<%= t ".search" %>"
+                      type="text" value="" name="search">
+                  </form>
                 </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <%= t ".product" %>
-                  </a>
-                  <div class="dropdown-menu mega-menu">
-                    <div class="row">
-                      <div class="col-md-6 col-sm-6">
-                        <ul class="mega-menu-links">
-                          <strong><li><h6><%= t ".product" %></h6></li></strong>
-                          <li><a href="">Iphone</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-sm-6">
-                        <ul class="mega-menu-links">
-                          <strong><li><h6><%= t ".price" %></h6></li></strong>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <li class="dropdown-white"><a href="">Iphone</a></li>
-                  <li class="dropdown-white"><a href="">Samsung</a></li>
+                <li class="option-cart">
+                  <a href="#" class="cart-icon" data-toggle="modal"
+                    data-target="#myModal"><span class="cart_no">02</span></a>
+                  <%= render "shared/cart" %>
                 </li>
               </ul>
-            </div> <!-- end collapse -->
-          </div> <!-- end header-bottom -->
-        </div> <!-- end col-md-10 -->
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-  </div> <!-- end header -->
-</div>
+              <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li class="dropdown-white">
+                    <%= link_to t(".home"), root_path,
+                    data: {toggle: "dropdown"}, class: "dropdown-toggle" %>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <%= t ".product" %>
+                    </a>
+                    <div class="dropdown-menu mega-menu">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                          <ul class="mega-menu-links">
+                            <strong><li><h6><%= t ".product" %></h6></li></strong>
+                            <li><a href="">Iphone</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                          <ul class="mega-menu-links">
+                            <strong><li><h6><%= t ".price" %></h6></li></strong>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <li class="dropdown-white"><a href="">Iphone</a></li>
+                    <li class="dropdown-white"><a href="">Samsung</a></li>
+                  </li>
+                </ul>
+              </div> <!-- end collapse -->
+            </div> <!-- end header-bottom -->
+          </div> <!-- end col-md-10 -->
+        </div> <!-- end row -->
+      </div> <!-- end container -->
+    </div> <!-- end header -->
+  </div>
+</body>

@@ -5,10 +5,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <div class="footer-logo"><%= link_to image_tag "logo.png" %></div>
+            <div class="footer-logo"><%= link_to(image_tag("logo.png"), root_path) %>
+            </div>
           </div>
           <div class="col-md-3 col-sm-6">
-            <h4 class="title"><%= t "contact" %> <strong><%= t ".info" %></strong></h4>
+            <h3 class="title"><%= t "contact" %> <strong><%= t ".info" %></strong></h3>
             <p>Address: Hoai Duc, Hanoi , Vietnam</p>
             <p>Call Us : 0164.806.2543</p>
             <p>Email : tdtrung5893@gmail.com</p>
