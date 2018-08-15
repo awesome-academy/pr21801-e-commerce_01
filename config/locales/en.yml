@@ -1,6 +1,8 @@
 en:
   add_success_category: "Add new category successed!"
   add_failed_category: "An error occurred while adding new category"
+  update_success: "Update Successful!"
+  update_failed: "An error has occurred while updating!"
   layouts:
     header:
       address: "Handico Tower, Pham Hung, Me Tri, Nam Tu Liem, Ha Noi"
@@ -55,8 +57,11 @@ en:
   categories:
     new:
       new_category: "New Category"
+      create: "Create"
     form:
       category: "Category"
       category_description: "Category description:"
       category_name: "Category name:"
-      create: "Create"
+    edit:
+      edit_category: "Edit Category"
+      update: "Update"
