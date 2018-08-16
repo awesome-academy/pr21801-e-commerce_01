@@ -1,11 +1,56 @@
 en:
-  add_success_category: "Add new category successed!"
   add_failed_category: "An error occurred while adding new category"
-  update_success: "Update Successful!"
-  update_failed: "An error has occurred while updating!"
-  delete_success: "Delete Successful!"
+  add_success_category: "Add new category successed!"
   delete_failed: "An error has occurred while deleting!"
+  delete_success: "Delete Successful!"
   delete_warning: "Can't delete because exist of product in category"
+  update_failed: "An error has occurred while updating!"
+  update_success: "Update Successful!"
+
+  categories:
+    new:
+      create: "Create"
+      new_category: "New Category"
+    form:
+      category: "Select Category"
+      category_description: "Category description:"
+      category_name: "Category name:"
+      none: "None"
+      status: "Status"
+    edit:
+      edit_category: "Edit Category"
+      update: "Update"
+    index:
+      action: "Action"
+      delete: "Delete"
+      details: "Details"
+      list: List Category
+      name: "Name"
+      not_found_categories: "Not found categories"
+      parent_category: "Parent Category"
+      search: "Search"
+      search_user: "Search"
+      sure: "Are you sure?"
+    show:
+      del_continue: "Delete Category: "
+      delete: "Delete Category"
+      edit: "Edit name category"
+      new: "Add new category"
+      sel_cate: "Select orther Category"
+      sub: "Submit"
+    category:
+      description: "Description"
+      status: "Status"
+  devise:
+    registrations:
+      are_you_sure: "Are you sure?"
+      back: "Back"
+      cancel_my_account: "Cancel my account"
+      characters_minimum: "characters minimum"
+      currently_waiting_confirmation: "Currently waiting confirmation:"
+      edit: "Edit"
+      leave_blank_if_you_dont_want_to_change_it: "leave blank if you don't want to change it"
+      only_required_if_you_want_to_change_password: "only required if you want to change password"
   layouts:
     header:
       address: "Handico Tower, Pham Hung, Me Tri, Nam Tu Liem, Ha Noi"
@@ -43,6 +88,8 @@ en:
       already_a_member: "Already a member?"
       characters_minimum: "characters minimum"
       login: "Login"
+      login_with_google: "login with Google"
+      or: "or"
       sign_up: "Sign up"
     product:
       add: "Add To Cart"
@@ -52,46 +99,15 @@ en:
       our: "Our "
       product: "products"
     error_messages:
-      the_form_contains: "The form contains"
       error: "errors"
+      the_form_contains: "The form contains"
   static_pages:
     home:
       add: "Add To Cart"
-      brand: "Brand"
       amount: "Total Price"
       brand: "Brand"
-  categories:
-    new:
-      new_category: "New Category"
-      create: "Create"
-    form:
-      category: "Select Category"
-      category_description: "Category description:"
-      category_name: "Category name:"
-      status: "Status"
-      none: "None"
-    edit:
-      edit_category: "Edit Category"
-      update: "Update"
-    index:
-      list: List Category
-      not_found_categories: "Not found categories"
-      details: "Details"
-      delete: "Delete"
-      sure: "Are you sure?"
-      action: "Action"
-      search_user: "Search"
-      name: "Name"
-      parent_category: "Parent Category"
-      search: "Search"
-    show:
-      sel_cate: "Select orther Category"
-      del_continue: "Delete Category: "
-      sub: "Submit"
-      delete: "Delete Category"
-      new: "Add new category"
-      edit: "Edit name category"
-    category:
-      description: "Description"
-      status: "Status"
-
+      featured: "nổi bật"
+      hot: "bán chạy"
+      more_detail: "Xem chi tiết"
+      our: "nổi tiếng"
+      product: "Sản phẩm"
