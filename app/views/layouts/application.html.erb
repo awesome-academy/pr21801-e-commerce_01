@@ -3,8 +3,8 @@
   <head>
     <title>ECommerce01</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track":
+      "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "bootstrap.min" %>
   </head>
@@ -13,7 +13,7 @@
     <%= render "layouts/header" %>
     <div class="content">
       <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %> margin-header"><%= message %></div>
+        <div class="alert alert-<%= message_type %> margin-header mess_color"><%= message %></div>
       <% end %>
       <%= yield %>
     </div>

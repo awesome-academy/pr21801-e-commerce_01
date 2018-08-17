@@ -51,6 +51,40 @@ en:
       edit: "Edit"
       leave_blank_if_you_dont_want_to_change_it: "leave blank if you don't want to change it"
       only_required_if_you_want_to_change_password: "only required if you want to change password"
+  admin:
+    categories:
+      new:
+        new_category: "New Category"
+        create: "Create"
+      form:
+        category: "Select Category"
+        category_description: "Category description:"
+        category_name: "Category name:"
+        status: "Status"
+        none: "None"
+      edit:
+        edit_category: "Edit Category"
+        update: "Update"
+      index:
+        list: List Category
+        not_found_categories: "Not found categories"
+        details: "Details"
+        delete: "Delete"
+        sure: "Are you sure?"
+        action: "Action"
+        search_user: "Search"
+        name: "Name"
+        parent_category: "Parent Category"
+        search: "Search"
+      show:
+        sub: "Submit"
+        delete: "Delete Category"
+        new: "Add new category"
+        edit: "Edit name category"
+      category:
+        description: "Description"
+        status: "Status"
+        delete: "Delete Category"
   layouts:
     header:
       address: "Handico Tower, Pham Hung, Me Tri, Nam Tu Liem, Ha Noi"
@@ -106,8 +140,8 @@ en:
       add: "Add To Cart"
       amount: "Total Price"
       brand: "Brand"
-      featured: "nổi bật"
-      hot: "bán chạy"
-      more_detail: "Xem chi tiết"
-      our: "nổi tiếng"
-      product: "Sản phẩm"
+      featured: "Featured "
+      hot: "Hot "
+      more_detail: "More Detail"
+      our: "Our "
+      product: "Product"

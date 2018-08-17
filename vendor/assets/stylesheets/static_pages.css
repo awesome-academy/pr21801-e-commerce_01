@@ -640,7 +640,7 @@ button:hover {
 
 .usermenu li a.user {
   background: url('user.png') left top no-repeat;
-  width: 105px;
+  min-width: 60px;
   word-wrap: break-word
 }
 

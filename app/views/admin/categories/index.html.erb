@@ -2,7 +2,7 @@
   <h2 class="title"><%= t ".list" %></h2>
   <section class="panel">
     <div class="nav search-row text-center">
-      <%= form_tag categories_path, method: :get, id: :search_category do %>
+      <%= form_tag admin_categories_path, method: :get, id: :search_category do %>
         <%= text_field_tag :search, params[:search], placeholder: t(".search") %>
         <%= submit_tag t(".search_user"), name: nil %>
         <div class="panel-body">

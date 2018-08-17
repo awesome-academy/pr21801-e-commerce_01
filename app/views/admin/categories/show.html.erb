@@ -4,14 +4,17 @@
       <ul class="nav navbar-nav">
         <% @categories.each do |category| %>
           <% if root(@category) == category %>
-            <li class="active"><%= link_to category.name, category %></li>
+            <li class="active"><%= link_to category.name,
+              admin_category_path(category) %></li>
             <% if @category.children.present? || @category == category %>
               <% @category.children.each do |child| %>
-                <li class="sub-category"><%= link_to child.name, child %></li>
+                <li class="sub-category"><%= link_to child.name,
+                  admin_category_path(child) %></li>
               <% end %>
             <% else %>
               <% Category.roots(@category.parent_id).each do |parent| %>
-                <li class="sub-category"><%= link_to parent.name, parent %></li>
+                <li class="sub-category"><%= link_to parent.name,
+                  admin_category_path(parent) %></li>
               <% end %>
             <% end %>
           <% end %>
@@ -24,12 +27,20 @@
     <ol class="breadcrumb title">
       <% ancestors(@category).each do |category| %>
         <li>
-          <%= link_to category.name, category %>
+          <%= link_to category.name, admin_category_path(category) %>
         </li>
       <% end %>
       <li>
         <strong><%= @category.name %></strong>
       </li>
+      <p class="new-category">
+        <%= link_to t(".edit"), edit_admin_category_path(parent_id: @category),
+          class: "btn btn-warning btn-rounded btn-sm new-category" %>
+      </p>
+      <p class="new-category">
+        <%= link_to t(".new"), new_admin_category_path(parent_id: @category.id),
+          class: "btn btn-success btn-rounded btn-sm new-category" %>
+      </p>
     </ol>
   </div>
   <div class="clearfix"></div>
