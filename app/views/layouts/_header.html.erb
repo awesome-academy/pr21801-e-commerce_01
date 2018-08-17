@@ -43,6 +43,11 @@
                           class: "login" %>
                         <%= render "shared/login" %>
                       </li>
+                      <li>
+                        <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+                          <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        <% end %>
+                      </li>
                     <% end %>
                   </ul>
                   <ul class="option_nav">

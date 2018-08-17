@@ -629,7 +629,7 @@ button:hover {
 .usermenu li a {
   float: right;
   padding-left: 22px;
-  color: green;
+  color: #fff;
 }
 
 .usermenu li p {
@@ -664,6 +664,11 @@ button:hover {
   background: url('regbg.png') left top no-repeat;
 }
 
+.usermenu li a.modal-link {
+  float: none;
+  padding-left: 0px;
+  color: green;
+}
 
 /* NAV style */
 
