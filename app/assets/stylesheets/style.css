@@ -48,3 +48,13 @@ h2.title {
 .nav-category {
   padding: 10px;
 }
+
+.new-category {
+  float: right;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+tr.table-cate th {
+  text-align: center;
+}

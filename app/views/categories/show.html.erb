@@ -30,6 +30,14 @@
       <li>
         <strong><%= @category.name %></strong>
       </li>
+      <p class="new-category">
+        <%= link_to t(".edit"), edit_category_path(@category),
+          class: "btn btn-warning btn-rounded btn-sm new-category" %>
+      </p>
+      <p class="new-category">
+        <%= link_to t(".new"), new_category_path(parent_id: @category.id),
+          class: "btn btn-success btn-rounded btn-sm new-category" %>
+      </p>
     </ol>
   </div>
   <div class="clearfix"></div>
