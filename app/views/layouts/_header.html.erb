@@ -44,7 +44,8 @@
                         <%= render "shared/login" %>
                       </li>
                       <li>
-                        <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+                        <%= link_to user_google_oauth2_omniauth_authorize_path,
+                          class: "pd-gg" do %>
                           <i class="fa fa-google-plus" aria-hidden="true"></i>
                         <% end %>
                       </li>

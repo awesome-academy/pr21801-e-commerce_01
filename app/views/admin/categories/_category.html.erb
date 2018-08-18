@@ -1,0 +1,17 @@
+<tr>
+  <td><%= category.name %></td>
+  <td>
+    <%= category.parent.name if category.parent.present? %>
+  </td>
+  <td align="center">
+    <%= link_to t(".details"), edit_admin_category_path(category,
+      parent_id: category.id), class: "btn btn-warning btn-rounded btn-sm my-0" %>
+    <%= link_to t("admin.categories.show.new"),
+      new_admin_category_path(parent_id: category.id),
+        class: "btn btn-success btn-rounded btn-sm my-0" %>
+    <%= link_to t(".delete"), admin_category_path(category.id),
+      method: :delete, data: {confirm: t("admin.categories.index.sure"),
+        id: category.id}, class: "btn btn-danger btn-rounded btn-sm
+          my-0 destroy" %>
+  </td>
+</tr>

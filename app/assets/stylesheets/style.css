@@ -58,3 +58,16 @@ h2.title {
 tr.table-cate th {
   text-align: center;
 }
+
+.mess_color {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: auto;
+}
+
+.usermenu li a.pd-gg {
+  float: right;
+  padding-left: 0px;
+  color: #fff;
+}
