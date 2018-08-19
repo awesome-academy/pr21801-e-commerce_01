@@ -81,3 +81,10 @@ vi:
       more_detail: "Xem chi tiết"
       our: "nổi tiếng"
       product: "Sản phẩm"
+  views:
+    pagination:
+      first: "« Trang đầu"
+      last: "Trang cuối »"
+      previous: "‹ Trước"
+      next: "Sau ›"
+      truncate: "…"

@@ -1,3 +1,5 @@
+@import 'colors';
+
 body {
   font-size: 14px;
 }
@@ -32,7 +34,7 @@ h2.title {
   font-size: 60px;
   text-align: center;
   font-weight: bold;
-  color: #bdbdbd;
+  color: $gray;
 }
 
 .input label {
@@ -60,7 +62,7 @@ tr.table-cate th {
 }
 
 .mess_color {
-  background-color: white;
+  background-color: $white;
   padding: 10px;
   border-radius: 5px;
   width: auto;
@@ -69,5 +71,39 @@ tr.table-cate th {
 .usermenu li a.pd-gg {
   float: right;
   padding-left: 0px;
-  color: #fff;
+  color: $white;
+}
+
+.paginate{
+  color: $slate-blue;
+}
+
+.current{
+  padding: 5px 15px;
+  border: 1px solid $royal-blue;
+  color: $white;
+  background-color: $slate-blue;
+}
+
+.paginate a, .first a, .last a, .prev a, .next a{
+  padding: 5px 15px;
+  border: 1px solid $royal-blue;
+  color: $slate-blue;
+}
+
+.paginate a:hover, .first a:hover, .last a:hover, .prev a:hover, .next a:hover{
+  color: $white;
+  background-color: $slate-blue;
+  border: 1px solid $slate-blue;
+}
+
+.display-category {
+  margin: 30px 0;
+  display: inline;
+  font-size: 15px;
+  color: $azure;
+}
+
+#search_category{
+  margin-top: 30px;
 }
