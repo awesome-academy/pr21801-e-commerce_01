@@ -76,6 +76,7 @@ en:
         name: "Name"
         parent_category: "Parent Category"
         search: "Search"
+        display_category: "Select the number of categories you want to display:"
       show:
         sub: "Submit"
         delete: "Delete Category"
@@ -145,3 +146,10 @@ en:
       more_detail: "More Detail"
       our: "Our "
       product: "Product"
+  views:
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"

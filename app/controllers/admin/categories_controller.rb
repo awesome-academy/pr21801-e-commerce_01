@@ -5,7 +5,9 @@ class Admin::CategoriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @categories = Category.ordered_by_name.search_by_name(params[:search])
+    @search =  Category.ransack params[:q]
+    @categories = @search.result.ordered_by_name.search_by_name(params[:search]).
+      page(params[:page]).per params[:limit]
   end
 
   def new

@@ -6,10 +6,14 @@ Rails.application.routes.draw do
     controllers: {omniauth_callbacks: "users/omniauth_callbacks",
       registrations: "registrations"}
 
+  concern :paginatable do
+    get "(page/:page)", action: :index, on: :collection, as: ""
+  end
+
   resources :categories, only: [:show]
 
   namespace :admin do
-    resources :users
-    resources :categories
+    resources :users, concerns: :paginatable
+    resources :categories, concerns: :paginatable
   end
 end
