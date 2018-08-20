@@ -1,8 +1,21 @@
 vi:
-  add_success_category: "Add new category successed!"
   add_failed_category: "An error occurred while adding new category"
-  update_success: "Update Successful!"
+  add_success_category: "Add new category successed!"
   update_failed: "An error has occurred while updating!"
+  update_success: "Update Successful!"
+  user_could_not_be_deleted: "Không thể xóa người dùng."
+  user_deleted: "Người dùng đã bị xóa."
+
+  admin:
+    users:
+      index:
+        action: "Hành động"
+        delete: "Xóa"
+        email: "Email"
+        name: "Tên"
+        name_or_email_cont: "Tên hoặc email có chứa..."
+        user_list: "Danh sách người dùng"
+        you_sure: "Bạn chắc chứ?"
   categories:
     new:
       new_category: "New Category"
@@ -16,14 +29,16 @@ vi:
       update: "Update"
   devise:
     registrations:
-      are_you_sure: "Bạn đã chắc chắn?"
-      back: "Quay lại"
-      cancel_my_account: "Hủy tài khoản"
-      characters_minimum: "kí tự tối thiểu"
-      currently_waiting_confirmation: "Đang chờ xác nhận:"
-      edit: "Chỉnh sửa"
-      leave_blank_if_you_dont_want_to_change_it: "để trống nêu bạn không muốn thay đổi"
-      only_required_if_you_want_to_change_password: "chỉ cần khi bạn muốn đổi mật khẩu"
+      edit:
+        are_you_sure: "Bạn đã chắc chắn?"
+        back: "Quay lại"
+        cancel_my_account: "Hủy tài khoản"
+        characters_minimum: "kí tự tối thiểu"
+        currently_waiting_confirmation: "Đang chờ xác nhận:"
+        edit: "Chỉnh sửa"
+        leave_blank_if_you_dont_want_to_change_it: "để trống nêu bạn không muốn thay đổi"
+        only_required_if_you_want_to_change_password: "chỉ cần khi bạn muốn đổi mật khẩu"
+        update: "Cập nhật"
   layouts:
     header:
       address: "Tòa nhà Handico, Phạm Hùng, Mễ Trì, Nam Nam Từ Liêm, Hà Nội"
@@ -39,6 +54,7 @@ vi:
       sign_up: "Đăng ký"
       signup: "Đăng ký"
       total: "Tổng tiền"
+      user_list: "Danh sách người dùng"
     footer:
       contact: "liên lạc"
       info: "Thông tin"

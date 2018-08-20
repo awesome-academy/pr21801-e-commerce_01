@@ -6,7 +6,52 @@ en:
   delete_warning: "Can't delete because exist of product in category"
   update_failed: "An error has occurred while updating!"
   update_success: "Update Successful!"
+  user_could_not_be_deleted: "User could not be deleted."
+  user_deleted: "User deleted."
 
+  admin:
+    categories:
+      new:
+        new_category: "New Category"
+        create: "Create"
+      form:
+        category: "Select Category"
+        category_description: "Category description:"
+        category_name: "Category name:"
+        status: "Status"
+        none: "None"
+      edit:
+        edit_category: "Edit Category"
+        update: "Update"
+      index:
+        list: List Category
+        not_found_categories: "Not found categories"
+        details: "Details"
+        delete: "Delete"
+        sure: "Are you sure?"
+        action: "Action"
+        search_user: "Search"
+        name: "Name"
+        parent_category: "Parent Category"
+        search: "Search"
+      show:
+        sub: "Submit"
+        delete: "Delete Category"
+        new: "Add new category"
+        edit: "Edit name category"
+      category:
+        description: "Description"
+        status: "Status"
+        delete: "Delete Category"
+    users:
+      index:
+        action: "Action"
+        delete: "Delete"
+        email: "Email"
+        name: "Name"
+        name_or_email_cont: "Name or email contains..."
+        user_list: "User list"
+        you_sure: "You sure?"
   categories:
     new:
       create: "Create"
@@ -43,27 +88,15 @@ en:
       status: "Status"
   devise:
     registrations:
-      are_you_sure: "Are you sure?"
-      back: "Back"
-      cancel_my_account: "Cancel my account"
-      characters_minimum: "characters minimum"
-      currently_waiting_confirmation: "Currently waiting confirmation:"
-      edit: "Edit"
-      leave_blank_if_you_dont_want_to_change_it: "leave blank if you don't want to change it"
-      only_required_if_you_want_to_change_password: "only required if you want to change password"
-  admin:
-    categories:
-      new:
-        new_category: "New Category"
-        create: "Create"
-      form:
-        category: "Select Category"
-        category_description: "Category description:"
-        category_name: "Category name:"
-        status: "Status"
-        none: "None"
       edit:
-        edit_category: "Edit Category"
+        are_you_sure: "Are you sure?"
+        back: "Back"
+        cancel_my_account: "Cancel my account"
+        characters_minimum: "characters minimum"
+        currently_waiting_confirmation: "Currently waiting confirmation:"
+        edit: "Edit"
+        leave_blank_if_you_dont_want_to_change_it: "leave blank if you don't want to change it"
+        only_required_if_you_want_to_change_password: "only required if you want to change password"
         update: "Update"
       index:
         list: List Category
@@ -101,6 +134,7 @@ en:
       sign_up: "Sign up"
       signup: "Register"
       total: "Total "
+      user_list: "User list"
     footer:
       contact: "Contact "
       info: "info"

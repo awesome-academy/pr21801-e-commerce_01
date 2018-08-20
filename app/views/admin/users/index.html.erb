@@ -1,0 +1,47 @@
+<div class="container_fullwidth">
+  <div class="container">
+    <h2 class="text-center"><%= t ".user_list" %></h2>
+    <%= search_form_for @q do |f| %>
+      <div class="input-group mb-5">
+        <%= f.search_field :name_or_email_cont,
+          placeholder: t(".name_or_email_cont"), class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag type: "submit", class: "btn btn-default" do %>
+            <i class="fa fa-search"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div class="text-center">
+      <%= paginate @users %><br>
+      <%= page_entries_info @users %>
+    </div>
+    <table class="table table-hover mt-5" >
+      <thead>
+        <tr>
+          <th><%= sort_link @q, :name, t(".name") %></th>
+          <th><%= sort_link @q, :email, t(".email") %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <% unless user.role? %>
+              <td>
+                <%= link_to t(".delete"), admin_user_path(user), method: :delete,
+                  data: {confirm: t(".you_sure")}, class: "btn btn-danger" %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= page_entries_info @users %><br>
+      <%= paginate @users %>
+    </div>
+  </div>
+</div>

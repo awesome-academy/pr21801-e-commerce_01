@@ -1,4 +1,4 @@
-/* CSS RESET */
+/* css reset */
 
 html,
 body,
@@ -90,7 +90,7 @@ video {
 }
 
 
-/* HTML5 display-role reset for older browsers */
+/* html5 display-role reset for older browsers */
 
 article,
 aside,
@@ -107,7 +107,7 @@ section {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'roboto', sans-serif;
   font-size: 12px;
   font-weight: 300;
   line-height: 1;
@@ -139,7 +139,7 @@ table {
 }
 
 
-/* Changable Global Styles -------------------------------------------------- */
+/* changable global styles -------------------------------------------------- */
 
 *::-moz-selection {
   color: #ff9e98;
@@ -269,14 +269,14 @@ img {
 }
 
 
-/*Color*/
+/*color*/
 
 .light-red {
   color: #fe5252;
 }
 
 .gray {
-  color: #CCC;
+  color: #ccc;
 }
 
 .red {
@@ -296,7 +296,7 @@ img {
 }
 
 .gray-bg {
-  background: #CCC;
+  background: #ccc;
 }
 
 .pink-bg {
@@ -336,7 +336,7 @@ img {
 }
 
 
-/*Transition Animation*/
+/*transition animation*/
 
 a,
 button,
@@ -413,10 +413,10 @@ button:hover {
 }
 
 
-/* End of global estyle-------------------------------------------------- */
+/* end of global estyle-------------------------------------------------- */
 
 
-/* customizable Style */
+/* customizable style */
 
 .wrapper {
   position: relative;
@@ -439,7 +439,7 @@ button:hover {
 }
 
 
-/* HEADER STYLE */
+/* header style */
 
 #home {
   background: url('bg.jpg') center top no-repeat;
@@ -670,7 +670,7 @@ button:hover {
   color: green;
 }
 
-/* NAV style */
+/* nav style */
 
 .navbar-collapse {
   float: left;
@@ -755,7 +755,7 @@ ul.dropdown-menu > li > a {
   padding: 3px 10px;
   white-space: nowrap;
   font-size: 13px;
-  text-transform: capitalize;
+  text-transform: none;
   border: none;
 }
 
@@ -774,7 +774,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/* Opton Bar */
+/* opton bar */
 
 .option {
   position: relative;
@@ -966,7 +966,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/*~~~~~~~~~~~ HOME PAGE SLIDER ~~~~~~~~~*/
+/*~~~~~~~~~~~ home page slider ~~~~~~~~~*/
 
 .flat-caption {
   padding: 0;
@@ -1060,7 +1060,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/* HOME2 SLIDER */
+/* home2 slider */
 
 .hom-slider {
   position: relative;
@@ -1116,7 +1116,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/** HOME 2 SLIDER **/
+/** home 2 slider **/
 
 #homeslide2 {
   margin-top: -20px;
@@ -1146,7 +1146,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/** HOME 3 SLIDER **/
+/** home 3 slider **/
 
 #homeslide3 {
   margin-top: -20px;
@@ -1178,13 +1178,13 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/*```````````` HEADER SECTION CLOSE ```````````````````*/
+/*```````````` header section close ```````````````````*/
 
 
-/*~~~~~~ CONTAINER ~~~~~~~~~~~~~*/
+/*~~~~~~ container ~~~~~~~~~~~~~*/
 
 
-/*promotion Banner */
+/*promotion banner */
 
 .promotion-banner {
   background: url('black_transparent50.png') left top repeat;
@@ -1259,7 +1259,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/*~~ Products Style ~~*/
+/*~~ products style ~~*/
 
 
 /*featured products */
@@ -1276,7 +1276,7 @@ ul.dropdown-menu > li > a:hover {
 #featured,
 #hot,
 #brand,
-#braldLogo {
+#braldlogo {
   margin: 0;
   padding: 0;
   display: block;
@@ -1287,7 +1287,7 @@ ul.dropdown-menu > li > a:hover {
 #featured li,
 #hot li,
 #brand li,
-#braldLogo li {
+#braldlogo li {
   float: left;
   width: 100%;
   padding: 0;
@@ -1408,16 +1408,16 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/* Product List */
+/* product list */
 
-.products-listItem {
+.products-listitem {
   float: left;
   position: relative;
   width: 100%;
   margin-bottom: 15px;
 }
 
-.products-listItem .products {
+.products-listitem .products {
   border: 1px solid #e1e1e1;
   position: relative;
   overflow: hidden;
@@ -1429,14 +1429,14 @@ ul.dropdown-menu > li > a:hover {
   min-height: 150px;
 }
 
-.products-listItem .products:hover {
+.products-listitem .products:hover {
   background: #fff;
   border-color: #f7544a;
   -webkit-box-shadow: 0 0 5px 1px #d3d3d3;
   box-shadow: 0 0 5px 1px #d3d3d3;
 }
 
-.products-listItem .thumbnail {
+.products-listitem .thumbnail {
   border: medium none;
   float: left;
   margin: 0;
@@ -1513,7 +1513,7 @@ ul.dropdown-menu > li > a:hover {
 /*!````` product style close``````````````!*/
 
 
-/* BRAND LOGO */
+/* brand logo */
 
 .brand_item {
   float: left;
@@ -1531,14 +1531,14 @@ ul.dropdown-menu > li > a:hover {
   text-align: center;
 }
 
-#braldLogo .brand_item li {
+#braldlogo .brand_item li {
   display: inline-block;
   *display: inline;
   margin-right: 2%;
   width: 18.4%;
 }
 
-#braldLogo .brand_item li:last-child {
+#braldlogo .brand_item li:last-child {
   margin-right: 0;
 }
 
@@ -1566,7 +1566,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/*!~~~~~~~~~~~~ SPECIAL DEAL ~~~~~~~~~~~~~*/
+/*!~~~~~~~~~~~~ special deal ~~~~~~~~~~~~~*/
 
 .special-deal {}
 
@@ -1606,7 +1606,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/*!~~~~~~~~~~~~ PRODUCT TAGS ~~~~~~~~~~~~~*/
+/*!~~~~~~~~~~~~ product tags ~~~~~~~~~~~~~*/
 
 .product-tag {}
 
@@ -1636,7 +1636,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/* News letter */
+/* news letter */
 
 .get-newsletter {}
 
@@ -1661,7 +1661,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/*Bacebook Likebox */
+/*bacebook likebox */
 
 .likebutton {
   float: left;
@@ -1696,7 +1696,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 
-/*!~~~~FOOTER STYLE~~~~*/
+/*!~~~~footer style~~~~*/
 
 .footer {
   width: 100%;
@@ -1834,7 +1834,7 @@ form.newsletter input[type='submit']:hover {
 }
 
 
-/* Products page style */
+/* products page style */
 
 .page-index {
   border-top: 1px solid #5c5c5c;
@@ -1869,7 +1869,7 @@ form.newsletter input[type='submit']:hover {
 }
 
 
-/* Category */
+/* category */
 
 .category {
   position: relative;
@@ -1959,7 +1959,7 @@ form.newsletter input[type='submit']:hover {
 }
 
 
-/* BANNER */
+/* banner */
 
 .leftbanner {
   width: 100%;
@@ -1975,7 +1975,7 @@ form.newsletter input[type='submit']:hover {
 }
 
 
-/* Page main banner*/
+/* page main banner*/
 
 .banner {
   width: 100%;
@@ -2144,7 +2144,7 @@ option {
 }
 
 
-/*Products Details page style */
+/*products details page style */
 
 .products-details {
   position: relative;
@@ -2235,7 +2235,7 @@ option {
 }
 
 .products-description {
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   border-radius: 10px;
   display: block;
   margin: 15px 0 15px 360px;
@@ -2370,7 +2370,7 @@ option {
 }
 
 
-/* CONTENT */
+/* content */
 
 .tab-content-wrap {
   float: left;
@@ -2380,7 +2380,7 @@ option {
 .tab-content {
   position: relative;
   padding: 15px 0;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   border-radius: 10px;
   display: block;
   margin: 15px 0;
@@ -2413,7 +2413,7 @@ option {
 
 /**************************************/
 
-#Reviews table {
+#reviews table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -2424,20 +2424,20 @@ option {
   margin-bottom: 30px;
 }
 
-#Reviews table th,
-#Reviews table td {
+#reviews table th,
+#reviews table td {
   border-left: 1px solid #e1e1e1;
   border-top: 1px solid #e1e1e1;
   padding: 15px;
   text-align: center;
 }
 
-#Reviews table thead tr:first-child th {
+#reviews table thead tr:first-child th {
   border-top: none;
 }
 
-#Reviews table td:first-child,
-#Reviews table th:first-child {
+#reviews table td:first-child,
+#reviews table th:first-child {
   border-left: none;
 }
 
@@ -2448,47 +2448,47 @@ option {
   width: 100%;
 }
 
-#Reviews .input {
+#reviews .input {
   width: 100%;
   padding: 10px;
 }
 
-#Reviews .lebel-abs {
+#reviews .lebel-abs {
   left: 20px;
   position: absolute;
   top: 15px;
 }
 
-#Reviews .button {
+#reviews .button {
   float: right;
 }
 
-#Reviews .namefild,
-#Reviews .emailfild {
+#reviews .namefild,
+#reviews .emailfild {
   padding-left: 100px;
 }
 
-#Reviews .emailfild {
+#reviews .emailfild {
   padding-left: 100px;
 }
 
-#Reviews .summeryfild {
+#reviews .summeryfild {
   padding-left: 160px;
 }
 
-#Reviews .textareafild {
+#reviews .textareafild {
   padding-top: 30px;
 }
 
 
-/* TAGS*/
+/* tags*/
 
 .tag {}
 
 .tag input[type='text'] {
   position: relative;
   margin: 0 15px;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   padding: 5px 10px;
@@ -2496,7 +2496,7 @@ option {
 
 .tag input[type='submit'] {
   position: relative;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   background: #f7544a;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -2510,7 +2510,7 @@ option {
 }
 
 
-/*Shopping cart table style*/
+/*shopping cart table style*/
 
 .shopping-cart {}
 
@@ -2533,14 +2533,14 @@ option {
 
 .shop-table tbody td {
   text-align: center;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   vertical-align: middle;
   padding: 10px;
   border-left: none;
 }
 
 .shop-table tbody tr td:first-child {
-  border-left: 1px solid #E1E1E1;
+  border-left: 1px solid #e1e1e1;
   -webkit-border-radius: 10px 0 0 10px;
   border-radius: 10px 0 0 10px;
 }
@@ -2624,7 +2624,7 @@ option {
   margin: 15px 0;
   border-radius: 10px;
   -webkit-border-radius: 10px;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   padding: 30px;
   float: left;
   width: 100%;
@@ -2804,7 +2804,7 @@ option {
 }
 
 
-/*Contact us page style */
+/*contact us page style */
 
 .contact-title {
   font-weight: 400;
@@ -2828,8 +2828,8 @@ option {
 }
 
 .contact-infoormation,
-.ContactForm {
-  border: 1px solid #E1E1E1;
+.contactform {
+  border: 1px solid #e1e1e1;
   border-radius: 10px;
   float: left;
   margin: 15px 0;
@@ -2838,7 +2838,7 @@ option {
 }
 
 .contact-infoormation h5,
-.ContactForm h5 {
+.contactform h5 {
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 30px;
@@ -2880,13 +2880,13 @@ option {
   margin: 5px 10px 10px 0
 }
 
-.ContactForm label {
+.contactform label {
   position: relative;
   display: block;
   margin-bottom: 8px;
 }
 
-.ContactForm .inputfild {
+.contactform .inputfild {
   width: 100%;
   margin-bottom: 22px;
 }
@@ -3206,7 +3206,7 @@ option {
   .featured-products .caroufredsel_wrapper {
     min-height: 1650px;
   }
-  #productsDetails .caroufredsel_wrapper {
+  #productsdetails .caroufredsel_wrapper {
     min-height: 1245px;
   }
   .banner {
@@ -3215,10 +3215,10 @@ option {
   #tabnav ul li a {
     padding: 10px 15px;
   }
-  #braldLogo li {
+  #braldlogo li {
     text-align: center;
   }
-  #braldLogo .brand_item li {
+  #braldlogo .brand_item li {
     margin-right: 3%;
     margin-bottom: 3%;
     width: 47%;
@@ -3226,8 +3226,8 @@ option {
     display: inline-block;
     text-align: center;
   }
-  #braldLogo .brand_item li:nth-child(2),
-  #braldLogo .brand_item li:nth-child(4) {
+  #braldlogo .brand_item li:nth-child(2),
+  #braldlogo .brand_item li:nth-child(4) {
     margin-right: 0;
   }
   .our-brand .caroufredsel_wrapper {
@@ -3255,7 +3255,7 @@ option {
     float: none;
     display: inline-block;
   }
-  .products-listItem .thumbnail {
+  .products-listitem .thumbnail {
     float: none;
     width: auto;
   }
@@ -3289,14 +3289,14 @@ option {
   .shop-table tr {
     float: left;
     width: 100%;
-    border: 1px solid #E1E1E1;
+    border: 1px solid #e1e1e1;
     border-radius: 10px;
   }
   .shop-table td {
     float: right;
     width: 100% !important;
     border: none !important;
-    border-bottom: 1px solid #E1E1E1 !important;
+    border-bottom: 1px solid #e1e1e1 !important;
     position: relative;
     white-space: nowrap;
   }
@@ -3449,8 +3449,8 @@ option {
   #tabnav ul li {
     margin-right: 5px;
   }
-  #Reviews table th,
-  #Reviews table td {
+  #reviews table th,
+  #reviews table td {
     padding: 5px;
   }
   .tag input[type='text'] {
@@ -3473,8 +3473,8 @@ option {
     width: 100%;
     overflow: hidden;
   }
-  .zoomLens,
-  .zoomContainer {
+  .zoomlens,
+  .zoomcontainer {
     display: none !important;
   }
 }
@@ -3509,7 +3509,7 @@ option {
   .caption5 {
     top: 63%;
   }
-  /* Shopping page */
+  /* shopping page */
   .shop-table .productname {
     font-size: 12px;
   }
@@ -3543,3 +3543,34 @@ option {
 .modal-footer {
   background-color: #f9f9f9;
 }
+
+.dropbtn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-menu {display: block;}

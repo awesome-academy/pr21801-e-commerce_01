@@ -5,25 +5,26 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "bootstrap-kaminari-views"
+gem "cancancan", "~> 2.0"
 gem "coffee-rails", "~> 4.2"
+gem "config"
 gem "devise"
+gem "faker"
 gem "figaro"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
+gem "kaminari"
 gem "mysql2"
 gem "omniauth-google-oauth2"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.4"
+gem "ransack", github: "activerecord-hackery/ransack"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
-gem "config"
-gem "cancancan", "~> 2.0"
-gem "kaminari"
-gem "ransack"
-gem "bootstrap-kaminari-views"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
