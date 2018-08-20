@@ -48,6 +48,7 @@ en:
         action: "Action"
         delete: "Delete"
         email: "Email"
+        export: "Export data"
         name: "Name"
         name_or_email_cont: "Name or email contains..."
         user_list: "User list"

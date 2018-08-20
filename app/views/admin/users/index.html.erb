@@ -1,7 +1,12 @@
 <div class="container_fullwidth">
   <div class="container">
     <h2 class="text-center"><%= t ".user_list" %></h2>
-    <%= search_form_for @q do |f| %>
+    <div class="mb-5">
+      <h3><%= t ".export" %></h3>
+      <%= link_to t(".export"), admin_users_path(format: "csv"),
+        class: "btn btn-sm btn-info" %>
+    </div>
+    <%= search_form_for @q, url: admin_users_path do |f| %>
       <div class="input-group mb-5">
         <%= f.search_field :name_or_email_cont,
           placeholder: t(".name_or_email_cont"), class: "form-control" %>
@@ -31,8 +36,9 @@
             <td><%= user.email %></td>
             <% unless user.role? %>
               <td>
-                <%= link_to t(".delete"), admin_user_path(user), method: :delete,
-                  data: {confirm: t(".you_sure")}, class: "btn btn-danger" %>
+                <%= link_to t(".delete"), admin_user_path(user),
+                  method: :delete, data: {confirm: t(".you_sure")},
+                  class: "btn btn-danger" %>
               </td>
             <% end %>
           </tr>

@@ -12,6 +12,7 @@ vi:
         action: "Hành động"
         delete: "Xóa"
         email: "Email"
+        export: "Xuất dữ liệu"
         name: "Tên"
         name_or_email_cont: "Tên hoặc email có chứa..."
         user_list: "Danh sách người dùng"
