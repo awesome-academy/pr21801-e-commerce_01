@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get "/users", to: "admin/users#index"
-
   root "static_pages#home"
   get "static_pages/about"
 
