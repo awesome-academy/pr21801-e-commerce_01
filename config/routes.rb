@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:show]
+  resources :products
 
   namespace :admin do
     resources :users, concerns: :paginatable

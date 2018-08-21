@@ -1,5 +1,6 @@
 categories:
   maximum: 30
+  limit: 5
 show_limit:
   show_5: 5
   show_10: 10
@@ -7,3 +8,5 @@ show_limit:
   show_20: 20
   show_30: 30
   show_50: 50
+product:
+  limit: 8

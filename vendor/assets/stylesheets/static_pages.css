@@ -723,8 +723,9 @@ button:hover {
 
 .mega-menu,
 .navbar-nav > li > .dropdown-menu {
-  min-width: 150px;
+  min-width: 350px;
   padding: 20px;
+  max-height: 140px;
   border: 1px solid #f7544a;
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -1305,7 +1306,7 @@ ul.dropdown-menu > li > a:hover {
 
 .products {
   border: 1px solid #e1e1e1;
-  min-height: 400px;
+  min-height: 450px;
   position: relative;
   overflow: hidden;
   -webkit-border-radius: 10px;
@@ -1526,7 +1527,6 @@ ul.dropdown-menu > li > a:hover {
   border: 1px solid #dcdcdc;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  width: 100%;
   padding: 10px;
   text-align: center;
 }

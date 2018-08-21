@@ -5,6 +5,7 @@ class Category < ApplicationRecord
   belongs_to :parent, class_name: Category.name, optional: true
   validates :name, presence: true, uniqueness: true,
     length: {maximum: Settings.categories.maximum}
+  scope :get_category, -> {select(:id, :name).limit(Settings.categories.limit)}
   scope :roots, -> parent_id {where(parent_id: parent_id)}
   scope :by_id, -> category_id {where(id: category_id)}
   scope :ordered_by_name, -> {order(name: :asc)}
