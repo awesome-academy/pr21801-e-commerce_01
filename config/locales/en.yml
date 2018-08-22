@@ -99,6 +99,8 @@ en:
         leave_blank_if_you_dont_want_to_change_it: "leave blank if you don't want to change it"
         only_required_if_you_want_to_change_password: "only required if you want to change password"
         update: "Update"
+        unhappy: "Unhappy?"
+        signup: "Sign up"
       index:
         list: List Category
         not_found_categories: "Not found categories"

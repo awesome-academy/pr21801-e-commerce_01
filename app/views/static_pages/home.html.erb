@@ -64,8 +64,9 @@
         <div class="control"><a id="prev_hot" class="prev" href="#">&lt;</a><a id="next_hot" class="next" href="#">&gt;</a></div>
         <ul id="hot">
           <li>
-            <div class="row">
-              <%= render "shared/product" %>
+            <div id="slide-owl" class="row">
+              <%= render partial: "shared/product", collection: @like_products,
+                as: :product %>
             </div>
           </li>
         </ul>
@@ -77,7 +78,7 @@
         <ul id="featured">
           <li>
             <div class="row">
-              <%= render "shared/product" %>
+              <%= render partial: "shared/product", collection: @products %>
             </div>
           </li>
         </ul>

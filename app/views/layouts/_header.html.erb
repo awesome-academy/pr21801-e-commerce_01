@@ -97,28 +97,27 @@
                   <li class="dropdown-white">
                     <%= link_to t(".home"), root_path %>
                   </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <%= t ".product" %>
-                    </a>
-                    <div class="dropdown-menu mega-menu">
-                      <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                          <ul class="mega-menu-links">
-                            <strong><li><h6><%= t ".product" %></h6></li></strong>
-                            <li><a href="">Iphone</a></li>
-                          </ul>
+                  <% @all_categories.each do |category| %>
+                    <% if category.children.present? %>
+                      <li class="dropdown">
+                        <%= link_to category.name, category,
+                          class: "dropdown-toggle" %>
+                        <div class="dropdown-menu mega-menu">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <ul class="mega-menu-links pagi_menu">
+                                <% category.children.each do |children| %>
+                                  <li><%= link_to children.name, children %></li>
+                                <% end %>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                          <ul class="mega-menu-links">
-                            <strong><li><h6><%= t ".price" %></h6></li></strong>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <li class="dropdown-white"><a href="">Iphone</a></li>
-                    <li class="dropdown-white"><a href="">Samsung</a></li>
-                  </li>
+                      </li>
+                    <% else %>
+                      <li class="dropdown-white"><%= link_to category.name, category %></li>
+                    <% end %>
+                  <% end %>
                 </ul>
               </div> <!-- end collapse -->
             </div> <!-- end header-bottom -->
