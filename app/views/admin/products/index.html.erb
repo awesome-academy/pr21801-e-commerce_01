@@ -1,0 +1,36 @@
+<div class="container_fullwidth">
+  <div class="container">
+    <table class="table table-hover table-bordered mt-5" >
+      <h3 class="text-center mb-5"><%= t ".product_list" %></h4>
+      <%= link_to t(".add_product"),
+        new_admin_product_path,
+        class: "btn btn-lg btn-success" %>
+      <thead>
+        <tr class="bold">
+          <th class="text-center"><%= t ".name" %></th>
+          <th class="text-center"><%= t ".category" %></th>
+          <th class="text-center"><%= t ".price" %></th>
+          <th class="text-center"><%= t ".description" %></th>
+          <th class="text-center"><em class="fa fa-cog"></em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.category.name %></td>
+            <td class="text-right"><%= product.price %> <%= t ".usd" %></td>
+            <td><%= product.description %></td>
+            <td class="text-center">
+              <%= link_to t(".edit"), edit_admin_product_path(product),
+                class: "btn btn-sm btn-info" %>
+              <%= link_to t(".delete"), admin_product_path(product),
+                method: :delete, data: {confirm: t(".you_sure")},
+                class: "btn btn-sm btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

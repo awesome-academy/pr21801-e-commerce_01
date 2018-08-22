@@ -22,17 +22,12 @@
       </ul>
     </div>
   </nav>
-
   <div class="mb-30">
     <ol class="breadcrumb title">
       <% ancestors(@category).each do |category| %>
-        <li>
-          <%= link_to category.name, admin_category_path(category) %>
-        </li>
+        <li><%= link_to category.name, admin_category_path(category) %></li>
       <% end %>
-      <li>
-        <strong><%= @category.name %></strong>
-      </li>
+      <li><strong><%= @category.name %></strong></li>
       <p class="new-category">
         <%= link_to t(".edit"), edit_admin_category_path(parent_id: @category),
           class: "btn btn-warning btn-rounded btn-sm" %>
@@ -42,24 +37,11 @@
           class: "btn btn-success btn-rounded btn-sm new-category" %>
       </p>
       <p class="new-category">
-        <%= link_to t(".add_product"),
-          new_admin_product_path,
+        <%= link_to t(".add_product"), new_admin_product_path,
           class: "btn btn-primary btn-rounded btn-sm new-category" %>
       </p>
     </ol>
   </div>
   <div class="clearfix"></div>
-  <div class="container_fullwidth">
-    <div class="container">
-      <div class="hot-products">
-        <ul id="hot">
-          <li>
-            <div class="row">
-              <%= render partial: "shared/product", collection: @products %>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <%= render "products" %>
 </div>
