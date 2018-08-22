@@ -14,7 +14,9 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def show; end
+  def show
+    @products = @category.products.get_product
+  end
 
   def edit; end
 

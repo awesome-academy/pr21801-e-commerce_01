@@ -9,5 +9,8 @@ show_limit:
   show_30: 30
   show_50: 50
 product:
-  limit: 10
   featured: 12
+  limit: 10
+  validates:
+    price_maximum: 8
+

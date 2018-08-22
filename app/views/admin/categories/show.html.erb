@@ -35,11 +35,16 @@
       </li>
       <p class="new-category">
         <%= link_to t(".edit"), edit_admin_category_path(parent_id: @category),
-          class: "btn btn-warning btn-rounded btn-sm new-category" %>
+          class: "btn btn-warning btn-rounded btn-sm" %>
       </p>
       <p class="new-category">
         <%= link_to t(".new"), new_admin_category_path(parent_id: @category.id),
           class: "btn btn-success btn-rounded btn-sm new-category" %>
+      </p>
+      <p class="new-category">
+        <%= link_to t(".add_product"),
+          new_admin_product_path,
+          class: "btn btn-primary btn-rounded btn-sm new-category" %>
       </p>
     </ol>
   </div>
@@ -50,7 +55,7 @@
         <ul id="hot">
           <li>
             <div class="row">
-              <%= render "shared/product" %>
+              <%= render partial: "shared/product", collection: @products %>
             </div>
           </li>
         </ul>

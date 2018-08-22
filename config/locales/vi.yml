@@ -1,12 +1,26 @@
 vi:
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
+  create_product_failed: "Tạo sản phẩm thất bại!"
+  product_created: "Tạo sản phẩm thành công!"
   update_failed: "An error has occurred while updating!"
   update_success: "Update Successful!"
   user_could_not_be_deleted: "Không thể xóa người dùng."
   user_deleted: "Người dùng đã bị xóa."
 
   admin:
+    categories:
+      show:
+        add_product: "Thêm sản phẩm"
+    products:
+      new:
+        category: "Danh mục"
+        create: "Tạo"
+        new_product: "Sản phẩm mới"
+        none: "Không có"
+        product_description: "Mô tả sản phẩm"
+        product_name: "Tên sản phẩm"
+        product_price: "Gía sản phẩm"
     users:
       index:
         action: "Hành động"
@@ -88,6 +102,7 @@ vi:
       more_detail: "More Details"
       our: "Our "
       product: "products"
+      usd: "VNĐ"
   static_pages:
     home:
       add: "Thêm vào giỏ hàng"

@@ -10,13 +10,14 @@ Rails.application.routes.draw do
     get "(page/:page)", action: :index, on: :collection, as: ""
   end
 
-  resources :categories, only: [:show]
+  resources :categories, only: :show
   resources :products do
     resource :like, module: :products
   end
 
   namespace :admin do
-    resources :users, concerns: :paginatable
     resources :categories, concerns: :paginatable
+    resources :products, concerns: :paginatable
+    resources :users, concerns: :paginatable
   end
 end
