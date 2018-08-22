@@ -3,7 +3,9 @@ class CategoriesController < ApplicationController
   before_action :load_roots
   load_and_authorize_resource
 
-  def show; end
+  def show
+    @products = @category.products.get_product
+  end
 
   private
 
