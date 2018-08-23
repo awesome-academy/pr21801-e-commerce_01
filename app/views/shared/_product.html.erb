@@ -11,9 +11,7 @@
       <button class="button add-cart" type="button">
         <%= t ".add" %>
       </button>
-      <button class="button wishlist" type="button">
-        <i class="fa fa-heart-o"></i>
-      </button>
+      <div id="like_form_<%= product.id %>" class="like_form"><%= render "shared/like_form", product: product %></div>
     </div>
   </div>
 </div>

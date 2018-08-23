@@ -127,3 +127,28 @@ tr.table-cate th {
   flex-shrink: 0;
   height: 100%;
 }
+
+.like_form{
+  display: inline;
+}
+
+.like_form a{
+  color: $slate-red;
+}
+
+.like_form a:hover{
+  background: $slate-red;
+  color: $white;
+}
+
+.like_form a.liked{
+  background: $slate-red;
+  color: $white;
+  border: 1px solid $slate-red;
+}
+
+.like_form a.liked:hover{
+  background: $white;
+  color: $slate-red;
+  border: 1px solid $royal-blue;
+}
