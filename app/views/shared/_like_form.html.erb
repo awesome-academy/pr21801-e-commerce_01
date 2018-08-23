@@ -1,0 +1,7 @@
+<div class="like_form">
+  <% if user_signed_in? && current_user.liked_products.include?(product) %>
+    <%= render "shared/unlike", product: product %>
+  <% else %>
+    <%= render "shared/like", product: product %>
+  <% end %>
+</div>

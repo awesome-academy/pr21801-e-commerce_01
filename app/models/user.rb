@@ -3,6 +3,7 @@ class User < ApplicationRecord
     :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :likes
+  has_many :liked_products, through: :likes, source: :product
   has_many :ratings
   has_many :comments
   has_many :orders
