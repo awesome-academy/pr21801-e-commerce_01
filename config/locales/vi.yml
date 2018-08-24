@@ -2,25 +2,56 @@ vi:
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
   create_product_failed: "Tạo sản phẩm thất bại!"
+  delete_failed: "An error has occurred while deleting!"
+  delete_product_failed: "Xóa sản phẩm thất bại!"
+  delete_success: "Delete Successful!"
+  delete_warning: "Can't delete because exist of product in category"
   product_created: "Tạo sản phẩm thành công!"
+  product_deleted: "Xóa sản phẩm thành công!"
+  product_updated: "Cập nhật sản phẩm thành công!"
   update_failed: "An error has occurred while updating!"
+  update_product_failed: "Cập nhật sản phẩm thất bại!"
   update_success: "Update Successful!"
   user_could_not_be_deleted: "Không thể xóa người dùng."
   user_deleted: "Người dùng đã bị xóa."
 
   admin:
     categories:
+      products:
+        delete: "Xóa"
+        description: "Mô tả sản phẩm"
+        edit: "Chỉnh sửa"
+        name: "Tên sản phẩm"
+        price: "Gía"
+        product_list: "Danh sách sản phẩm"
+        usd: "VNĐ"
+        you_sure: "Bạn chắc chứ?"
       show:
         add_product: "Thêm sản phẩm"
     products:
-      new:
+      form:
         category: "Danh mục"
-        create: "Tạo"
-        new_product: "Sản phẩm mới"
         none: "Không có"
         product_description: "Mô tả sản phẩm"
         product_name: "Tên sản phẩm"
         product_price: "Gía sản phẩm"
+      edit:
+        edit_product: "Chỉnh sửa sản phẩm"
+        update: "Cập nhật"
+      index:
+        add_product: "Thêm sản phẩm"
+        category: "Loại sản phẩm"
+        delete: "Xóa"
+        description: "Mô tả sản phẩm"
+        edit: "Chỉnh sửa"
+        name: "Tên sản phẩm"
+        price: "Gía"
+        product_list: "Danh sách sản phẩm"
+        usd: "VNĐ"
+        you_sure: "Bạn chắc chứ?"
+      new:
+        add_product: "Thêm sản phẩm"
+        create: "Tạo"
     users:
       index:
         action: "Hành động"
@@ -64,6 +95,7 @@ vi:
       logout: "Đăng xuất"
       price: "Gía"
       product: "Điện thoại"
+      product_list: "Danh sách sản phẩm"
       quantity: "Số lượng: "
       search: "Nhập sản phẩm bạn muốn tìm kiếm"
       sign_up: "Đăng ký"

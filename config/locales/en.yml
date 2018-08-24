@@ -3,16 +3,29 @@ en:
   add_success_category: "Add new category successed!"
   create_product_failed: "Create product failed!"
   delete_failed: "An error has occurred while deleting!"
+  delete_product_failed: "Delete product failed!"
   delete_success: "Delete Successful!"
   delete_warning: "Can't delete because exist of product in category"
   product_created: "Product created!"
+  product_deleted: "Product deleted!"
+  product_updated: "Product updated!"
   update_failed: "An error has occurred while updating!"
+  update_product_failed: "Update product failed!"
   update_success: "Update Successful!"
   user_could_not_be_deleted: "User could not be deleted."
   user_deleted: "User deleted."
 
   admin:
     categories:
+      products:
+        delete: "Delete"
+        description: "Description"
+        edit: "Edit"
+        name: "Product name"
+        price: "Price"
+        product_list: "Product list"
+        usd: "$"
+        you_sure: "You sure?"
       new:
         new_category: "New Category"
         create: "Create"
@@ -47,14 +60,29 @@ en:
         status: "Status"
         delete: "Delete Category"
     products:
-      new:
+      form:
         category: "Category"
-        create: "Create"
-        new_product: "New product"
         none: "None"
         product_description: "Product description"
         product_name: "Product name"
         product_price: "Product price"
+      edit:
+        edit_product: "Edit product"
+        update: "Update"
+      index:
+        add_product: "Add product"
+        category: "Category"
+        delete: "Delete"
+        description: "Description"
+        edit: "Edit"
+        name: "Product name"
+        price: "Price"
+        product_list: "Product list"
+        usd: "$"
+        you_sure: "You sure?"
+      new:
+        add_product: "Add product"
+        create: "Create"
     users:
       index:
         action: "Action"
@@ -144,6 +172,7 @@ en:
       logout: "Logout"
       price: "Price"
       product: "Smartphone"
+      product_list: "Product list"
       quantity: "quantity: "
       search: "Enter your search term..."
       sign_up: "Sign up"
