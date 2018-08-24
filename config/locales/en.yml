@@ -1,9 +1,11 @@
 en:
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
+  create_product_failed: "Create product failed!"
   delete_failed: "An error has occurred while deleting!"
   delete_success: "Delete Successful!"
   delete_warning: "Can't delete because exist of product in category"
+  product_created: "Product created!"
   update_failed: "An error has occurred while updating!"
   update_success: "Update Successful!"
   user_could_not_be_deleted: "User could not be deleted."
@@ -35,14 +37,24 @@ en:
         parent_category: "Parent Category"
         search: "Search"
       show:
-        sub: "Submit"
+        add_product: "Add product"
         delete: "Delete Category"
-        new: "Add new category"
         edit: "Edit name category"
+        new: "Add new category"
+        sub: "Submit"
       category:
         description: "Description"
         status: "Status"
         delete: "Delete Category"
+    products:
+      new:
+        category: "Category"
+        create: "Create"
+        new_product: "New product"
+        none: "None"
+        product_description: "Product description"
+        product_name: "Product name"
+        product_price: "Product price"
     users:
       index:
         action: "Action"
@@ -170,6 +182,7 @@ en:
       more_detail: "More Details"
       our: "Our "
       product: "products"
+      usd: "$"
     error_messages:
       error: "errors"
       the_form_contains: "The form contains"

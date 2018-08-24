@@ -6,7 +6,7 @@
     <div class="offer">- %20</div>
     <div class="thumbnail"><%= link_to image_tag "products/small/products-01.png" %></div>
     <div class="productname"><%= product.name %></div>
-    <h3 class="price"><%= product.price %></h3>
+    <h3 class="price"><%= product.price %> <%= t ".usd" %></h3>
     <div class="button_group">
       <button class="button add-cart" type="button">
         <%= t ".add" %>
