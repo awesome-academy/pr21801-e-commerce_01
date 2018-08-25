@@ -1,7 +1,16 @@
 <div class="col-md-3 col-sm-6 mb-20 slide">
   <div class="products">
     <div class="rating">
-      <input type="hidden" class="rating" data-filled="fa fa-star fa-2x" data-empty="fa fa-star-o fa-2x" />
+      <% if user_signed_in? %>
+        <input type="hidden" data-id="<%= product.id %>"
+          data-star="<%= star(product) %>" value="<%= star(product) %>"
+          data-rate-id="<%= product.ratings.nil? ? "" : rate(product) %>" class="rating"
+          data-filled="fa fa-star fa-1x" data-empty="fa fa-star-o fa-1x" />
+      <% else %>
+        <input type="hidden" data-id="<%= product.id %>" class="rating"
+          data-filled="fa fa-star fa-1x" data-empty="fa fa-star-o fa-1x"
+          value="<%= product.average_rating %>" disabled="disabled" />
+      <% end %>
     </div>
     <div class="offer">- %20</div>
     <div class="thumbnail"><%= link_to image_tag "products/small/products-01.png" %></div>
