@@ -12,9 +12,9 @@ class Product < ApplicationRecord
     length: {maximum: Settings.product.validates.price_maximum},
     numericality: {only_integer: true, greater_than: 0}
 
-  scope :get_product, ->{select :id, :name, :price, :description}
+  scope :get_product, ->{select :id, :name, :price, :average_rating, :description}
   scope :like_most, ->{
     joins(:likes).group("product_id").order("count(user_id) DESC").
-      limit(Settings.product.limit)
+    limit(Settings.product.limit)
   }
 end

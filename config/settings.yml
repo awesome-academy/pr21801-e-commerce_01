@@ -13,4 +13,5 @@ product:
   limit: 10
   validates:
     price_maximum: 8
-
+ratings:
+  average: 0
