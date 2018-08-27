@@ -1,11 +1,14 @@
 vi:
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
+  create_failed: "An error has occurred!"
   create_product_failed: "Tạo sản phẩm thất bại!"
   delete_failed: "An error has occurred while deleting!"
+  delete_image_failed: "Xóa ảnh thất bại!"
   delete_product_failed: "Xóa sản phẩm thất bại!"
   delete_success: "Delete Successful!"
   delete_warning: "Can't delete because exist of product in category"
+  image_deleted: "Xóa ảnh thành công!"
   product_created: "Tạo sản phẩm thành công!"
   product_deleted: "Xóa sản phẩm thành công!"
   product_updated: "Cập nhật sản phẩm thành công!"
@@ -21,6 +24,7 @@ vi:
         delete: "Xóa"
         description: "Mô tả sản phẩm"
         edit: "Chỉnh sửa"
+        images: "Hình ảnh"
         name: "Tên sản phẩm"
         price: "Gía"
         product_list: "Danh sách sản phẩm"
@@ -28,11 +32,18 @@ vi:
         you_sure: "Bạn chắc chứ?"
       show:
         add_product: "Thêm sản phẩm"
+    images:
+      form:
+        product_image: "Hình ảnh sản phẩm"
+      new:
+        add: "Thêm"
+      add_image: "Thêm hình ảnh"
     products:
       form:
         category: "Danh mục"
         none: "Không có"
         product_description: "Mô tả sản phẩm"
+        product_images: "Hình ảnh sản phẩm"
         product_name: "Tên sản phẩm"
         product_price: "Gía sản phẩm"
       edit:
@@ -44,6 +55,7 @@ vi:
         delete: "Xóa"
         description: "Mô tả sản phẩm"
         edit: "Chỉnh sửa"
+        images: "Hình ảnh sản phẩm"
         name: "Tên sản phẩm"
         price: "Gía"
         product_list: "Danh sách sản phẩm"

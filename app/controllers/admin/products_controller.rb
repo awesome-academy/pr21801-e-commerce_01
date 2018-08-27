@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+  before_action :get_product, only: [:edit, :update, :destroy]
   load_and_authorize_resource
 
   def index
@@ -7,6 +8,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.images.build
   end
 
   def edit; end
@@ -44,7 +46,12 @@ class Admin::ProductsController < ApplicationController
 
   private
 
+  def get_product
+    redirect_to root_url unless @product = Product.find_by(id: params[:id])
+  end
+
   def product_params
-    params.require(:product).permit :name, :category_id, :price, :description
+    params.require(:product).permit :name, :category_id, :price, :description,
+      images_attributes: [:id, :image_url]
   end
 end
