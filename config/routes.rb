@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get "(page/:page)", action: :index, on: :collection, as: ""
   end
 
+  resources :carts
   resources :categories, only: :show
   resources :ratings
   resources :products, only: :show do

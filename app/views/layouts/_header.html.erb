@@ -93,7 +93,11 @@
                 </li>
                 <li class="option-cart">
                   <a href="#" class="cart-icon" data-toggle="modal"
-                    data-target="#myModal"><span class="cart_no">02</span></a>
+                    data-target="#myModal">
+                    <span class="cart_no">
+                      <%= quantity_item %>
+                    </span>
+                  </a>
                   <%= render "shared/cart" %>
                 </li>
               </ul>

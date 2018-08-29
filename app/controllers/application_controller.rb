@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
   include RatingsHelper
+  include CartsHelper
 
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :load_category
+  before_action :load_cart
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
@@ -31,5 +33,12 @@ class ApplicationController < ActionController::Base
 
   def current_ability
     @current_ability ||= Ability.new(current_user, namespace)
+  end
+
+  def load_cart
+    if session[:order]
+      current_order
+      total_cart
+    end
   end
 end

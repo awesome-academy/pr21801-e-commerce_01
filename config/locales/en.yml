@@ -188,6 +188,7 @@ en:
       amount: "Total Price"
       cart: "Cart"
       continue: "< Continue shopping"
+      image: "image"
       payment: "Checkout"
       price: "Unit Price"
       product: "Product"
@@ -233,3 +234,6 @@ en:
       previous: "‹ PREV"
       next: "NEXT ›"
       truncate: "…"
+  carts:
+    create:
+      add_success: "You just add new product to Cart"

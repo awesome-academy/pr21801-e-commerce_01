@@ -152,3 +152,39 @@ tr.table-cate th {
   color: $slate-red;
   border: 1px solid $royal-blue;
 }
+
+.option-cart .cart_no{
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  width: 30px;
+  font-size: 14px;
+  color: $white;
+  background-color: red;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.option-cart:hover .cart_no{
+  background-color: $slate-red;
+}
+
+.modal-width{
+  max-width: 80px;
+}
+
+.cart-item th{
+  text-align: center;
+}
+
+.quantity input{
+  max-width: 80px;
+}
+
+.payment span{
+  color: $red;
+}
+
+.button_to{
+  display: inline;
+}
