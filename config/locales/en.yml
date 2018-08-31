@@ -194,6 +194,12 @@ en:
     footer:
       contact: "Contact "
       info: "info"
+  products:
+    show:
+      add: "Add to Cart"
+      description: "DESCRIPTION"
+      product_tags: "PRODUCT TAGS"
+      review: "REVIEW"
   shared:
     cart:
       amount: "Total Price"

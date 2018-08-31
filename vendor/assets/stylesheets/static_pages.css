@@ -433,7 +433,7 @@ button:hover {
 }
 
 .container_fullwidth {
-  background: #3498db;
+  background: #fff;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -1323,7 +1323,7 @@ ul.dropdown-menu > li > a:hover {
 }
 
 .rating {
-  color: yellow;
+  color: #f7544a;
   padding: 5px;
 }
 
