@@ -117,6 +117,12 @@ vi:
     footer:
       contact: "liên lạc"
       info: "Thông tin"
+  products:
+    show:
+      add: "Thêm vào giỏ hàng"
+      description: "MÔ TẢ"
+      product_tags: "THẺ"
+      review: "ĐÁNH GIÁ"
   shared:
     cart:
       amount: "Thành tiền"

@@ -4,7 +4,8 @@
       <% if user_signed_in? %>
         <input type="hidden" data-id="<%= product.id %>"
           data-star="<%= star(product) %>" value="<%= star(product) %>"
-          data-rate-id="<%= product.ratings.nil? ? "" : rate(product) %>" class="rating"
+          data-rate-id="<%= product.ratings.nil? ? "" : rate(product) %>"
+          class="rating"
           data-filled="fa fa-star fa-1x" data-empty="fa fa-star-o fa-1x" />
       <% else %>
         <input type="hidden" data-id="<%= product.id %>" class="rating"
@@ -13,13 +14,19 @@
       <% end %>
     </div>
     <div class="offer">- %20</div>
-    <div class="thumbnail"><%= link_to image_tag "products/small/products-01.png" %></div>
-    <div class="productname"><%= product.name %></div>
+    <div class="thumbnail">
+      <%= image_tag product.images.first.image_url.url if product.images.any? %>
+    </div>
+    <div class="productname">
+      <%= link_to product.name, product_path(product) %>
+    </div>
     <h3 class="price"><%= config_price product.price %></h3>
     <div class="button_group">
       <%= button_to t(".add"), carts_path(product_id: product.id),
         method: :post, remote: true, class: "button add-cart" %>
-      <div id="like_form_<%= product.id %>" class="like_form"><%= render "shared/like_form", product: product %></div>
+      <div id="like_form_<%= product.id %>" class="like_form">
+        <%= render "shared/like_form", product: product %>
+      </div>
     </div>
   </div>
 </div>
