@@ -1,18 +1,19 @@
-*.rbc
-capybara-*.html
-.rspec
-/log
-/tmp
 !/log/.keep
 !/tmp/.keep
-/public/system
-/coverage/
-/spec/tmp
 *.orig
-rerun.txt
-pickle-email-*.html
-/yarn-error.log
+*.rbc
+.rspec
+/coverage/
+/log
+/public/system
+/spec/tmp
 /test/*
+/tmp
+/yarn-error.log
+capybara-*.html
+pickle-email-*.html
+public/uploads
+rerun.txt
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb

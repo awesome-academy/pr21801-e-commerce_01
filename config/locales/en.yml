@@ -4,9 +4,11 @@ en:
   create_failed: "An error has occurred!"
   create_product_failed: "Create product failed!"
   delete_failed: "An error has occurred while deleting!"
+  delete_image_failed: "Delete image failed!"
   delete_product_failed: "Delete product failed!"
   delete_success: "Delete Successful!"
   delete_warning: "Can't delete because exist of product in category"
+  image_deleted: "Image deleted!"
   product_created: "Product created!"
   product_deleted: "Product deleted!"
   product_updated: "Product updated!"
@@ -22,6 +24,7 @@ en:
         delete: "Delete"
         description: "Description"
         edit: "Edit"
+        images: "Images"
         name: "Product name"
         price: "Price"
         product_list: "Product list"
@@ -60,11 +63,18 @@ en:
         description: "Description"
         status: "Status"
         delete: "Delete Category"
+    images:
+      form:
+        product_image: "Product image"
+      new:
+        add: "Add"
+        add_image: "Add image"
     products:
       form:
         category: "Category"
         none: "None"
         product_description: "Product description"
+        product_images: "Product images"
         product_name: "Product name"
         product_price: "Product price"
       edit:
@@ -76,6 +86,7 @@ en:
         delete: "Delete"
         description: "Description"
         edit: "Edit"
+        images: "Images"
         name: "Product name"
         price: "Price"
         product_list: "Product list"

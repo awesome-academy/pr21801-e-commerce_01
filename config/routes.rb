@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, concerns: :paginatable
+    resources :images
     resources :products, concerns: :paginatable
     resources :users, concerns: :paginatable
   end

@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(name: "admin", email: "admin@gmail.com", role: true,
-  password: ENV["ADMIN_PASSWORD"])
+User.create!(
+  name: "admin", email: "admin@gmail.com", role: true,
+  password: ENV["ADMIN_PASSWORD"]
+)
+
 User.create!(name: "Tùng", email: "tung@gmail.com", password: "123456")
 User.create!(name: "Trung", email: "trung@gmail.com", password: "123456")
 User.create!(name: "Long", email: "long@gmail.com", password: "123456")
@@ -21,3 +24,7 @@ User.create!(name: "Hùng", email: "hung@gmail.com", password: "123456")
   password = "password"
   User.create!(name: name, email: email, password: password)
 end
+
+Category.create!(
+  name: "First category", description: "creted from seeds.rb", parent_id: nil
+)
