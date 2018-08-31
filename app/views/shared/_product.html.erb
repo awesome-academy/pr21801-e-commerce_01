@@ -15,11 +15,10 @@
     <div class="offer">- %20</div>
     <div class="thumbnail"><%= link_to image_tag "products/small/products-01.png" %></div>
     <div class="productname"><%= product.name %></div>
-    <h3 class="price"><%= product.price %> <%= t ".usd" %></h3>
+    <h3 class="price"><%= config_price product.price %></h3>
     <div class="button_group">
-      <button class="button add-cart" type="button">
-        <%= t ".add" %>
-      </button>
+      <%= button_to t(".add"), carts_path(product_id: product.id),
+        method: :post, remote: true, class: "button add-cart" %>
       <div id="like_form_<%= product.id %>" class="like_form"><%= render "shared/like_form", product: product %></div>
     </div>
   </div>

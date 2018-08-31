@@ -15,3 +15,6 @@ product:
     price_maximum: 8
 ratings:
   average: 0
+order_details:
+  quantity:
+    default: 1
