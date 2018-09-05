@@ -14,7 +14,8 @@ class Ability
       else
         can :read, :all
         can :update, User, id: user.id
-        can [:update, :destroy], [Like, Comment, Rating], user_id: user.id
+        can [:create, :update, :destroy], [Like, Comment, Rating],
+          user_id: user.id
     end
   end
 end

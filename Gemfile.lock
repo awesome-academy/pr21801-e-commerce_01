@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
-  revision: 688c7edb9e2967e69e8bd23dce798ed8d7f44f8d
+  revision: c36d8b62f50a9aeef01426955870b379e76d74c4
   specs:
     ransack (2.0.1)
       actionpack (>= 5.0)
@@ -117,7 +117,7 @@ GEM
       dry-equalizer (~> 0.2)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 0.4, >= 0.4.2)
-    dry-validation (0.12.1)
+    dry-validation (0.12.2)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
       dry-core (~> 0.2, >= 0.2.1)
@@ -238,7 +238,7 @@ GEM
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     ruby_dep (1.5.0)
-    rubyzip (1.2.1)
+    rubyzip (1.2.2)
     sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -280,7 +280,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
-    web-console (3.6.2)
+    web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)

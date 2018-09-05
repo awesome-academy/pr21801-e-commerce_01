@@ -1,6 +1,8 @@
 vi:
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
+  can_not_delete_comment: "Không thể xóa bình luận."
+  comment_deleted: "Đã xóa bình luận!"
   create_failed: "An error has occurred!"
   create_product_failed: "Tạo sản phẩm thất bại!"
   delete_failed: "An error has occurred while deleting!"
@@ -120,9 +122,12 @@ vi:
   products:
     show:
       add: "Thêm vào giỏ hàng"
+      are_you_sure: "Bạn đã chắc chắn?"
+      delete: "Xóa"
       description: "MÔ TẢ"
-      product_tags: "THẺ"
+      post: "Đăng"
       review: "ĐÁNH GIÁ"
+      write_something: "Hãy viết gì đó vào đây"
   shared:
     cart:
       amount: "Thành tiền"
