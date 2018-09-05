@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
   before_action :get_product
 
-  def show; end
+  def show
+    @comments = @product.comments.hash_tree
+  end
 
   private
 

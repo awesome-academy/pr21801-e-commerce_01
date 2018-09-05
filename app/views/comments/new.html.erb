@@ -1,0 +1,8 @@
+<h1><%= t ".new_reply" %></h1>
+
+<% if @comment.parent %>
+  <%= render "comment", comment: @comment.parent, from_reply_form: true %>
+<% end %>
+
+<%= provide :button_text, t(".reply") %>
+<%= render "form" %>
