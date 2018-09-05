@@ -198,6 +198,7 @@ en:
     show:
       add: "Add to Cart"
       description: "DESCRIPTION"
+      post: "Post"
       product_tags: "PRODUCT TAGS"
       review: "REVIEW"
   shared:
