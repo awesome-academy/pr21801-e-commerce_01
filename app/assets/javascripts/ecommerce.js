@@ -1,7 +1,7 @@
-$(document).on("turbolinks:load", function () {
+$(document).on('turbolinks:load', function () {
   $(function(){
-    $("#show-limit").on("change", function(){
-      $(this).closest("form").trigger("submit");
+    $('#show-limit').on('change', function(){
+      $(this).closest('form').trigger('submit');
     });
   });
 
@@ -35,6 +35,16 @@ $(document).on("turbolinks:load", function () {
       error: function(errors) {
         alert(errors.response_text);
       }
+    });
+  });
+
+  $('.cart_table').on('change', '.input', function(){
+    var quantity = $(this).val();
+    var product_id = $(this).data('id');
+    $.ajax({
+      url: 'carts/' + product_id,
+      method: 'PUT',
+      data: {quantity: quantity}
     });
   });
 });

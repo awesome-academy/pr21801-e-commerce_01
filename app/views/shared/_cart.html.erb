@@ -15,24 +15,23 @@
             <th><%= t ".amount" %></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="cart_table">
           <% if @current_order %>
             <% @current_order.each do |cart_item| %>
               <tr>
-                <td class="thumb"></td>
+                <td class="thumb"><%= image_tag cart_item["image_url"] %></td>
                 <td class="details">
-                  <%= link_to cart_item["name"], product_path(cart_item["product_id"]) %>
+                  <%= link_to cart_item["name"], product_path(cart_item["product_id"].to_i) %>
                 </td>
                 <td class="price text-center">
-                  <strong><%= config_price cart_item["price"] %></strong>
+                  <strong><%= format_price cart_item["price"] %></strong>
                 </td>
                 <td class="quantity text-center">
-                  <input class="input" type="number"
-                    value="<%= cart_item['quantity']%>" min="1" />
+                  <input class="input" type="number" value="<%= cart_item["quantity"]%>" data-id="<%= cart_item["product_id"] %>" min="1" />
                 </td>
                 <td class="total text-center">
-                  <strong class="primary-color">
-                    <%= config_price(cart_item["quantity"] * cart_item["price"].to_i) %>
+                  <strong class="primary-color price-item-<%= cart_item["product_id"] %>">
+                    <%= format_price(cart_item["quantity"].to_i * cart_item["price"].to_i) %>
                   </strong>
                 </td>
               </tr>
@@ -42,8 +41,8 @@
       </table>
       <div class="modal-footer">
         <h3 class="payment"><%= t ".total" %>
-          <span>
-            <%= config_price @total_price %>
+          <span class="total_price">
+            <%= format_price @total_price %>
           </span>
         </h3>
         <h5 class="payment"><%= t ".vat" %></h5>

@@ -34,11 +34,11 @@
             </td>
             <td class="col-md-2"><%= product.name %></td>
             <td class="text-right col-md-2">
-              <%= product.price %> <%= t ".usd" %>
+              <%= format_price product.price %>
             </td>
             <td class="col-md-3"><%= product.description %></td>
             <td class="text-center col-md-2">
-              <%= link_to t(".edit"), edit_admin_product_path(product),
+              <%= link_to t(".edit"), edit_admin_product_path(product, category_id: product.category),
                 class: "btn btn-sm btn-info" %>
               <%= link_to t(".delete"), admin_product_path(product),
                 method: :delete, data: {confirm: t(".you_sure")},

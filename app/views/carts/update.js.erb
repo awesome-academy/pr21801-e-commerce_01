@@ -1,0 +1,3 @@
+$('.cart_no').html('<%= @total_cart %>');
+$('.price-item-<%= params[:id]%>').html('<%= format_price @sub_price %>');
+$('.total_price').html('<%= format_price @total_price %>');

@@ -5,6 +5,5 @@ class StaticPagesController < ApplicationController
     @like_products = Product.like_most
   end
 
-  def about
-  end
+  def about; end
 end
