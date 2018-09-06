@@ -1,0 +1,68 @@
+<div class="container_fullwidth">
+  <div class="container">
+    <div>
+      <ol class="breadcrumb title mb-30">
+        <li><%= link_to t(".home"), root_url %></li>
+        <li class="active"><%= t ".cart" %></li>
+      </ol>
+    </div>
+    <% if @current_order.present? %>
+      <h2 class="title"><%= t ".cart_review" %></h2>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr class="active bold cart-item">
+            <th><%= t "shared.cart.image" %></th>
+            <th><%= t "shared.cart.product" %></th>
+            <th><%= t "shared.cart.price" %></th>
+            <th><%= t "shared.cart.quantity" %></th>
+            <th><%= t "shared.cart.amount" %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="cart_table">
+          <% @current_order.each do |cart_item| %>
+            <tr>
+              <td class="thumb text-center"><%= image_tag cart_item["image_url"] %></td>
+              <td class="details">
+                <%= link_to cart_item["name"], product_path(cart_item["product_id"].to_i) %>
+              </td>
+              <td class="price text-center">
+                <strong><%= format_price cart_item["price"] %></strong>
+              </td>
+              <td class="quantity text-center">
+                <input class="input" type="number" value="<%= cart_item["quantity"]%>" data-id="<%= cart_item["product_id"] %>" min="1" />
+              </td>
+              <td class="total text-center">
+                <strong class="primary-color price-item-<%= cart_item["product_id"] %>">
+                  <%= format_price(cart_item["quantity"].to_i * cart_item["price"].to_i) %>
+                </strong>
+              </td>
+              <td class="text-center">
+                <%= link_to cart_path(cart_item["product_id"]), method: :delete,
+                  remote: true, data: {confirm: t("categories.index.sure")},
+                    class: "remove-item" do %>
+                  <i class="fa fa-close"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="modal-footer">
+        <h3 class="payment"><%= t "shared.cart.total" %>
+          <span class="total_price"><%= format_price @total_price %></span>
+        </h3>
+        <h5 class="payment"><%= t "shared.cart.vat" %></h5>
+        <div class="payment">
+          <%= render "orders/order_form", order: @order %>
+        </div>
+      </div>
+    <% else %>
+      <div class="container text-center">
+        <%= image_tag "cart-empty.png" %>
+        <h3 class="cart-empty-title"><%= t ".cart_empty" %></h3>
+        <%= link_to t(".continue_shopping"), root_url, class: "btn-cart-continue" %>
+      </div>
+    <% end %>
+  </div>
+</div>
