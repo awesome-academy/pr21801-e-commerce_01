@@ -8,6 +8,7 @@ end
 gem "bootstrap-kaminari-views"
 gem "cancancan", "~> 2.0"
 gem "carrierwave", github: "carrierwaveuploader/carrierwave"
+gem "closure_tree"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "devise"

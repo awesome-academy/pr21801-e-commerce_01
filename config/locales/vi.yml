@@ -121,6 +121,7 @@ vi:
     show:
       add: "Thêm vào giỏ hàng"
       description: "MÔ TẢ"
+      pót: "Đăng"
       product_tags: "THẺ"
       review: "ĐÁNH GIÁ"
   shared:
