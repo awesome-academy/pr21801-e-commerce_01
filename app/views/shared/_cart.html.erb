@@ -13,6 +13,7 @@
             <th><%= t ".price" %></th>
             <th><%= t ".quantity" %></th>
             <th><%= t ".amount" %></th>
+            <th><%= t ".remove" %></th>
           </tr>
         </thead>
         <tbody class="cart_table">
@@ -33,6 +34,13 @@
                   <strong class="primary-color price-item-<%= cart_item["product_id"] %>">
                     <%= format_price(cart_item["quantity"].to_i * cart_item["price"].to_i) %>
                   </strong>
+                </td>
+                <td class="text-center">
+                  <%= link_to cart_path(cart_item["product_id"]), method: :delete,
+                    remote: true, data: {confirm: t("categories.index.sure")},
+                      class: "remove-item" do %>
+                    <i class="fa fa-close"></i>
+                  <% end %>
                 </td>
               </tr>
             <% end %>

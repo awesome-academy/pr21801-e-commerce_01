@@ -215,6 +215,7 @@ en:
       price: "Unit Price"
       product: "Product"
       quantity: "Quantity"
+      remove: "Remove"
       total: "Total: "
       vat: "Our prices include VAT"
     login:
