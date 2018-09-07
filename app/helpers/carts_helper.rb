@@ -6,9 +6,8 @@ module CartsHelper
   def total_cart
     @total_cart = 0;
     @total_price = 0;
-
     session[:order].each do |cart_item|
-      @total_cart += cart_item["quantity"]
+      @total_cart += cart_item["quantity"].to_i
       @total_price += cart_item["price"].to_i * cart_item["quantity"].to_i
     end
   end

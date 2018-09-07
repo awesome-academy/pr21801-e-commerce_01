@@ -43,10 +43,7 @@
               <div class="price">
                 Price :
                 <span class="new_price">
-                  <%= @product.price %>
-                  <sup>
-                    $
-                  </sup>
+                  <%= format_price @product.price %>
                 </span>
                 <span class="old_price">
                   450.00

@@ -16,7 +16,7 @@ class Product < ApplicationRecord
     numericality: {only_integer: true, greater_than: 0}
 
   scope :get_product, ->{
-    select :id, :name, :price, :description, :average_rating
+    select :id, :name, :price, :description, :average_rating, :category_id
   }
 
   scope :like_most, ->{

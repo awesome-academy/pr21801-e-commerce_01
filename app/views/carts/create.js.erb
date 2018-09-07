@@ -1,2 +1,18 @@
 $('.cart_no').html(parseInt($('.cart_no').html()) + 1);
 alert('<%= t ".add_success" %>');
+if (<%= @item_index.present? %>) {
+  $('.input[data-id="<%= @carts[@item_index.to_i]['product_id'] %>"').val(<%= @carts[@item_index.to_i]["quantity"] %>);
+  $('.price-item-<%= @carts[@item_index.to_i]["product_id"] %>').html('<%= format_price @carts[@item_index.to_i]["price"] %>');
+} else {
+  $('.cart_table').append('<tr><td class="thumb"><%= image_tag @item[:image_url] %></td>\
+    <td class="details"><%= @item[:name] %></td>\
+    <td class="price text-center"><strong><%= format_price(@item[:price]) %></strong></td>\
+    <td class="quantity text-center">\
+    <input class="input" type="number" value="<%= @item[:quantity] %>"\
+    data-id="<%= @item[:product_id] %>" min="1" /></td>\
+    <td class="total text-center">\
+    <strong class="primary-color price-item-<%= @item[:product_id] %>">\
+    <%= format_price(@item[:quantity] * @item[:price]) %>\
+    </strong></td></tr>');
+}
+$('.total_price').html('<%= format_price @total_price %>');

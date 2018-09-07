@@ -20,7 +20,7 @@
     <div class="productname">
       <%= link_to product.name, product_path(product) %>
     </div>
-    <h3 class="price"><%= config_price product.price %></h3>
+    <h3 class="price"><%= format_price product.price %></h3>
     <div class="button_group">
       <%= button_to t(".add"), carts_path(product_id: product.id),
         method: :post, remote: true, class: "button add-cart" %>
