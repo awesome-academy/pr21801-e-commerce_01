@@ -16,7 +16,7 @@ module CartsHelper
     quantity = 0
     unless session[:order].nil?
       session[:order].each do |order|
-        quantity += order["quantity"]
+        quantity += order["quantity"].to_i
       end
     end
     return quantity

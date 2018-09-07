@@ -1,0 +1,5 @@
+$('.cart_no').html('<%= @total_cart %>');
+$('.remove-item').bind('ajax:success', function(){
+  $(this).closest('tr').empty(300);
+});
+$('.total_price').html('<%= format_price @total_price %>');

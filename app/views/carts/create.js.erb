@@ -13,6 +13,8 @@ if (<%= @item_index.present? %>) {
     <td class="total text-center">\
     <strong class="primary-color price-item-<%= @item[:product_id] %>">\
     <%= format_price(@item[:quantity] * @item[:price]) %>\
-    </strong></td></tr>');
+    </strong></td><td class="text-center"><%= link_to cart_path(@item[:product_id]),\
+    method: :delete, remote: true, data: {confirm: t("categories.index.sure")},\
+    class: "remove-item" do %><i class="fa fa-close"></i><% end %></td></tr>');
 }
 $('.total_price').html('<%= format_price @total_price %>');

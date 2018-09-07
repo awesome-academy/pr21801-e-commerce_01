@@ -16,7 +16,7 @@ class CartsController < ApplicationController
       total_cart
       @total_price += @item[:price] * @item[:quantity]
     else
-      quantity = session[:order][@item_index]["quantity"].to_i
+      quantity = session[:order][@item_index]["quantity"]
       session[:order][@item_index]["quantity"] = quantity + 1
       total_cart
     end
@@ -34,6 +34,14 @@ class CartsController < ApplicationController
         @sub_price = item["quantity"].to_i * item["price"]
       end
     end
+    total_cart
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def destroy
+    session[:order].delete_if{|item| item["product_id"] == params[:id].to_i}
     total_cart
     respond_to do |format|
       format.js

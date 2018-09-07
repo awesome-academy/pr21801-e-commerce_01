@@ -137,6 +137,7 @@ vi:
       price: "Đơn giá"
       product: "Sản phẩm"
       quantity: "Số lượng"
+      remove: "xóa sản phẩm"
       total: "Thành tiền: "
       vat: "Giá đã bao gồm VAT"
     login:
