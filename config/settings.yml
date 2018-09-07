@@ -1,6 +1,8 @@
 categories:
   maximum: 30
   limit: 5
+comments:
+  content_max_length: 140
 show_limit:
   show_5: 5
   show_10: 10

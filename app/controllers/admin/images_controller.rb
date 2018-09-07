@@ -2,7 +2,7 @@ class Admin::ImagesController < ApplicationController
   load_and_authorize_resource
 
   def destroy
-    @image = Image.find_by params[:id]
+    @image = Image.find_by id: params[:id]
     if @image.destroy
       flash[:success] = t "image_deleted"
     else

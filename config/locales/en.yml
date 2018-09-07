@@ -1,6 +1,8 @@
 en:
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
+  can_not_delete_comment: "Can not delete comment."
+  comment_deleted: "Comment deleted!"
   create_failed: "An error has occurred!"
   create_product_failed: "Create product failed!"
   delete_failed: "An error has occurred while deleting!"
@@ -197,9 +199,12 @@ en:
   products:
     show:
       add: "Add to Cart"
+      are_you_sure: "Are you sure?"
+      delete: "Delete"
       description: "DESCRIPTION"
-      product_tags: "PRODUCT TAGS"
+      post: "Post"
       review: "REVIEW"
+      write_something: "Write something..."
   shared:
     cart:
       amount: "Total Price"

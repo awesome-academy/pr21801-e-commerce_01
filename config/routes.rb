@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :categories, only: :show
   resources :ratings
   resources :products, only: :show do
+    resources :comments
     resource :like, module: :products
   end
 
