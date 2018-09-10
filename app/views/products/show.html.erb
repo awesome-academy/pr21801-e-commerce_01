@@ -27,7 +27,7 @@
                   data-filled="fa fa-star fa-1x" data-empty="fa fa-star-o fa-1x"
                   value="<%= @product.average_rating %>" disabled="disabled" />
                 <a class="review_num" href="#">
-                  02 Review(s)
+                  <%= pluralize(@comments.count, "Review") %>
                 </a>
               </p>
               <p>
@@ -108,40 +108,12 @@
                 </p>
               </div>
               <div class="tab-content" id="Reviews">
-                <% @product.comments.each do |comment| %>
-                  <div class="review">
-                    <h5 class="reviewer">
-                      <%= comment.user.name %>
-                    </h5>
-                    <p class="review-date">
-                      <%= comment.created_at %>
-                    </p>
-                    <p class="well">
-                      <%= comment.content %>
-                    </p>
-                    <p>
-                      <% if can? :destroy, comment %>
-                        <%= link_to t(".delete"),
-                          product_comment_path(@product, comment),
-                          method: :delete, data: {confirm: t(".are_you_sure")} %> |
-                      <% end %>
-                    </p>
-                  </div>
-                <% end %>
+                <div class="clearfix">
+                </div>
+                <%= comments_tree_for @comments %>
                 <% if user_signed_in? %>
-                  <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                      <%= form_for [@product, @product.comments.build] do |f| %>
-                        <%= render "shared/error_messages", object: f.object %>
-                        <%= f.hidden_field :product_id %>
-                        <%= f.hidden_field :user_id, value: current_user.id %>
-                        <%= f.text_area :content,
-                          placeholder: t(".write_something"),
-                          class: "form-row input textareafild" %>
-                        <%= f.submit t(".post"), class: "button" %>
-                      <% end %>
-                    </div>
-                  </div>
+                  <%= provide :button_text, t(".post") %>
+                  <%= render "comments/form" %>
                 <% end %>
               </div>
             </div>

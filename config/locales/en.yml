@@ -1,7 +1,9 @@
 en:
+  add_comment_failed: "Add comment failed!"
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
   can_not_delete_comment: "Can not delete comment."
+  comment_added: "Your comment was successfully added!"
   comment_deleted: "Comment deleted!"
   create_failed: "An error has occurred!"
   create_product_failed: "Create product failed!"
@@ -141,6 +143,16 @@ en:
     category:
       description: "Description"
       status: "Status"
+  comments:
+    comment:
+      are_you_sure: "Are you sure?"
+      delete: "Delete"
+      reply: "Reply"
+    form:
+      write_something: "Write something..."
+    new:
+      new_reply: "New reply"
+      reply: "Reply"
   devise:
     registrations:
       edit:
@@ -199,12 +211,9 @@ en:
   products:
     show:
       add: "Add to Cart"
-      are_you_sure: "Are you sure?"
-      delete: "Delete"
       description: "DESCRIPTION"
       post: "Post"
       review: "REVIEW"
-      write_something: "Write something..."
   shared:
     cart:
       amount: "Total Price"

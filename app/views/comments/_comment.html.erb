@@ -1,0 +1,21 @@
+<div class="review">
+  <h5 class="reviewer">
+    <%= comment.user_name %>
+  </h5>
+  <p class="review-date">
+    <%= comment.created_at %>
+  </p>
+  <p class="well">
+    <%= comment.content %>
+  </p>
+  <p class="text-right">
+    <% if can? :destroy, comment %>
+      <%= link_to t(".delete"), product_comment_path(@product, comment),
+        method: :delete, data: {confirm: t(".are_you_sure")} %> |
+    <% end %>
+    <% from_reply_form ||= nil %>
+    <% unless from_reply_form %>
+      <%= link_to t(".reply"), new_comment_path(@product, comment.id) %>
+    <% end %>
+  </p>
+</div>
