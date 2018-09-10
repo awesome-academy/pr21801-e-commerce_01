@@ -1,13 +1,20 @@
 class CartsController < ApplicationController
   before_action :get_product, only: :create
 
-  def index; end
+  def index
+    if session[:order]
+      current_order
+      total_cart
+      create_order
+    end
+  end
 
   def create
     unless session[:order].present?
       session[:order] = []
     end
-    @item = {"image_url": @product.images.first.image_url.url, "product_id": @product.id, "name": @product.name, "price": @product.price,
+    @item = {"image_url": @product.images.first.image_url.url,
+      "product_id": @product.id, "name": @product.name, "price": @product.price,
       "quantity": Settings.order_details.quantity.default}
 
     @item_index = session[:order].find_index {|n| n["product_id"] == @product.id}
@@ -31,10 +38,13 @@ class CartsController < ApplicationController
     session[:order].each do |item|
       if item["product_id"] == params[:id].to_i
         item["quantity"] = params["quantity"].to_i
+        @product_id = item["product_id"]
+        @quantity = item["quantity"]
         @sub_price = item["quantity"].to_i * item["price"]
       end
     end
     total_cart
+    create_order
     respond_to do |format|
       format.js
     end
@@ -43,6 +53,7 @@ class CartsController < ApplicationController
   def destroy
     session[:order].delete_if{|item| item["product_id"] == params[:id].to_i}
     total_cart
+    create_order
     respond_to do |format|
       format.js
     end

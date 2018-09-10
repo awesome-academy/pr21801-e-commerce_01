@@ -60,9 +60,7 @@
           </a>
         </div>
         <div class="payment">
-          <button class="btn btn-danger" type="button">
-            <%= t ".payment" %>
-          </button>
+          <%= link_to t(".cart_detail"), carts_path, class: "btn btn-danger" %>
         </div>
       </div>
     </div><!-- /.modal-content -->

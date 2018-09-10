@@ -22,6 +22,11 @@ vi:
   user_could_not_be_deleted: "Không thể xóa người dùng."
   user_deleted: "Người dùng đã bị xóa."
 
+  orders:
+    create:
+      buy_product_success: "Cám ơn bạn đã mua sản phẩm của chúng tôi!"
+      buy_product_failed: "Đã xảy ra lỗi trong quá trình mua hàng!"
+
   admin:
     categories:
       products:
@@ -78,6 +83,14 @@ vi:
         name_or_email_cont: "Tên hoặc email có chứa..."
         user_list: "Danh sách người dùng"
         you_sure: "Bạn chắc chứ?"
+  carts:
+    create:
+      add_success: "Bạn vừa thêm sản phẩm thành công"
+    index:
+      cart: "Giỏ hàng"
+      cart_review: "Chi tiết giỏ hàng"
+      cart_empty: "Không có sản phẩm nào trong giỏ hàng"
+      continue_shopping: "Tiếp tục mua sắm"
   categories:
     new:
       new_category: "New Category"
@@ -141,12 +154,13 @@ vi:
     cart:
       amount: "Thành tiền"
       cart: "Giỏ hàng"
+      cart_detail: "Chi tiết giỏ hàng"
       continue: "< Tiếp tục mua hàng"
       payment: "Tiến hành thanh toán"
       price: "Đơn giá"
       product: "Sản phẩm"
       quantity: "Số lượng"
-      remove: "xóa sản phẩm"
+      remove: "Xóa sản phẩm"
       total: "Thành tiền: "
       vat: "Giá đã bao gồm VAT"
     login:

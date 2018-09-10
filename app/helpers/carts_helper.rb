@@ -21,4 +21,18 @@ module CartsHelper
     end
     return quantity
   end
+
+  def create_order
+    if session[:order]
+      sum = 0
+      total = session[:order].each do |item|
+        sum += item["quantity"] * item["price"]
+      end
+      @order = Order.new total: sum
+      session[:order].each do |order|
+        @order.order_details.build product_id: order["product_id"],
+          quantity: order["quantity"], price: order["price"]
+      end
+    end
+  end
 end

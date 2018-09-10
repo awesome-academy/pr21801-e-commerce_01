@@ -1,0 +1,12 @@
+<%= form_for order do |order| %>
+  <%= order.hidden_field :status, value: :pending %>
+  <%= order.hidden_field :total %>
+
+  <%= order.fields_for :order_details do |order_detail| %>
+    <%= order_detail.hidden_field :product_id %>
+    <%= order_detail.hidden_field :quantity %>
+    <%= order_detail.hidden_field :price %>
+  <% end %>
+
+  <%= order.submit t("shared.cart.payment"), class: "btn btn-danger" %>
+<% end %>

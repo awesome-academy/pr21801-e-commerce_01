@@ -199,3 +199,27 @@ tr.table-cate th {
 }
 
 .replies {margin-left: 50px;}
+
+.cart-empty-title{
+  font-size: 16px;
+  font-weight: 700;
+  color: $azure;
+  margin-top: 50px;
+}
+
+.btn-cart-continue{
+  background-color: $royal-red;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  color: $white;
+  border-radius: 5px;
+  padding: 12px 120px;
+  margin-top: 20px;
+  box-shadow: 0 3px 10px 3px $white;
+}
+
+.btn-cart-continue:hover{
+  color: $white;
+  background-color: $slate-red;
+}

@@ -22,6 +22,11 @@ en:
   user_could_not_be_deleted: "User could not be deleted."
   user_deleted: "User deleted."
 
+  orders:
+    create:
+      buy_product_success: "You have just bought success some product"
+      buy_product_failed: "An error has occurred while buy product!"
+
   admin:
     categories:
       products:
@@ -218,6 +223,7 @@ en:
     cart:
       amount: "Total Price"
       cart: "Cart"
+      cart_detail: "Cart details"
       continue: "< Continue shopping"
       image: "image"
       payment: "Checkout"
@@ -269,3 +275,8 @@ en:
   carts:
     create:
       add_success: "You just add new product to Cart"
+    index:
+      cart: "Cart"
+      cart_review: "Cart Review"
+      cart_empty: "There are no products in your shopping carts"
+      continue_shopping: "Continue shopping"
