@@ -2,7 +2,11 @@ vi:
   add_comment_failed: "Không thể thêm bình luận"
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
+  buy_product_success: "Cám ơn bạn đã mua sản phẩm của chúng tôi!"
+  buy_product_failed: "Đã xảy ra lỗi trong quá trình mua hàng!"
   can_not_delete_comment: "Không thể xóa bình luận."
+  cancel_success: "Đơn hàng đã hủy thành công!"
+  cancel_failed: "Đã xảy ra lỗi trong quá trình hủy đơn hàng!"
   comment_added: "Thêm bình luận thành công!"
   comment_deleted: "Đã xóa bình luận!"
   create_failed: "An error has occurred!"
@@ -21,11 +25,6 @@ vi:
   update_success: "Update Successful!"
   user_could_not_be_deleted: "Không thể xóa người dùng."
   user_deleted: "Người dùng đã bị xóa."
-
-  orders:
-    create:
-      buy_product_success: "Cám ơn bạn đã mua sản phẩm của chúng tôi!"
-      buy_product_failed: "Đã xảy ra lỗi trong quá trình mua hàng!"
 
   admin:
     categories:
@@ -199,3 +198,11 @@ vi:
       previous: "‹ Trước"
       next: "Sau ›"
       truncate: "…"
+  orders:
+    index:
+      order_list: "Danh sách đơn hàng"
+    show:
+      order_date: "Ngày mua hàng"
+      order_detail: "Chi tiết đơn hàng"
+      cancel: "Hủy đơn hàng"
+      you_sure: "Bạn có chắc chắn muốn hủy đơn hàng này không?"

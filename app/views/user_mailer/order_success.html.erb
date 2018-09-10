@@ -1,0 +1,14 @@
+<p><%= t(".message_for_customer").upcase %></p>
+<% @order_details.each do |item| %>
+  <p><span><b><%= t ".product_name" %></b></span><%= item.product.name %></p>
+  <p>
+    <span><b><%= t ".product_price" %></b></span>
+    <%= format_price item.product.price %>
+  </p>
+  <p>
+    <span><b><%= t ".quantity" %></b></span>
+    <span><%= item.quantity %></span>
+  </p>
+  <hr />
+<% end %>
+<h3><%= t ".signature" %></h3>

@@ -2,7 +2,11 @@ en:
   add_comment_failed: "Add comment failed!"
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
+  buy_product_success: "You have just bought success some product"
+  buy_product_failed: "An error has occurred while buy product!"
   can_not_delete_comment: "Can not delete comment."
+  cancel_success: "This order has been cancelled, thank you!"
+  cancel_failed: "An error has occurred while canceling!"
   comment_added: "Your comment was successfully added!"
   comment_deleted: "Comment deleted!"
   create_failed: "An error has occurred!"
@@ -21,11 +25,6 @@ en:
   update_success: "Update Successful!"
   user_could_not_be_deleted: "User could not be deleted."
   user_deleted: "User deleted."
-
-  orders:
-    create:
-      buy_product_success: "You have just bought success some product"
-      buy_product_failed: "An error has occurred while buy product!"
 
   admin:
     categories:
@@ -280,3 +279,19 @@ en:
       cart_review: "Cart Review"
       cart_empty: "There are no products in your shopping carts"
       continue_shopping: "Continue shopping"
+  orders:
+    index:
+      order_list: "Order List"
+    show:
+      order_date: "Order date"
+      order_detail: "Oder Details"
+      cancel: "Cancel"
+      you_sure: "Are you sure you want to cancel this order?"
+  user_mailer:
+    order_success:
+      order_success: "You have just bought success some item"
+      product_name: "Product's name: "
+      product_price: "Product's price: "
+      message_for_customer: "Products you have just bought, thank you!"
+      signature: "--93 Mobile Store--"
+      quantity: "Quantity: "

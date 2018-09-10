@@ -53,7 +53,7 @@
           <span class="total_price"><%= format_price @total_price %></span>
         </h3>
         <h5 class="payment"><%= t "shared.cart.vat" %></h5>
-        <div class="payment">
+        <div class="payment form-order">
           <%= render "orders/order_form", order: @order %>
         </div>
       </div>

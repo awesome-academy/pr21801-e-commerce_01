@@ -1,0 +1,52 @@
+<div class="container_fullwidth">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <ol class="breadcrumb title mb-30">
+        <li><%= link_to t("layouts.header.home"), root_url %></li>
+        <li><%= link_to t(".order_list"), orders_path %></li>
+        <li class="active"><%= t ".order_detail" %></li>
+      </ol>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="btn-order-status">
+        <% case @order.status %>
+          <% when Settings.order_status.pending %>
+            <button class="btn btn-warning" disabled="disabled"><%= @order.status %></button>
+          <% when Settings.order_status.delivered %>
+            <button class="btn btn-success" disabled="disabled"><%= @order.status %></button>
+          <% when Settings.order_status.canceled %>
+            <button class="btn btn-danger" disabled="disabled"><%= @order.status %></button>
+        <% end %>
+      </div>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr class="table-order">
+            <th></th>
+            <th><%= sort_link @search, :name, t("shared.cart.product") %></th>
+            <th><%= sort_link @search, :price, t("shared.cart.price") %></th>
+            <th><%= sort_link @search, :quantity, t("shared.cart.quantity") %></th>
+            <th><%= sort_link @search, :created_at, t(".order_date") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @items.each_with_index do |item, index| %>
+            <tr class="table-order">
+              <td><%= link_to index + 1, product_path(item.product_id) %></td>
+              <td><%= link_to item.product.name, product_path(item.product_id) %></td>
+              <td><%= format_price item.product.price %></td>
+              <td><%= item.quantity %></td>
+              <td><%= l item.created_at, format: :short %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% if @order.pending? %>
+      <%= form_for @order do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :status, value: :canceled %>
+        <%= f.submit t(".cancel"), data: {confirm: t(".you_sure")}, class: "btn btn-danger" %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>

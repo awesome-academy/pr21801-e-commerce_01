@@ -2,3 +2,4 @@ $('.cart_no').html('<%= @total_cart %>');
 $('.input[data-id="<%= @product_id %>"').val(<%= @quantity %>);
 $('.price-item-<%= params[:id]%>').html('<%= format_price @sub_price %>');
 $('.total_price').html('<%= format_price @total_price %>');
+$('.form-order').html('<%= j render "orders/order_form", order: @order %>');
