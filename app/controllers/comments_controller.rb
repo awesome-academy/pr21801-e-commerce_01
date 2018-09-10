@@ -2,12 +2,8 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :load_product
 
-  def new
-    @comment = Comment.new(parent_id: params[:parent_id])
-  end
-
   def create
-    if params[:comment][:parent_id]
+    if params[:comment][:parent_id].present?
       parent = Comment.find_by id: params[:comment][:parent_id]
       return unless parent
       @comment = parent.children.build comment_params
@@ -15,20 +11,28 @@ class CommentsController < ApplicationController
       @comment = Comment.new comment_params
     end
 
-    if @comment.save
-      flash[:success] = t "comment_added"
-    else
-      flash[:danger] = t "add_comment_failed"
+    respond_to do |format|
+      if @comment.save
+        format.html {flash[:success] = t "comment_added"}
+        format.js
+      else
+        format.html {flash[:danger] = t "add_comment_failed"}
+      end
+      format.html {redirect_to product_path @product}
     end
-    redirect_to product_path @product
   end
 
   def destroy
     ActiveRecord::Base.transaction do
       @comment.descendants.destroy_all
       @comment.destroy
-      flash[:success] = t "comment_deleted"
-      redirect_to product_url @product
+      respond_to do |format|
+        format.html {
+          flash[:success] = t "comment_deleted"
+          redirect_to product_url @product
+        }
+        format.js
+      end
     end
     rescue
       flash[:danger] = t "can_not_delete_comment"

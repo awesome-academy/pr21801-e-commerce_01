@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  acts_as_tree
+  acts_as_tree order: "created_at DESC"
 
   belongs_to :user
   belongs_to :product

@@ -109,9 +109,8 @@ vi:
       reply: "Trả lời"
     form:
       write_something: "Hãy viết gì đó vào đây"
-    new:
-      new_reply: "Thêm trả lời"
-      reply: "Trả lời"
+    create:
+      post: "Đăng"
   devise:
     registrations:
       edit:

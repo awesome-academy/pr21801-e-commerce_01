@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col-md-12 col-sm-12">
-    <%= form_for [@product, @product.comments.build] do |f| %>
+    <%= form_for [@product, @product.comments.build], remote: true do |f| %>
       <%= render "shared/error_messages", object: f.object %>
-      <%= f.hidden_field :parent_id, value: @comment.parent_id if @comment.present? %>
+      <%= f.hidden_field :parent_id, value: parent_id %>
       <%= f.hidden_field :product_id %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.text_area :content,
         placeholder: t(".write_something"),
         class: "form-row input textareafild" %>
-      <%= f.submit yield(:button_text), class: "button" %>
+      <%= f.submit button_text, class: "button" %>
     <% end %>
   </div>
 </div>

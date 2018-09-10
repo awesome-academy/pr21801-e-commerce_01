@@ -1,21 +1,24 @@
-<div class="review">
+<div class="review comment-<%= comment.id %>">
   <h5 class="reviewer">
     <%= comment.user_name %>
   </h5>
-  <p class="review-date">
-    <%= comment.created_at %>
-  </p>
+  <div class="review-date row">
+    <div class="col-md-6">
+      <%= comment.created_at %>
+    </div>
+    <% if can? :destroy, comment %>
+      <div class="col-md-6 text-right">
+        <%= link_to t(".delete"), product_comment_path(@product, comment),
+          method: :delete, remote: true, data: {confirm: t(".are_you_sure")} %>
+      </div>
+    <% end %>
+  </div>
   <p class="well">
     <%= comment.content %>
   </p>
-  <p class="text-right">
-    <% if can? :destroy, comment %>
-      <%= link_to t(".delete"), product_comment_path(@product, comment),
-        method: :delete, data: {confirm: t(".are_you_sure")} %> |
-    <% end %>
-    <% from_reply_form ||= nil %>
-    <% unless from_reply_form %>
-      <%= link_to t(".reply"), new_comment_path(@product, comment.id) %>
-    <% end %>
-  </p>
+  <% unless comment.parent_id %>
+    <div class="commentform">
+      <%= render "comments/form", parent_id: comment.id, button_text: t(".reply") %>
+    </div>
+  <% end %>
 </div>
