@@ -4,5 +4,7 @@ class Order < ApplicationRecord
   has_many :products, through: :order_details
   accepts_nested_attributes_for :order_details
 
+  scope :all_order, ->{select :id, :created_at, :status, :total}
+
   enum status: {pending: 0, delivered: 1, canceled: 2}
 end

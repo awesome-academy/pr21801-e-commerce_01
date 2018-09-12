@@ -20,3 +20,7 @@ ratings:
 order_details:
   quantity:
     default: 1
+order_status:
+  pending: "pending"
+  delivered: "delivered"
+  canceled: "canceled"

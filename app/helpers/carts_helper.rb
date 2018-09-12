@@ -25,7 +25,7 @@ module CartsHelper
   def create_order
     if session[:order]
       sum = 0
-      total = session[:order].each do |item|
+      session[:order].each do |item|
         sum += item["quantity"] * item["price"]
       end
       @order = Order.new total: sum

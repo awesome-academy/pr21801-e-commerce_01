@@ -40,8 +40,16 @@
                             </ul>
                           </div>
                         <% else %>
-                          <%= link_to current_user.name,
+                          <div class="dropdown">
+                            <%= link_to current_user.name,
                             edit_user_registration_path, class: "user" %>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <%= link_to t("orders.index.order_list"), orders_path,
+                                  class: "btn btn-lg" %>
+                              </li>
+                            </ul>
+                          </div>
                         <% end %>
                       </li>
                       <li>

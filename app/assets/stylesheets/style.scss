@@ -57,8 +57,13 @@ h2.title {
   font-size: 14px;
 }
 
-tr.table-cate th {
+tr.table-cate th, tr.table-order td{
   text-align: center;
+}
+
+tr.table-order th{
+  text-align: center;
+  font-weight: 700;
 }
 
 .mess_color {
@@ -222,4 +227,9 @@ tr.table-cate th {
 .btn-cart-continue:hover{
   color: $white;
   background-color: $slate-red;
+}
+
+.btn-order-status{
+  float: right;
+  margin-bottom: 20px;
 }
