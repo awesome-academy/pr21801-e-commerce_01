@@ -1,0 +1,7 @@
+if ('<%= @comment.parent_id %>' != '') {
+  $('.comment-<%= @comment.parent_id %>').after('<div class="replies">\
+    <%= j render "comments/comment", comment: @comment %></div>');
+} else {
+  $('#commentdiv').prepend('<%= j render "comments/comment", comment: @comment %>');
+}
+$('.commentform form textarea').val('');

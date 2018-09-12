@@ -154,9 +154,8 @@ en:
       reply: "Reply"
     form:
       write_something: "Write something..."
-    new:
-      new_reply: "New reply"
-      reply: "Reply"
+    create:
+      post: "Post"
   devise:
     registrations:
       edit:

@@ -110,11 +110,15 @@
               <div class="tab-content" id="Reviews">
                 <div class="clearfix">
                 </div>
-                <%= comments_tree_for @comments %>
                 <% if user_signed_in? %>
-                  <%= provide :button_text, t(".post") %>
-                  <%= render "comments/form" %>
+                  <div class="commentform">
+                    <%= render "comments/form", parent_id: nil, button_text: t(".post") %>
+                  </div>
+                  <hr>
                 <% end %>
+                <div id="commentdiv">
+                  <%= comments_tree_for @comments %>
+                </div>
               </div>
             </div>
           </div>

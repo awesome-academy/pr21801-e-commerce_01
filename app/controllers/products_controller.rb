@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :get_product
 
   def show
-    @comments = @product.comments.hash_tree
+    @comments = @product.comments.hash_tree(limit_depth: 2)
   end
 
   private
