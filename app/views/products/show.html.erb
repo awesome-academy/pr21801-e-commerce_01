@@ -81,7 +81,10 @@
               <div class="clearfix">
               </div>
               <hr class="border">
-              <img src="#" alt="" class="pull-right">
+              <div class="pull-right">
+                <%= social_share_button_tag(@product.name,
+                  allow_sites: %w(twitter pinterest reddit)) %>
+              </div>
             </div>
           </div>
           <div class="clearfix">
