@@ -106,8 +106,11 @@ vi:
       are_you_sure: "Bạn đã chắc chắn?"
       delete: "Xóa"
       reply: "Trả lời"
+      posted: "Đăng lúc "
+      ago: " trước."
     form:
       write_something: "Hãy viết gì đó vào đây"
+      not_sign_in: "Bạn cần phải đăng nhập trước khi comment"
     create:
       post: "Đăng"
   devise:
@@ -146,7 +149,9 @@ vi:
     show:
       add: "Thêm vào giỏ hàng"
       description: "MÔ TẢ"
-      post: "Đăng"
+      pót: "Đăng"
+      products: "tương tự"
+      related: "Sản phẩm"
       review: "ĐÁNH GIÁ"
   shared:
     cart:
@@ -161,6 +166,10 @@ vi:
       remove: "Xóa sản phẩm"
       total: "Thành tiền: "
       vat: "Giá đã bao gồm VAT"
+    filters:
+      min: "Gía nhỏ nhất"
+      max: "Gía lớn nhất"
+      not_found_product: "Không có sản phẩm phù hợp"
     login:
       login: "Đăng nhập"
       not_a_member: "Không phải thành viên?"

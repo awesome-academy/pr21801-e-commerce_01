@@ -31,12 +31,6 @@
                 </a>
               </p>
               <p>
-                Availability:
-                <span class=" light-red">
-                  In Stock
-                </span>
-              </p>
-              <p>
                 <%= @product.description %>
               </p>
               <hr class="border">
@@ -54,14 +48,6 @@
               </div>
               <hr class="border">
               <div class="wided">
-                <div class="qty">
-                  Qty &nbsp;&nbsp;:
-                  <select>
-                    <option>
-                      1
-                    </option>
-                  </select>
-                </div>
                 <div class="button_group">
                   <%= button_to t(".add"), carts_path(product_id: @product.id),
                     method: :post, remote: true, class: "button add-cart" %>
@@ -121,6 +107,31 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="clearfix">
+          </div>
+          <div id="productsDetails" class="hot-products">
+            <h3 class="title">
+              <strong>
+                <%= t ".related" %>
+              </strong>
+              <%= t ".products" %>
+            </h3>
+            <div class="control">
+              <a id="prev_hot" class="prev" href="#">
+                &lt;
+              </a>
+              <a id="next_hot" class="next" href="#">
+                &gt;
+              </a>
+            </div>
+            <ul id="hot">
+              <li>
+                <div class="row">
+                  <%= render partial: "shared/product", collection: @products %>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

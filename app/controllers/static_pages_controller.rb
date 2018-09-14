@@ -1,8 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
-    @products = Product.get_product.page(params[:page]).
-      per params[Settings.product.featured]
-    @like_products = Product.like_most
+    @hot_products = Product.hot_product
+    @q = Product.ransack params[:q]
+    @products = @q.result.get_product.page params[:page]
   end
 
   def about; end
