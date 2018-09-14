@@ -2,15 +2,16 @@ vi:
   add_comment_failed: "Không thể thêm bình luận"
   add_failed_category: "Đã xảy ra lỗi trong quá trình thêm mới danh mục!"
   add_success_category: "Thêm mới danh mục thành công"
-  buy_product_success: "Cám ơn bạn đã mua sản phẩm của chúng tôi!"
   buy_product_failed: "Đã xảy ra lỗi trong quá trình mua hàng!"
+  buy_product_success: "Cám ơn bạn đã mua sản phẩm của chúng tôi!"
   can_not_delete_comment: "Không thể xóa bình luận."
-  cancel_success: "Đơn hàng đã hủy thành công!"
   cancel_failed: "Đã xảy ra lỗi trong quá trình hủy đơn hàng!"
+  cancel_success: "Đơn hàng đã hủy thành công!"
   comment_added: "Thêm bình luận thành công!"
   comment_deleted: "Đã xóa bình luận!"
   create_failed: "Đã có lỗi xảy ra trong quá trình tạo mới"
   create_product_failed: "Tạo sản phẩm thất bại!"
+  create_promotion_failed: "Tạo khuyến mãi thất bại!"
   delete_failed: "Đã xảy ra lỗi trong quá trình xóa!"
   delete_image_failed: "Xóa ảnh thất bại!"
   delete_product_failed: "Xóa sản phẩm thất bại!"
@@ -22,8 +23,11 @@ vi:
   product_created: "Tạo sản phẩm thành công!"
   product_deleted: "Xóa sản phẩm thành công!"
   product_updated: "Cập nhật sản phẩm thành công!"
+  promotion_created: "Tạo khuyến mãi thành công!"
+  promotion_updated: "Cập nhật khuyến mãi thành công!"
   update_failed: "Đã có lỗi xảy ra trong quá trình cập nhật!"
   update_product_failed: "Cập nhật sản phẩm thất bại!"
+  update_promotion_failed: "Cập nhật khuyến mãi thất bại!"
   update_success: "Cập nhật thành công!"
   user_could_not_be_deleted: "Không thể xóa người dùng."
   user_deleted: "Người dùng đã bị xóa."
@@ -114,6 +118,28 @@ vi:
       new:
         add_product: "Thêm sản phẩm"
         create: "Tạo"
+    promotions:
+      form:
+        add_product: "Thêm sản phẩm"
+        promotion_content: "Nội dung khuyến mãi:"
+        sale_percent: "Phần trăm giảm gía:"
+      promotion_detail:
+        end_date: "Ngày kết thúc:"
+        product: "Sản phẩm:"
+        start_date: "Ngày bắt đầu:"
+      edit:
+        update: "Cập nhật"
+        update_promotion: "Cập nhật khuyến mãi"
+      index:
+        description: "Mô tả"
+        edit: "Sửa"
+        new_promotion: "Khuyễn mãi mới"
+        promotion: "Khuyến mãi"
+        promotions: "Khuyến mãi"
+        sale_percent: "Phần trăm giảm gía"
+      new:
+        create: "Tạo"
+        new_promotion: "Khuyến mãi mới"
     users:
       index:
         action: "Hành động"
@@ -201,6 +227,7 @@ vi:
       price: "Gía"
       product: "Điện thoại"
       product_list: "Danh sách các sản phẩm"
+      promotion_list: "Danh sách khuyến mãi"
       quantity: "Số lượng: "
       search: "Nhập sản phẩm bạn muốn tìm kiếm"
       sign_up: "Đăng ký"

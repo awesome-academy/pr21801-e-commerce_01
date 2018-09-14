@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row mt-5">
+    <h3 class="col-md-6">
+      <%= t ".promotions" %>
+    </h3>
+    <div class="col-md-6 text-right">
+      <%= link_to t(".new_promotion"), new_admin_promotion_path,
+        class: "btn btn-success" %>
+    </div>
+  </div>
+  <hr>
+  <div class="text-center">
+    <%= paginate @promotions %><br>
+    <%= page_entries_info @promotions %>
+  </div>
+  <table class="table table-hover table-bordered mt-5">
+    <thead>
+      <tr>
+        <th><%= t ".promotion" %></th>
+        <th><%= t ".description" %></th>
+        <th><%= t ".sale_percent" %></th>
+        <th><em class="fa fa-cog"></em></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @promotions.each do |promotion| %>
+        <tr>
+          <td><%= promotion.id %></td>
+          <td><%= promotion.content %><br></td>
+          <td><%= promotion.percent %>%</td>
+          <td>
+            <%= link_to t(".edit"), edit_admin_promotion_path(promotion),
+              class: "btn btn-info btn-sm" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= page_entries_info @promotions %><br>
+    <%= paginate @promotions %>
+  </div>
+</div>

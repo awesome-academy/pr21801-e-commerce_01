@@ -276,3 +276,15 @@ tr.table-order th{
 .bold th{
   text-align: center;
 }
+
+.products .oldprice {
+  float: left;
+  width: 100%;
+  color: #777777;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 15px;
+  line-height: 0px;
+  text-decoration: line-through;
+}

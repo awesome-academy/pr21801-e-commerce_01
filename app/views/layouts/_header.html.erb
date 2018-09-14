@@ -28,6 +28,12 @@
                             <%= link_to current_user.name,
                               admin_dashboard_path,
                               class: "user dropbtn" %>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <%= link_to t(".promotion_list"),
+                                  admin_promotions_path, class: "btn btn-lg" %>
+                              </li>
+                            </ul>
                           </div>
                         <% else %>
                           <div class="dropdown">

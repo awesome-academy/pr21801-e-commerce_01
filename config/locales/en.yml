@@ -2,15 +2,16 @@ en:
   add_comment_failed: "Add comment failed!"
   add_failed_category: "An error occurred while adding new category"
   add_success_category: "Add new category successed!"
-  buy_product_success: "You have just bought success some product"
   buy_product_failed: "An error has occurred while buy product!"
+  buy_product_success: "You have just bought success some product"
   can_not_delete_comment: "Can not delete comment."
-  cancel_success: "This order has been cancelled, thank you!"
   cancel_failed: "An error has occurred while canceling!"
+  cancel_success: "This order has been cancelled, thank you!"
   comment_added: "Your comment was successfully added!"
   comment_deleted: "Comment deleted!"
   create_failed: "An error has occurred!"
   create_product_failed: "Create product failed!"
+  create_promotion_failed: "Create promotion failed!"
   delete_failed: "An error has occurred while deleting!"
   delete_image_failed: "Delete image failed!"
   delete_product_failed: "Delete product failed!"
@@ -22,8 +23,11 @@ en:
   product_created: "Product created!"
   product_deleted: "Product deleted!"
   product_updated: "Product updated!"
+  promotion_created: "Promotion created!"
+  promotion_updated: "Promotion updated!"
   update_failed: "An error has occurred while updating!"
   update_product_failed: "Update product failed!"
+  update_promotion_failed: "Update promotion failed!"
   update_success: "Update Successful!"
   user_could_not_be_deleted: "User could not be deleted."
   user_deleted: "User deleted."
@@ -117,6 +121,28 @@ en:
       new:
         add_product: "Add product"
         create: "Create"
+    promotions:
+      form:
+        add_product: "Add product"
+        promotion_content: "Promotion content:"
+        sale_percent: "Sale percent:"
+      promotion_detail:
+        end_date: "End date:"
+        product: "Product:"
+        start_date: "Start date:"
+      edit:
+        update: "Update"
+        update_promotion: "Update promotion"
+      index:
+        description: "Description"
+        edit: "Edit"
+        new_promotion: "New promotion"
+        promotion: "Promotion"
+        promotions: "Promotions"
+        sale_percent: "Sale percent"
+      new:
+        create: "Create"
+        new_promotion: "New promotion"
     users:
       index:
         action: "Action"
@@ -198,6 +224,7 @@ en:
       price: "Price"
       product: "Smartphone"
       product_list: "Product list"
+      promotion_list: "Promotion list"
       quantity: "quantity: "
       search: "Enter your search term..."
       sign_up: "Sign up"

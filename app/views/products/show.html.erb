@@ -52,15 +52,18 @@
               <hr class="border">
               <div class="price">
                 <%= t "layouts.header.price" %>
-                <span class="new_price">
-                  <%= format_price @product.price %>
-                </span>
-                <span class="old_price">
-                  450.00
-                  <sup>
-                    $
-                  </sup>
-                </span>
+                <% if @percent.present? %>
+                  <span class="new_price">
+                    <%= format_price sale_price_show(@product, @percent) %>
+                  </span>
+                  <span class="old_price">
+                    <%= format_price @product.price %>
+                  </span>
+                <% else %>
+                  <span class="new_price">
+                    <%= format_price @product.price %>
+                  </span>
+                <% end %>
               </div>
               <hr class="border">
               <div class="wided">
@@ -104,10 +107,13 @@
               <div class="tab-content" id="Reviews">
                 <div class="clearfix">
                 </div>
-                <div class="commentform">
-                  <%= render "comments/form", parent_id: nil, button_text: t(".post") %>
-                </div>
-                <hr>
+                <% if user_signed_in? %>
+                  <div class="commentform">
+                    <%= render "comments/form", parent_id: nil,
+                      button_text: t(".post") %>
+                  </div>
+                  <hr>
+                <% end %>
                 <div id="commentdiv">
                   <%= comments_tree_for @comments %>
                 </div>

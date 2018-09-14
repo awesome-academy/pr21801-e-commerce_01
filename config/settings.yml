@@ -16,6 +16,8 @@ product:
   limit: 8
   validates:
     price_maximum: 8
+promotion:
+  maximum_percent: 100
 ratings:
   average: 0
 order_details:
