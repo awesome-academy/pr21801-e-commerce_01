@@ -4,8 +4,8 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
 
   def show
-    @products = @category.products.get_product.page(params[:page]).
-      per params[Settings.product.featured]
+    @products = @category.products.get_product.page(params[:page])
+      .per params[Settings.product.featured]
   end
 
   private

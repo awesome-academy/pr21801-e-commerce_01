@@ -152,8 +152,11 @@ en:
       are_you_sure: "Are you sure?"
       delete: "Delete"
       reply: "Reply"
+      posted: "Posted at "
+      ago: " ago."
     form:
       write_something: "Write something..."
+      not_sign_in: "You must be signed in to post comment"
     create:
       post: "Post"
   devise:
@@ -216,6 +219,8 @@ en:
       add: "Add to Cart"
       description: "DESCRIPTION"
       post: "Post"
+      products: "Products"
+      related: "Related"
       review: "REVIEW"
   shared:
     cart:
@@ -231,6 +236,10 @@ en:
       remove: "Remove"
       total: "Total: "
       vat: "Our prices include VAT"
+    filters:
+      min: "Min price"
+      max: "Max price"
+      not_found_product: "Not found product"
     login:
       login: "Login"
       not_a_member: "Not a member?"

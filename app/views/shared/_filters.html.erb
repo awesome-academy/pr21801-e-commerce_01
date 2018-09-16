@@ -1,0 +1,13 @@
+<%= search_form_for @q, url: root_path do |f| %>
+  <div class="input-group mb-5">
+    <%= f.label :price_gteq, t(".min") %>
+    <%= f.number_field :price_gteq, value: Settings.filters.min_default, required: true, step: Settings.filters.step, min: Settings.filters.min_default %>
+    <%= f.label :price_lteq, t(".max") %>
+    <%= f.number_field :price_lteq, value: Settings.filters.max_default, required: true, step: Settings.filters.step, min: Settings.filters.max_default %>
+    <div class="input-group-btn button-filter">
+      <%= button_tag type: "submit", class: "btn btn-default" do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def show
     @comments = @product.comments.hash_tree(limit_depth: 2)
+    @products = @product.category.products
   end
 
   private

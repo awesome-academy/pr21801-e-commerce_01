@@ -18,9 +18,12 @@ class Product < ApplicationRecord
   scope :get_product, ->{
     select :id, :name, :price, :description, :average_rating, :category_id
   }
-
   scope :like_most, ->{
     joins(:likes).group("product_id").order("count(user_id) DESC")
       .limit Settings.product.limit
+  }
+  scope :hot_product, ->{
+    joins(:order_details).group("product_id").order("count(product_id) DESC")
+      .limit Settings.product.hot
   }
 end

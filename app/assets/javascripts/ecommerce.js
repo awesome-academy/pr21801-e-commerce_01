@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function () {
     var quantity = $(this).val();
     var product_id = $(this).data('id');
     $.ajax({
-      url: 'carts/' + product_id,
+      url: '/carts/' + product_id,
       method: 'PUT',
       data: {quantity: quantity}
     });
