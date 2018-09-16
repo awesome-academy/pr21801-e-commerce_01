@@ -4,7 +4,9 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
 
   def show
-    @products = @category.products.get_product.page(params[:page])
+    products = Product.by_category((@category.children + [@category])
+      .map(&:products).flatten.pluck(:id))
+    @products = products.get_product.page(params[:page])
       .per params[Settings.product.featured]
   end
 

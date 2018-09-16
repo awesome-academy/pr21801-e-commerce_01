@@ -18,6 +18,7 @@ vi:
   delete_warning: "Không thể xóa danh mục này vì vẫn còn tồn tại sản phẩm"
   image_deleted: "Xóa ảnh thành công!"
   import_success: "Đã thêm sản phẩm"
+  import_failed: "Đã có lỗi xảy ra trong quá trình thêm sản phẩm!"
   product_created: "Tạo sản phẩm thành công!"
   product_deleted: "Xóa sản phẩm thành công!"
   product_updated: "Cập nhật sản phẩm thành công!"
@@ -91,20 +92,22 @@ vi:
         update: "Cập nhật"
       index:
         add_product: "Thêm sản phẩm"
-        average_rating: "Đánh gía trung bình"
+        average_rating: "Đánh gía"
         btn_import: "Thêm sản phẩm"
         category: "Loại sản phẩm"
+        category_name: "Tên danh mục"
         csv: "CSV"
         delete: "Xóa"
         download: "Tải về:"
         excel: "Excel"
         images: "Hình ảnh"
-        import: "Thêm dữ liệu tu file csv, excel..."
+        import: "Thêm dữ liệu từ file csv, excel..."
         likes: "Lượt thích"
         name: "Tên sản phẩm"
         or: "Hoặc"
         price: "Gía"
         product_list: "Danh sách sản phẩm"
+        product_name: "Tên sản phẩm"
         sort: "Sắp xếp:"
         you_sure: "Bạn chắc chứ?"
       new:
@@ -163,6 +166,8 @@ vi:
     shared:
       links:
         signin_with: "Đăng nhập bằng "
+        unhappy: "Bạn cảm thấy không hài lòng?"
+        signup: "Đăng ký"
   carts:
     create:
       add_success: "Bạn vừa thêm sản phẩm thành công vào giỏ hàng"
@@ -310,3 +315,12 @@ vi:
     formats:
       long: "%d tháng %B năm %Y, lúc %H:%M"
       short: "%d tháng %B, lúc %H:%M"
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: "Hiển thị %{first} - %{last} sản phẩm <b>trên tổng số %{total}</b> sản phẩm <b></b>"
+      one_page:
+        display_entries:
+          one: "<b>Tìm thấy 1 sản phẩm phù hợp!"
+          other: "<b>Tìm thấy %{count}</b> sản phẩm phù hợp"
+          zero: "Không có sản phẩm nào phù hợp!"

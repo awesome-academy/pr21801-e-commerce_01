@@ -229,7 +229,7 @@ tr.table-order th{
   background-color: $slate-red;
 }
 
-.btn-order-status{
+.btn-order-status, .export_product{
   float: right;
   margin-bottom: 20px;
 }
@@ -239,7 +239,7 @@ tr.table-order th{
   color: $snow;
 }
 
-.button-filter{
+.button-filter, .add_product{
   display: inline-block;
 }
 
@@ -249,4 +249,21 @@ tr.table-order th{
 
 .add-cart {
   padding: 9px 15px;
+}
+
+.import_product{
+  display: none;
+}
+
+.import_product input{
+  margin-top: 20px;
+}
+
+.thumbnail_products{
+  max-width: 100px;
+  max-height: 100px
+}
+
+.bold th{
+  text-align: center;
 }

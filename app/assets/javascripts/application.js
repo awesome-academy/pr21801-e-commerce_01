@@ -14,7 +14,6 @@
 //= require jquery
 //= require rails-ujs
 //= require jquery.slick
-//= require initialize
 //= require turbolinks
 //= require jquery-1.10.2.min
 //= require jquery.easing.1.3

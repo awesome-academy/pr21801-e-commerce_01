@@ -1,6 +1,22 @@
 <div class="wrapper">
   <div class="container_fullwidth">
     <div class="container">
+      <ol class="breadcrumb title">
+        <li>
+          <%= link_to t("layouts.header.home"), root_url %>
+        </li>
+        <% ancestors(@product.category).each do |category| %>
+          <li>
+            <%= link_to category.name, category %>
+          </li>
+        <% end %>
+        <li>
+          <%= link_to @product.category.name, @product.category %>
+        </li>
+        <li>
+          <strong><%= @product.name %></strong>
+        </li>
+      </ol>
       <div class="row">
         <div class="col-md-12">
           <div class="products-details">
@@ -88,12 +104,10 @@
               <div class="tab-content" id="Reviews">
                 <div class="clearfix">
                 </div>
-                <% if user_signed_in? %>
-                  <div class="commentform">
-                    <%= render "comments/form", parent_id: nil, button_text: t(".post") %>
-                  </div>
-                  <hr>
-                <% end %>
+                <div class="commentform">
+                  <%= render "comments/form", parent_id: nil, button_text: t(".post") %>
+                </div>
+                <hr>
                 <div id="commentdiv">
                   <%= comments_tree_for @comments %>
                 </div>
@@ -109,14 +123,6 @@
               </strong>
               <%= t ".products" %>
             </h3>
-            <div class="control">
-              <a id="prev_hot" class="prev" href="#">
-                &lt;
-              </a>
-              <a id="next_hot" class="next" href="#">
-                &gt;
-              </a>
-            </div>
             <ul id="hot">
               <li>
                 <div class="row">
