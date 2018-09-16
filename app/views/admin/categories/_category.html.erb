@@ -21,6 +21,7 @@
             method: :delete, data: {confirm: t("admin.categories.index.sure"),
               id: category.id}, class: "btn btn-danger btn-rounded btn-sm
                 my-0 destroy" %>
+          <%= link_to t("admin.products.index.add_product"), new_admin_product_path(category_id: category.id), class: "btn btn-info btn-rounded btn-sm" %>
         </td>
       </tr>
     <% end %>

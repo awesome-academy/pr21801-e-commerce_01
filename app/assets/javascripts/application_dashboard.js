@@ -1,0 +1,9 @@
+//= require jquery
+//= require jquery.slick
+//= require bootstrap.min
+//= require rails-ujs
+//= require turbolinks
+//= require metisMenu.min
+//= require startmin
+//= require bootstrap-rating
+//= require ecommerce

@@ -1,4 +1,4 @@
-class Admin::ImagesController < ApplicationController
+class Admin::ImagesController < Admin::ApplicationController
   load_and_authorize_resource
 
   def destroy

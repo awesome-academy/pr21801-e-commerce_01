@@ -1,4 +1,4 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::ApplicationController
   before_action :get_category, only: [:show, :edit, :update, :destroy]
   before_action :load_roots, only: [:show, :destroy]
   before_action :authenticate_user!

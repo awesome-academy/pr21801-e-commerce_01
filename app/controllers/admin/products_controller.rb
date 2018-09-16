@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::ProductsController < Admin::ApplicationController
   before_action :get_product, only: [:edit, :update, :destroy]
   load_and_authorize_resource
 
@@ -7,6 +7,7 @@ class Admin::ProductsController < ApplicationController
     @products = @q.result.includes(:images, :category, :order_details)
       .page(params[:page]).per(Settings.product.limit)
     @q.build_sort if @q.sorts.empty?
+
     respond_to do |format|
       format.html
       format.csv {send_data @products.to_csv, filename:"products-#{Date.today}.csv"}

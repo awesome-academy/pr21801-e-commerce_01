@@ -2,51 +2,47 @@
   <meta name="turbolinks-cache-control" content="no-cache">
 <% end %>
 
-<div class="container_fullwidth">
-  <div class="container">
-    <table class="table table-bordered mt-5" >
-      <h3 class="text-center mb-5"><%= t ".product_list" %></h4>
-      <thead>
-        <tr class="row bold">
-          <th class="text-center col-md-3"><%= t ".images" %></th>
-          <th class="text-center col-md-2"><%= t ".name" %></th>
-          <th class="text-center col-md-2"><%= t ".price" %></th>
-          <th class="text-center col-md-3"><%= t ".description" %></th>
-          <th class="text-center col-md-2"><em class="fa fa-cog"></em></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @products.each do |product| %>
-          <tr class="row">
-            <td class="text-center col-md-3">
-              <div class="slick_slide" align="center" style="max-width: 200px; max-height: 200px">
-                <% product.images.each do |i| %>
-                  <div>
-                    <div>
-                      <%= link_to t(".delete"), admin_image_path(i),
-                        method: :delete %>
-                    </div>
-                    <%= image_tag i.image_url_url,
-                      style: "max-width: 200px; max-height: 200px" %>
-                  </div>
-                <% end %>
+<table class="table table-bordered mt-5" >
+  <h2 class="page-header title"><%= t ".product_list" %></h2>
+  <thead>
+    <tr class="row bold">
+      <th class="text-center col-md-1"><%= t ".images" %></th>
+      <th class="text-center col-md-3"><%= t ".name" %></th>
+      <th class="text-center"><%= t ".price" %></th>
+      <th class="text-center"><%= t ".description" %></th>
+      <th class="text-center"><em class="fa fa-cog"></em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr class="row">
+        <td class="text-center">
+          <div class="slick_slide thumbnail_products" align="center">
+            <% product.images.each do |i| %>
+              <div>
+                <div>
+                  <%= link_to t(".delete"), admin_image_path(i),
+                    method: :delete %>
+                </div>
+                <%= image_tag i.image_url_url,
+                  class: "thumbnail_products" %>
               </div>
-            </td>
-            <td class="col-md-2"><%= product.name %></td>
-            <td class="text-right col-md-2">
-              <%= format_price product.price %>
-            </td>
-            <td class="col-md-3"><%= product.description %></td>
-            <td class="text-center col-md-2">
-              <%= link_to t(".edit"), edit_admin_product_path(product, category_id: product.category),
-                class: "btn btn-sm btn-info" %>
-              <%= link_to t(".delete"), admin_product_path(product),
-                method: :delete, data: {confirm: t(".you_sure")},
-                class: "btn btn-sm btn-danger" %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+            <% end %>
+          </div>
+        </td>
+        <td><%= product.name %></td>
+        <td class="text-right">
+          <%= format_price product.price %>
+        </td>
+        <td><%= product.description %></td>
+        <td class="text-center">
+          <%= link_to t(".edit"), edit_admin_product_path(product, category_id: product.category),
+            class: "btn btn-sm btn-info" %>
+          <%= link_to t(".delete"), admin_product_path(product),
+            method: :delete, data: {confirm: t(".you_sure")},
+            class: "btn btn-sm btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

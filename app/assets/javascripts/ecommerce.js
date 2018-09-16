@@ -75,10 +75,4 @@ $(document).on('turbolinks:load', function () {
     centerMode: true,
     focusOnSelect: true
   });
-  $('.filter').hide();
-  $('select.input').change(function(){
-    var sort = $('select.input-sort').val();
-    $('input.value-sort').val(sort);
-    $('.filter').click();
-  });
 });

@@ -44,16 +44,17 @@ vi:
         status: "Trạng thái"
         none: "Không có"
       index:
-        list: "Danh sách danh mục"
-        not_found_categories: "Không tìm thấy danh mục"
-        details: "Chi tiết"
-        delete: "Xóa"
-        sure: "Bạn chắc chứ?"
         action: "Hành động"
-        search_user: "Tìm kiếm"
+        delete: "Xóa"
+        details: "Chi tiết"
+        display_category: "Số lượng hiển thị trên 1 trang"
+        list: "Danh sách các danh mục"
         name: "Tên"
+        not_found_categories: "Không tìm thấy danh mục"
         parent_category: "Danh mục cha"
         search: "Tìm"
+        search_user: "Tìm kiếm"
+        sure: "Bạn chắc chứ?"
       new:
         new_category: "Tạo mới danh mục"
         create: "Tạo mới"
@@ -64,7 +65,7 @@ vi:
         images: "Hình ảnh"
         name: "Tên sản phẩm"
         price: "Gía"
-        product_list: "Danh sách sản phẩm"
+        product_list: "Danh sách các sản phẩm"
         usd: "VNĐ"
         you_sure: "Bạn chắc chứ?"
       show:
@@ -106,7 +107,7 @@ vi:
         name: "Tên sản phẩm"
         or: "Hoặc"
         price: "Gía"
-        product_list: "Danh sách sản phẩm"
+        product_list: "Danh sách các sản phẩm"
         product_name: "Tên sản phẩm"
         sort: "Sắp xếp:"
         you_sure: "Bạn chắc chứ?"
@@ -178,6 +179,17 @@ vi:
       continue_shopping: "Tiếp tục mua sắm"
       home: "Trang chủ"
   layouts:
+    admin:
+      admin_header:
+        addtion: "Thêm mới"
+        category: "Danh mục"
+        charts: "Biểu đồ"
+        dashboard: "Tổng quan"
+        product: "Sản phẩm"
+        settings: "Tùy chọn"
+        table: "Bảng dữ liệu"
+        user: "Người dùng"
+        user_profile: "Chỉnh sửa"
     header:
       address: "Tòa nhà Handico, Phạm Hùng, Mễ Trì, Nam Nam Từ Liêm, Hà Nội"
       checkout: "Thanh toán"
@@ -188,7 +200,7 @@ vi:
       logout: "Đăng xuất"
       price: "Gía"
       product: "Điện thoại"
-      product_list: "Danh sách sản phẩm"
+      product_list: "Danh sách các sản phẩm"
       quantity: "Số lượng: "
       search: "Nhập sản phẩm bạn muốn tìm kiếm"
       sign_up: "Đăng ký"
@@ -268,7 +280,7 @@ vi:
       truncate: "…"
   orders:
     index:
-      order_list: "Danh sách đơn hàng"
+      order_list: "Danh sách các đơn hàng"
       number_order: "Số đơn hàng"
       date: "Ngày"
       total: "Tổng tiền"
@@ -318,9 +330,9 @@ vi:
   helpers:
     page_entries_info:
       more_pages:
-        display_entries: "Hiển thị %{first} - %{last} sản phẩm <b>trên tổng số %{total}</b> sản phẩm <b></b>"
+        display_entries: "Hiển thị %{first} - %{last} %{entry_name} <b>trên tổng số %{total}</b> %{entry_name} <b></b>"
       one_page:
         display_entries:
-          one: "<b>Tìm thấy 1 sản phẩm phù hợp!"
-          other: "<b>Tìm thấy %{count}</b> sản phẩm phù hợp"
-          zero: "Không có sản phẩm nào phù hợp!"
+          one: "<b>Tìm thấy 1 %{entry_name} phù hợp!"
+          other: "<b>Tìm thấy %{count}</b> %{entry_name} phù hợp"
+          zero: "Không có %{entry_name} nào phù hợp!"
