@@ -60,8 +60,7 @@
   <div class="container_fullwidth">
     <div class="container">
       <div class="hot-products">
-        <h3 class="title"><strong><%= t ".hot" %></strong><%= t ".product" %></h3>
-        <div class="control"><a id="prev_hot" class="prev" href="#">&lt;</a><a id="next_hot" class="next" href="#">&gt;</a></div>
+        <h3 class="title"><strong><%= t ".hot" %></strong><%= t ".hot_product" %></h3>
         <ul id="hot">
           <li>
             <div id="slide-owl" class="row">
@@ -74,7 +73,7 @@
       <div class="clearfix"></div>
       <div class="featured-products">
         <div class="col-lg-12">
-          <div class="col-lg-3"><h3 class="title"><strong><%= t ".featured" %></strong><%= t ".product" %></h3></div>
+          <div class="col-lg-3"><h3 class="title"><strong><%= t ".featured" %></strong><%= t ".featured_product" %></h3></div>
           <div class="col-lg-9 filter-price">
             <%= render "shared/filters" %>
           </div>
@@ -91,31 +90,6 @@
           </li>
         </ul>
       </div> <!-- end feature-product -->
-      <div class="clearfix"></div>
-      <div class="our-brand">
-        <h3 class="title"><strong><%= t ".our" %></strong><%= t ".brand" %></h3>
-        <div class="control"><a id="prev_brand" class="prev" href="#">&lt;</a><a id="next_brand" class="next" href="#">&gt;</a></div>
-        <ul id="braldLogo">
-          <li>
-            <ul class="brand_item">
-              <li>
-                <a href="#">
-                  <div class="brand-logo"><%= link_to image_tag "samsung.png" %></div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul class="brand_item">
-              <li>
-                <a href="#">
-                  <div class="brand-logo"><%= link_to image_tag "samsung.png" %></div>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div> <!-- end our-brand -->
     </div> <!-- end container(213) -->
   </div> <!-- end container-fullwidth(212) -->
 </body>

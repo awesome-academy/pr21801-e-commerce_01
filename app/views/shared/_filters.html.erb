@@ -1,5 +1,5 @@
 <%= search_form_for @q, url: root_path do |f| %>
-  <div class="input-group mb-5">
+  <div class="input-group mb-5 filter_price">
     <%= f.label :price_gteq, t(".min") %>
     <%= f.number_field :price_gteq, value: Settings.filters.min_default, required: true, step: Settings.filters.step, min: Settings.filters.min_default %>
     <%= f.label :price_lteq, t(".max") %>

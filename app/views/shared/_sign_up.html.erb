@@ -14,7 +14,7 @@
          <form role="form">
             <div class="form-group">
               <span class="fa fa-user"></span>
-              <%= f.label :name %>:<br/>
+              <%= f.label :name, t("devise.sessions.new.name") %>:<br/>
               <%= f.text_field :name, autofocus: true, autocomplete: "name",
                 class: "form-control" %>
             </div>
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
               <span class="fa fa-eye"></span>
-              <%= f.label :password %>
+              <%= f.label :password, t("devise.sessions.new.password") %>
               <% if @minimum_password_length %>
               <em>
                 (<%= @minimum_password_length %>
@@ -44,7 +44,7 @@
       <div class="modal-footer">
         <button type="submit" class="btn btn-danger btn-default pull-left"
           data-dismiss="modal">
-          <span class="fa fa-times"></span> <%= t ".cancel" %>
+          <span class="fa fa-times"></span> <%= t "shared.login.cancel" %>
         </button>
         <span>
           <%= t ".already_a_member" %>

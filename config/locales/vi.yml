@@ -1,7 +1,7 @@
 vi:
   add_comment_failed: "Không thể thêm bình luận"
-  add_failed_category: "An error occurred while adding new category"
-  add_success_category: "Add new category successed!"
+  add_failed_category: "Đã xảy ra lỗi trong quá trình thêm mới danh mục!"
+  add_success_category: "Thêm mới danh mục thành công"
   buy_product_success: "Cám ơn bạn đã mua sản phẩm của chúng tôi!"
   buy_product_failed: "Đã xảy ra lỗi trong quá trình mua hàng!"
   can_not_delete_comment: "Không thể xóa bình luận."
@@ -9,25 +9,53 @@ vi:
   cancel_failed: "Đã xảy ra lỗi trong quá trình hủy đơn hàng!"
   comment_added: "Thêm bình luận thành công!"
   comment_deleted: "Đã xóa bình luận!"
-  create_failed: "An error has occurred!"
+  create_failed: "Đã có lỗi xảy ra trong quá trình tạo mới"
   create_product_failed: "Tạo sản phẩm thất bại!"
-  delete_failed: "An error has occurred while deleting!"
+  delete_failed: "Đã xảy ra lỗi trong quá trình xóa!"
   delete_image_failed: "Xóa ảnh thất bại!"
   delete_product_failed: "Xóa sản phẩm thất bại!"
-  delete_success: "Delete Successful!"
-  delete_warning: "Can't delete because exist of product in category"
+  delete_success: "Xóa thành công"
+  delete_warning: "Không thể xóa danh mục này vì vẫn còn tồn tại sản phẩm"
   image_deleted: "Xóa ảnh thành công!"
+  import_success: "Đã thêm sản phẩm"
   product_created: "Tạo sản phẩm thành công!"
   product_deleted: "Xóa sản phẩm thành công!"
   product_updated: "Cập nhật sản phẩm thành công!"
-  update_failed: "An error has occurred while updating!"
+  update_failed: "Đã có lỗi xảy ra trong quá trình cập nhật!"
   update_product_failed: "Cập nhật sản phẩm thất bại!"
-  update_success: "Update Successful!"
+  update_success: "Cập nhật thành công!"
   user_could_not_be_deleted: "Không thể xóa người dùng."
   user_deleted: "Người dùng đã bị xóa."
 
   admin:
     categories:
+      category:
+        description: "Mô tả"
+        status: "Trạng thái"
+        delete: "Xóa danh mục"
+      edit:
+        edit_category: "Chỉnh sửa danh mục"
+        update: "Cập nhật"
+      form:
+        category: "Chọn danh mục"
+        category_description: "Mô tả danh mục:"
+        category_name: "Tên danh mục:"
+        status: "Trạng thái"
+        none: "Không có"
+      index:
+        list: "Danh sách danh mục"
+        not_found_categories: "Không tìm thấy danh mục"
+        details: "Chi tiết"
+        delete: "Xóa"
+        sure: "Bạn chắc chứ?"
+        action: "Hành động"
+        search_user: "Tìm kiếm"
+        name: "Tên"
+        parent_category: "Danh mục cha"
+        search: "Tìm"
+      new:
+        new_category: "Tạo mới danh mục"
+        create: "Tạo mới"
       products:
         delete: "Xóa"
         description: "Mô tả sản phẩm"
@@ -40,12 +68,16 @@ vi:
         you_sure: "Bạn chắc chứ?"
       show:
         add_product: "Thêm sản phẩm"
+        delete: "Xóa danh mục"
+        edit: "chỉnh sửa tên danh mục"
+        new: "Thêm mới danh mục"
+        sub: "Hoàn thành"
     images:
       form:
         product_image: "Hình ảnh sản phẩm"
       new:
         add: "Thêm"
-      add_image: "Thêm hình ảnh"
+        add_image: "Thêm hình ảnh"
     products:
       form:
         category: "Danh mục"
@@ -59,15 +91,21 @@ vi:
         update: "Cập nhật"
       index:
         add_product: "Thêm sản phẩm"
+        average_rating: "Đánh gía trung bình"
+        btn_import: "Thêm sản phẩm"
         category: "Loại sản phẩm"
+        csv: "CSV"
         delete: "Xóa"
-        description: "Mô tả sản phẩm"
-        edit: "Chỉnh sửa"
-        images: "Hình ảnh sản phẩm"
+        download: "Tải về:"
+        excel: "Excel"
+        images: "Hình ảnh"
+        import: "Thêm dữ liệu tu file csv, excel..."
+        likes: "Lượt thích"
         name: "Tên sản phẩm"
+        or: "Hoặc"
         price: "Gía"
         product_list: "Danh sách sản phẩm"
-        usd: "VNĐ"
+        sort: "Sắp xếp:"
         you_sure: "Bạn chắc chứ?"
       new:
         add_product: "Thêm sản phẩm"
@@ -82,31 +120,12 @@ vi:
         name_or_email_cont: "Tên hoặc email có chứa..."
         user_list: "Danh sách người dùng"
         you_sure: "Bạn chắc chứ?"
-  carts:
-    create:
-      add_success: "Bạn vừa thêm sản phẩm thành công"
-    index:
-      cart: "Giỏ hàng"
-      cart_review: "Chi tiết giỏ hàng"
-      cart_empty: "Không có sản phẩm nào trong giỏ hàng"
-      continue_shopping: "Tiếp tục mua sắm"
-  categories:
-    new:
-      new_category: "New Category"
-      create: "Create"
-    form:
-      category: "Category"
-      category_description: "Category description:"
-      category_name: "Category name:"
-    edit:
-      edit_category: "Edit Category"
-      update: "Update"
   comments:
     comment:
       are_you_sure: "Bạn đã chắc chắn?"
       delete: "Xóa"
       reply: "Trả lời"
-      posted: "Đăng lúc "
+      posted: "Đăng "
       ago: " trước."
     form:
       write_something: "Hãy viết gì đó vào đây"
@@ -114,21 +133,50 @@ vi:
     create:
       post: "Đăng"
   devise:
+    failure:
+      user:
+        unauthenticated: "Bạn cần phải đăng nhập trước khi sử dụng chức năng này"
+        invalid: "Tên đăng nhập hoặc mật khẩu không đúng"
     registrations:
       edit:
-        are_you_sure: "Bạn đã chắc chắn?"
+        are_you_sure: "Bạn chắc chắn chứ?"
         back: "Quay lại"
         cancel_my_account: "Hủy tài khoản"
         characters_minimum: "kí tự tối thiểu"
+        current_pwd: "Mật khẩu hiện tại"
         currently_waiting_confirmation: "Đang chờ xác nhận:"
-        edit: "Chỉnh sửa"
+        edit: "Chỉnh sửa người dùng"
         leave_blank_if_you_dont_want_to_change_it: "để trống nêu bạn không muốn thay đổi"
         only_required_if_you_want_to_change_password: "chỉ cần khi bạn muốn đổi mật khẩu"
+        pwd_confirm: "Xác nhận mật khẩu"
+        signup: "Đăng ký"
+        unhappy: "Bạn cảm thấy không hài lòng?"
         update: "Cập nhật"
+    sessions:
+      new:
+        name: "Tên đăng nhập"
+        password: "Mật khẩu"
+        remember: "Ghi nhớ tài khoản"
+      user:
+        signed_in: "Chúc mừng bạn đã đăng nhập thành công"
+        signed_out: "Bạn đã đăng xuất thành công"
+    shared:
+      links:
+        signin_with: "Đăng nhập bằng "
+  carts:
+    create:
+      add_success: "Bạn vừa thêm sản phẩm thành công vào giỏ hàng"
+    index:
+      cart: "Giỏ hàng"
+      cart_review: "Chi tiết giỏ hàng"
+      cart_empty: "Không có sản phẩm nào trong giỏ hàng"
+      continue_shopping: "Tiếp tục mua sắm"
+      home: "Trang chủ"
   layouts:
     header:
       address: "Tòa nhà Handico, Phạm Hùng, Mễ Trì, Nam Nam Từ Liêm, Hà Nội"
       checkout: "Thanh toán"
+      english: "Tiếng_Anh"
       home: "Trang chủ"
       hotline: "0164.806.2543"
       login: "Đăng nhập"
@@ -142,14 +190,18 @@ vi:
       signup: "Đăng ký"
       total: "Tổng tiền"
       user_list: "Danh sách người dùng"
+      vietnam: "Tiếng_Việt"
     footer:
-      contact: "liên lạc"
-      info: "Thông tin"
+      contact: "Thông tin "
+      info: "liên lạc"
+      address: "Địa chỉ: Hoài Đức, Hà Nội, Việt Nam"
+      phone: "Di động: 0164.806.2543"
+      email: "Hòm thư: tdtrung5893@gmail.com"
   products:
     show:
       add: "Thêm vào giỏ hàng"
       description: "MÔ TẢ"
-      pót: "Đăng"
+      post: "Đăng"
       products: "tương tự"
       related: "Sản phẩm"
       review: "ĐÁNH GIÁ"
@@ -159,6 +211,7 @@ vi:
       cart: "Giỏ hàng"
       cart_detail: "Chi tiết giỏ hàng"
       continue: "< Tiếp tục mua hàng"
+      image: "Hình ảnh"
       payment: "Tiến hành thanh toán"
       price: "Đơn giá"
       product: "Sản phẩm"
@@ -167,10 +220,11 @@ vi:
       total: "Thành tiền: "
       vat: "Giá đã bao gồm VAT"
     filters:
-      min: "Gía nhỏ nhất"
-      max: "Gía lớn nhất"
+      min: "Lọc sản phẩm có gía từ"
+      max: "đến"
       not_found_product: "Không có sản phẩm phù hợp"
     login:
+      cancel: "Hủy"
       login: "Đăng nhập"
       not_a_member: "Không phải thành viên?"
       sign_up: "Đăng ký"
@@ -182,23 +236,24 @@ vi:
       or: "hoặc"
       sign_up: "Đăng ký"
     product:
-      add: "Add To Cart"
-      featured: "Featured "
-      hot: "Hot "
-      more_detail: "More Details"
-      our: "Our "
+      add: "Thêm vào giỏ hàng"
+      featured: "Sản phẩm "
+      hot: "Sản phẩm "
+      more_detail: "Xem chi tiết"
       product: "products"
-      usd: "VNĐ"
+    error_messages:
+      error: "errors"
+      the_form_contains: "The form contains"
   static_pages:
     home:
       add: "Thêm vào giỏ hàng"
-      amount: "Total Price"
-      brand: "Thương hiệu"
-      featured: "nổi bật"
-      hot: "bán chạy"
+      amount: "Tổng tiền"
+      featured: "Sản phẩm "
+      hot: "Sản phẩm "
+      load_more: "Xem thêm"
       more_detail: "Xem chi tiết"
-      our: "nổi tiếng"
-      product: "Sản phẩm"
+      hot_product: "Bán chạy"
+      featured_product: "Nổi bật"
   views:
     pagination:
       first: "« Trang đầu"
@@ -209,8 +264,49 @@ vi:
   orders:
     index:
       order_list: "Danh sách đơn hàng"
+      number_order: "Số đơn hàng"
+      date: "Ngày"
+      total: "Tổng tiền"
+      status: "Tình trạng"
     show:
       order_date: "Ngày mua hàng"
       order_detail: "Chi tiết đơn hàng"
       cancel: "Hủy đơn hàng"
       you_sure: "Bạn có chắc chắn muốn hủy đơn hàng này không?"
+  datetime:
+    distance_in_words:
+      half_a_minute: "30 giây"
+      less_than_x_seconds:
+        one:   "chưa tới 1 giây"
+        other: "chưa tới %{count} giây"
+      x_seconds:
+        one:   "1 giây"
+        other: "%{count} giây"
+      less_than_x_minutes:
+        one:   "chưa tới 1 phút"
+        other: "chưa tới %{count} phút"
+      x_minutes:
+        one:   "1 phút"
+        other: "%{count} phút"
+      about_x_hours:
+        one:   "khoảng 1 giờ"
+        other: "khoảng %{count} giờ"
+      x_days:
+        one:   "1 ngày"
+        other: "%{count} ngày"
+      about_x_months:
+        one:   "khoảng 1 tháng"
+        other: "khoảng %{count} tháng"
+      x_months:
+        one:   "1 tháng"
+        other: "%{count} tháng"
+      about_x_years:
+        one:   "khoảng 1 năm"
+        other: "khoảng %{count} năm"
+      over_x_years:
+        one:   "hơn 1 năm"
+        other: "hơn %{count} năm"
+  time:
+    formats:
+      long: "%d tháng %B năm %Y, lúc %H:%M"
+      short: "%d tháng %B, lúc %H:%M"
