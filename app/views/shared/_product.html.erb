@@ -1,18 +1,10 @@
 <div class="col-md-3 col-sm-6 mb-20 slide">
   <div class="products">
-    <div class="rating">
-      <% if user_signed_in? %>
-        <input type="hidden" data-id="<%= product.id %>"
-          data-star="<%= star(product) %>" value="<%= star(product) %>"
-          data-rate-id="<%= product.ratings.nil? ? "" : rate(product) %>"
-          class="rating"
-          data-filled="fa fa-star fa-1x" data-empty="fa fa-star-o fa-1x" />
-      <% else %>
-        <input type="hidden" data-id="<%= product.id %>" class="rating"
-          data-filled="fa fa-star fa-1x" data-empty="fa fa-star-o fa-1x"
-          value="<%= product.average_rating %>" disabled="disabled" />
-      <% end %>
-    </div>
+    <% if product.created_at.between?(1.week.ago, Time.zone.now) %>
+      <div class="new">
+        New
+      </div>
+    <% end %>
     <% product.promotion_details.each do |i| %>
       <% if Time.zone.today.between?(i.start_date, i.end_date) %>
         <div class="offer">- <%= i.promotion.percent %>%</div>
@@ -24,19 +16,25 @@
     <div class="productname">
       <%= link_to product.name, product_path(product) %>
     </div>
-    <% product.promotion_details.each do |i| %>
-      <% if Time.zone.today.between?(i.start_date, i.end_date) %>
-        <span class="price">
-          <%= format_price sale_price_partial(product, i) %>
-        </span>
-        <span>
-        <h5 class="oldprice"><%= format_price product.price %></h5>
-        </span>
-      <% else %>
-        <span class="price">
-          <%= format_price product.price %>
-        </span>
+    <% if product.promotion_details.present? %>
+      <% product.promotion_details.each do |i| %>
+        <% if Time.zone.today.between?(i.start_date, i.end_date) %>
+          <span class="price">
+            <%= format_price sale_price_partial(product, i) %>
+          </span>
+          <span>
+          <h5 class="oldprice"><%= format_price product.price %></h5>
+          </span>
+        <% else %>
+          <span class="price">
+            <%= format_price product.price %>
+          </span>
+        <% end %>
       <% end %>
+    <% else %>
+      <span class="price">
+        <%= format_price product.price %>
+      </span>
     <% end %>
     <div class="button_group">
       <%= button_to t(".add"), carts_path(product_id: product.id),

@@ -1,5 +1,11 @@
 <%= provide :button_text, t(".create") %>
-<div class="container">
-  <h2 class="title mt-30"><%= t ".new_promotion" %></h2>
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="page-header title"><%= t ".new_promotion" %></h2>
+      </div>
+    </div>
+  </div>
   <div class="mb-30"><%= render "form" %></div>
 </div>

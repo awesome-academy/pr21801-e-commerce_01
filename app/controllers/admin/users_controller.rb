@@ -3,9 +3,9 @@ class Admin::UsersController < Admin::ApplicationController
 
   def index
     @q = User.ransack params[:q]
-    @users = @q.result(distinct: true).page(params[:page]).per params[:limit]
+    @users = @q.result(distinct: true)
     respond_to do |format|
-      format.html
+      format.html {@users = @users.page(params[:page]).per params[:limit]}
       format.csv {send_data @users.to_csv, filename:"users-#{Date.today}.csv"}
       format.xls {send_data @users.to_csv(col_sep: "\t")}
     end

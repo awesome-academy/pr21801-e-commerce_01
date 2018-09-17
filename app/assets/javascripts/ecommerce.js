@@ -96,4 +96,10 @@ $(document).on('turbolinks:load', function () {
   $('.input-daterange').datepicker({
     format: 'yyyy-mm-dd'
   });
+
+  $('form').on('click', '.remove_record', function(event) {
+    $(this).prev('input[type=hidden]').val('1');
+    $(this).closest('div.single-promotion').remove();
+    event.preventDefault();
+  });
 });

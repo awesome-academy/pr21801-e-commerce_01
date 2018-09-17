@@ -35,3 +35,6 @@ show_more: 1
 import:
   header: 1
   row: 2
+charts: ["#f60", "#0f0", '#f00']
+top_order: 10
+slide: 3

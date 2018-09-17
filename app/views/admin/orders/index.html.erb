@@ -11,28 +11,40 @@
       <%= link_to t(".excel"), admin_orders_path(format: "xls") %>
     </div>
     <%= search_form_for @search, url: admin_orders_path do |f| %>
-      <div class="input-group col-md-12 mt-30 mb-5">
-        <%= f.label :id_eq, t("admin.orders.show.order_no") %>
-        <%= f.search_field :id_eq %><br/>
-        <%= f.label :user_name_cont, t(".user"), class: "mt-15" %>
-        <%= f.search_field :user_name_cont %>
+      <div class="col-md-12">
+        <div class="input-group mt-30 mb-5">
+          <%= f.label :id_eq, t("admin.orders.show.order_no"), class: "col-md-3 control-label mt-5" %>
+          <div class="col-md-9">
+            <%= f.search_field :id_eq, class: "form-control" %><br/>
+          </div>
+          <%= f.label :user_name_cont, t(".user"), class: "col-md-3 control-label mt-20" %>
+          <div class="col-md-9">
+            <%= f.search_field :user_name_cont, class: "form-control mt-15" %>
+          </div>
+        </div>
+        <div class="input-daterange">
+          <%= f.label :created_at_gteq, t(".from_date"), class: "col-md-2 control-label mt-15" %>
+          <div class="col-md-4">
+            <%= f.text_field :created_at_gteq, class: "form-control datepicker mt-10" %>
+          </div>
+          <%= f.label :created_at_lteq, t(".to_date"), class: "col-md-2 control-label mt-15" %>
+          <div class="col-md-4">
+            <%= f.text_field :created_at_lteq, class: "form-control datepicker mt-10" %>
+          </div>
+        </div>
+        <div class="mt-10">
+          <%= f.label :status_eq, t(".status"), class: "col-md-2 control-label mt-15" %>
+          <div class="col-md-3">
+            <%= f.select :status_eq, Order.statuses, {include_blank: true}, class: "form-control mt-10" %>
+          </div>
+        </div>
+        <%= button_tag type: "submit", class: "btn btn-info mt-10" do %>
+          <i class="fa fa-search"></i>
+          <%= t ".filter" %>
+        <% end %><br/>
       </div>
-      <div class="input-daterange">
-        <%= f.label :created_at_gteq, t(".from_date") %>
-        <%= f.text_field :created_at_gteq, class: "datepicker" %>
-        <%= f.label :created_at_lteq, t(".to_date") %>
-        <%= f.text_field :created_at_lteq, class: "datepicker" %>
-      </div>
-      <div class="mt-10">
-        <%= f.label :status_eq, t(".status") %>
-        <%= f.select :status_eq, Order.statuses, {include_blank: true} %>
-      </div>
-      <%= button_tag type: "submit", class: "btn btn-default mt-10" do %>
-        <i class="fa fa-search"></i>
-        <%= t ".filter" %>
-      <% end %><br/>
-      <div class="text-center">
-        <div class="display-category"><%= t "admin.categories.index.display_category" %></div>
+      <div class="col-md-12 text-center mt-20">
+        <div class="display-category"><%= t "admin.categories.index.display" %></div>
         <%= select_tag :limit, options_from_collection_for_select(
           Settings.show_limit, :second, :second, selected: params[:limit] ||
           Settings.show_limit.show_15), id: "show-limit"%>

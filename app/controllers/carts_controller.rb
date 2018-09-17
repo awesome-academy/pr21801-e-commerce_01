@@ -13,8 +13,14 @@ class CartsController < ApplicationController
     unless session[:order].present?
       session[:order] = []
     end
+    @product.promotion_details.each do |i|
+      if Time.zone.today.between?(i.start_date, i.end_date)
+        @percent = i.promotion.percent
+      end
+    end
+    @price = sale_price_show(@product, @percent)
     @item = {"image_url": @product.images.first.image_url.url,
-      "product_id": @product.id, "name": @product.name, "price": @product.price,
+      "product_id": @product.id, "name": @product.name, "price": @price,
       "quantity": Settings.order_details.quantity.default}
 
     @item_index = session[:order].find_index {|n| n["product_id"] == @product.id}

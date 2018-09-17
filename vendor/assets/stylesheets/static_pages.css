@@ -812,12 +812,13 @@ ul.dropdown-menu > li > a:hover {
 }
 
 .search-input {
+  width: 350px;
   position: absolute;
   top: 35px;
   right: 0;
   outline: none;
   background: #fff;
-  width: 220px;
+  width: 350px;
   height: 36px;
   margin: 0;
   z-index: 1000;
@@ -1325,6 +1326,19 @@ ul.dropdown-menu > li > a:hover {
 .rating {
   color: #f7544a;
   padding: 5px;
+}
+
+.new {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  z-index: 99;
+  padding: 10px;
+  font-size: 18px;
+  color: #fff;
+  background: #f7544a;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .offer {

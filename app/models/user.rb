@@ -12,7 +12,8 @@ class User < ApplicationRecord
   validates_presence_of :phone
   validates_presence_of :address
 
-  scope :new_user, -> time{where("created_at > ?", "#{time}")}
+  scope :new_user, -> (day_ago, time){where("created_at BETWEEN ? AND ?",
+    "#{day_ago}", "#{time}")}
 
   def self.from_omniauth access_token
     data = access_token.info
