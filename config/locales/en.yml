@@ -17,6 +17,7 @@ en:
   delete_success: "Delete Successful!"
   delete_warning: "Can't delete because exist of product in category"
   image_deleted: "Image deleted!"
+  import_success: "Product imported"
   product_created: "Product created!"
   product_deleted: "Product deleted!"
   product_updated: "Product updated!"
@@ -28,28 +29,19 @@ en:
 
   admin:
     categories:
-      products:
-        delete: "Delete"
+      category:
         description: "Description"
-        edit: "Edit"
-        images: "Images"
-        name: "Product name"
-        price: "Price"
-        product_list: "Product list"
-        usd: "$"
-        you_sure: "You sure?"
-      new:
-        new_category: "New Category"
-        create: "Create"
+        status: "Status"
+        delete: "Delete Category"
+      edit:
+        edit_category: "Edit Category"
+        update: "Update"
       form:
         category: "Select Category"
         category_description: "Category description:"
         category_name: "Category name:"
         status: "Status"
         none: "None"
-      edit:
-        edit_category: "Edit Category"
-        update: "Update"
       index:
         list: List Category
         not_found_categories: "Not found categories"
@@ -61,16 +53,25 @@ en:
         name: "Name"
         parent_category: "Parent Category"
         search: "Search"
+      new:
+        new_category: "New Category"
+        create: "Create"
+      products:
+        delete: "Delete"
+        description: "Description"
+        edit: "Edit"
+        images: "Images"
+        name: "Product name"
+        price: "Price"
+        product_list: "Product list"
+        usd: "$"
+        you_sure: "You sure?"
       show:
         add_product: "Add product"
         delete: "Delete Category"
         edit: "Edit name category"
         new: "Add new category"
         sub: "Submit"
-      category:
-        description: "Description"
-        status: "Status"
-        delete: "Delete Category"
     images:
       form:
         product_image: "Product image"
@@ -90,15 +91,21 @@ en:
         update: "Update"
       index:
         add_product: "Add product"
+        average_rating: "Average Ratings"
+        btn_import: "Import"
         category: "Category"
+        csv: "CSV"
         delete: "Delete"
-        description: "Description"
-        edit: "Edit"
+        download: "Download:"
+        excel: "Excel"
         images: "Images"
+        import: "Import from csv, excel..."
+        likes: "Likes"
         name: "Product name"
+        or: "Or"
         price: "Price"
         product_list: "Product list"
-        usd: "$"
+        sort: "Sort:"
         you_sure: "You sure?"
       new:
         add_product: "Add product"
@@ -113,40 +120,6 @@ en:
         name_or_email_cont: "Name or email contains..."
         user_list: "User list"
         you_sure: "You sure?"
-  categories:
-    new:
-      create: "Create"
-      new_category: "New Category"
-    form:
-      category: "Select Category"
-      category_description: "Category description:"
-      category_name: "Category name:"
-      none: "None"
-      status: "Status"
-    edit:
-      edit_category: "Edit Category"
-      update: "Update"
-    index:
-      action: "Action"
-      delete: "Delete"
-      details: "Details"
-      list: List Category
-      name: "Name"
-      not_found_categories: "Not found categories"
-      parent_category: "Parent Category"
-      search: "Search"
-      search_user: "Search"
-      sure: "Are you sure?"
-    show:
-      del_continue: "Delete Category: "
-      delete: "Delete Category"
-      edit: "Edit name category"
-      new: "Add new category"
-      sel_cate: "Select orther Category"
-      sub: "Submit"
-    category:
-      description: "Description"
-      status: "Status"
   comments:
     comment:
       are_you_sure: "Are you sure?"
@@ -160,44 +133,46 @@ en:
     create:
       post: "Post"
   devise:
+    failure:
+      user:
+        unauthenticated: "You must be signed in to system to continue."
     registrations:
       edit:
         are_you_sure: "Are you sure?"
         back: "Back"
         cancel_my_account: "Cancel my account"
         characters_minimum: "characters minimum"
+        current_pwd: "Current password"
         currently_waiting_confirmation: "Currently waiting confirmation:"
         edit: "Edit"
         leave_blank_if_you_dont_want_to_change_it: "leave blank if you don't want to change it"
         only_required_if_you_want_to_change_password: "only required if you want to change password"
-        update: "Update"
-        unhappy: "Unhappy?"
+        pwd_confirm: "Password confirmation"
         signup: "Sign up"
-      index:
-        list: List Category
-        not_found_categories: "Not found categories"
-        details: "Details"
-        delete: "Delete"
-        sure: "Are you sure?"
-        action: "Action"
-        search_user: "Search"
+        unhappy: "Unhappy?"
+        update: "Update"
+    sessions:
+      new:
         name: "Name"
-        parent_category: "Parent Category"
-        search: "Search"
-        display_category: "Select the number of categories you want to display:"
-      show:
-        sub: "Submit"
-        delete: "Delete Category"
-        new: "Add new category"
-        edit: "Edit name category"
-      category:
-        description: "Description"
-        status: "Status"
-        delete: "Delete Category"
+        password: "Password"
+        remember: "Remember me"
+    shared:
+      links:
+        signin_with: "Sign in with "
+  carts:
+    create:
+      add_success: "You just add new product to Cart"
+    index:
+      cart: "Cart"
+      cart_review: "Cart Review"
+      cart_empty: "There are no products in your shopping carts"
+      continue_shopping: "Continue shopping"
+      home: "Home"
   layouts:
     header:
       address: "Handico Tower, Pham Hung, Me Tri, Nam Tu Liem, Ha Noi"
       checkout: "CheckOut"
+      english: "English"
       home: "Home"
       hotline: "0164.806.2543"
       login: "Login"
@@ -211,9 +186,13 @@ en:
       signup: "Register"
       total: "Total "
       user_list: "User list"
+      vietnam: "Vietnamese"
     footer:
       contact: "Contact "
       info: "info"
+      address: "Address: Hoai Duc, Hanoi , Vietnam"
+      phone: "Call Us : 0164.806.2543"
+      email: "Email : tdtrung5893@gmail.com"
   products:
     show:
       add: "Add to Cart"
@@ -228,7 +207,7 @@ en:
       cart: "Cart"
       cart_detail: "Cart details"
       continue: "< Continue shopping"
-      image: "image"
+      image: "Image"
       payment: "Checkout"
       price: "Unit Price"
       product: "Product"
@@ -237,10 +216,11 @@ en:
       total: "Total: "
       vat: "Our prices include VAT"
     filters:
-      min: "Min price"
-      max: "Max price"
+      min: "Filter product have price from"
+      max: "to"
       not_found_product: "Not found product"
     login:
+      cancel: "Cancel"
       login: "Login"
       not_a_member: "Not a member?"
       sign_up: "Sign up"
@@ -256,9 +236,7 @@ en:
       featured: "Featured "
       hot: "Hot "
       more_detail: "More Details"
-      our: "Our "
       product: "products"
-      usd: "$"
     error_messages:
       error: "errors"
       the_form_contains: "The form contains"
@@ -266,12 +244,12 @@ en:
     home:
       add: "Add To Cart"
       amount: "Total Price"
-      brand: "Brand"
       featured: "Featured "
       hot: "Hot "
+      load_more: "Load more"
       more_detail: "More Detail"
-      our: "Our "
-      product: "Product"
+      hot_product: "Product"
+      featured_product: "Product"
   views:
     pagination:
       first: "« FIRST"
@@ -279,17 +257,13 @@ en:
       previous: "‹ PREV"
       next: "NEXT ›"
       truncate: "…"
-  carts:
-    create:
-      add_success: "You just add new product to Cart"
-    index:
-      cart: "Cart"
-      cart_review: "Cart Review"
-      cart_empty: "There are no products in your shopping carts"
-      continue_shopping: "Continue shopping"
   orders:
     index:
       order_list: "Order List"
+      number_order: "Number order"
+      date: "Date"
+      total: "Total"
+      status: "Status"
     show:
       order_date: "Order date"
       order_detail: "Oder Details"

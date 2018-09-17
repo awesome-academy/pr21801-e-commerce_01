@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :load_category
   before_action :load_cart
+  before_action :set_locale
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
@@ -40,5 +41,15 @@ class ApplicationController < ActionController::Base
       current_order
       total_cart
     end
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options
+    {locale: I18n.locale}
   end
 end

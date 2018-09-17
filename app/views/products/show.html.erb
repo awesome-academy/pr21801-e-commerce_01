@@ -35,7 +35,7 @@
               </p>
               <hr class="border">
               <div class="price">
-                Price :
+                <%= t "layouts.header.price" %>
                 <span class="new_price">
                   <%= format_price @product.price %>
                 </span>
@@ -48,28 +48,17 @@
               </div>
               <hr class="border">
               <div class="wided">
-                <div class="button_group">
+                <div class="qty">
                   <%= button_to t(".add"), carts_path(product_id: @product.id),
                     method: :post, remote: true, class: "button add-cart" %>
-                  <button class="button compare">
-                    <i class="fa fa-exchange">
-                    </i>
-                  </button>
                   <div id="like_form_<%= @product.id %>" class="like_form">
                     <%= render "shared/like_form", product: @product %>
                   </div>
-                  <button class="button favorite">
-                    <i class="fa fa-envelope-o">
-                    </i>
-                  </button>
                 </div>
-              </div>
-              <div class="clearfix">
-              </div>
-              <hr class="border">
-              <div class="pull-right">
-                <%= social_share_button_tag(@product.name,
-                  allow_sites: %w(twitter pinterest reddit)) %>
+                <div class="button_group">
+                  <%= social_share_button_tag(@product.name,
+                    allow_sites: %w(twitter pinterest reddit)) %>
+                </div>
               </div>
             </div>
           </div>
