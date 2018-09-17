@@ -15,7 +15,7 @@ if (<%= @item_index.present? %>) {
     <strong class="primary-color price-item-<%= @item[:product_id] %>">\
     <%= format_price @item[:price] %>\
     </strong></td><td class="text-center"><%= link_to cart_path(@item[:product_id]),\
-    method: :delete, remote: true, data: {confirm: t("categories.index.sure")},\
+    method: :delete, remote: true, data: {confirm: t("admin.categories.index.sure")},\
     class: "remove-item-#{@item[:product_id]}" do %><i class="fa fa-close"></i><% end %></td></tr>');
 }
 $('.total_price').html('<%= format_price @total_price %>');

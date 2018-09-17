@@ -8,7 +8,7 @@
     <section class="panel">
       <div class="nav search-row text-center">
         <%= search_form_for @search, url: admin_categories_path do |f|%>
-          <div class="display-category"><%= t ".display_category" %></div>
+          <div class="display-category"><%= t ".display" %></div>
           <%= select_tag :limit, options_from_collection_for_select(
             Settings.show_limit, :second, :second, selected: params[:limit] ||
               Settings.show_limit.show_15), id: "show-limit"%>

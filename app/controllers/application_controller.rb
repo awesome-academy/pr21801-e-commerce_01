@@ -19,7 +19,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def load_category
-    @all_categories = Category.get_category
+    @all_categories = Category.all_category
+    @main_categories = Category.main_category
+    @other_categories = Category.other_category
   end
 
   def configure_permitted_parameters

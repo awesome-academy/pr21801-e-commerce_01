@@ -54,7 +54,7 @@
             <% end %>
           </div>
         </td>
-        <td class="col-md-2"><%= link_to product.name, product_path(product) %></td>
+        <td class="col-md-2"><%= link_to product.name, admin_product_path(product) %></td>
         <td><%= product.category_name %></td>
         <td class="text-center">
           <input type="hidden" data-id="<%= product.id %>" class="rating"

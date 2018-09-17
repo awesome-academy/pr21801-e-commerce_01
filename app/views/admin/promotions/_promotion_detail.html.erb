@@ -1,11 +1,13 @@
-<div class="form-inline col-md-offset-2 col-md-10 mb-20">
+<div class="col-md-offset-2 col-md-10 mb-20 single-promotion">
   <div class="form-group">
     <%= f.input :product_id, collection: @products, label: t(".product") %>
-  </div> -
-  <div class="form-group">
+    <%= f.input :_destroy, as: :hidden %>
+    <%= f.label t("shared.cart.remove"), class: "remove_record" %>
+  </div>
+  <div class="form-group ml-30">
     <%= f.input :start_date, as: :date, label: t(".start_date") %>
-  </div> -
-  <div class="form-group">
+  </div>
+  <div class="form-group ml-30">
     <%= f.input :end_date, as: :date, label: t(".end_date") %>
   </div>
 </div>

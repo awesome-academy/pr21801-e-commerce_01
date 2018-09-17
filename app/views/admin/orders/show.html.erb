@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
-        <h2 class="page-header title"><%= t "orders.show.order_details" %></h2>
+        <h2 class="page-header title"><%= t "orders.show.order_detail" %></h2>
       </div>
     </div>
 
@@ -41,6 +41,30 @@
           <% end %>
         </tbody>
       </table>
+      <% if @order.pending? %>
+        <div class="col-md-12 mt-5">
+          <div class="col-md-3"><%= t ".cancel" %></div>
+          <div class="col-md-9">
+            <%= form_for @order do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :status, value: :canceled %>
+              <%= f.submit t("orders.show.cancel"),
+                data: {confirm: t("orders.show.you_sure")}, class: "btn btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-12 mt-10">
+          <div class="col-md-3"><%= t ".confirm" %></div>
+          <div class="col-md-9">
+            <%= form_for @order do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :status, value: :delivered %>
+              <%= f.submit t(".delivered"),
+                data: {confirm: t(".confirm")}, class: "btn btn-success" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
       <div class="modal-footer">
         <h3 class="payment"><%= t "shared.cart.total" %>
           <span class="total_price"><%= format_price @order.total %></span>

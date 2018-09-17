@@ -1,12 +1,14 @@
-<div class="container">
-  <div class="row mt-5">
-    <h3 class="col-md-6">
-      <%= t ".promotions" %>
-    </h3>
-    <div class="col-md-6 text-right">
-      <%= link_to t(".new_promotion"), new_admin_promotion_path,
-        class: "btn btn-success" %>
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="page-header title"><%= t ".promotions" %></h2>
+      </div>
     </div>
+  </div>
+  <div class="text-center">
+    <%= link_to t(".new_promotion"), new_admin_promotion_path,
+      class: "btn btn-success" %>
   </div>
   <hr>
   <div class="text-center">
@@ -19,6 +21,7 @@
         <th><%= t ".promotion" %></th>
         <th><%= t ".description" %></th>
         <th><%= t ".sale_percent" %></th>
+        <th><%= t "admin.categories.form.status" %></th>
         <th><em class="fa fa-cog"></em></th>
       </tr>
     </thead>
@@ -28,6 +31,7 @@
           <td><%= promotion.id %></td>
           <td><%= promotion.content %><br></td>
           <td><%= promotion.percent %>%</td>
+          <td><%= status_promotion promotion %></td>
           <td>
             <%= link_to t(".edit"), edit_admin_promotion_path(promotion),
               class: "btn btn-info btn-sm" %>
@@ -37,7 +41,6 @@
     </tbody>
   </table>
   <div class="text-center">
-    <%= page_entries_info @promotions %><br>
     <%= paginate @promotions %>
   </div>
 </div>

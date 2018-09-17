@@ -27,6 +27,7 @@ class Products::LikesController < ApplicationController
   private
 
   def set_product
-    redirect_to root_url unless @product = Product.find_by(id: params[:product_id])
+    redirect_to root_url unless @product = Product.friendly
+      .find_by_slug(params[:product_id])
   end
 end

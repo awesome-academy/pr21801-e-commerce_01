@@ -1,1 +1,2 @@
 $('#like_form_<%= @product.id %>').html('<%= j render partial: "shared/like_form", locals: { product: @product } %>');
+$('.likes_count').html(parseInt($('.likes_count').html()) + 1);

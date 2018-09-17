@@ -1,33 +1,51 @@
 <%= simple_form_for [:admin, @product], multipart: true do |f| %>
   <%= render "shared/error_messages", object: f.object %>
-  <div class="form-group">
-    <div class="col-md-offset-4 col-md-6 mt-10 mb-30">
-      <%= f.input :category_id, label: t(".category"), collection: options,
-        selected: params[:category_id], include_blank: t(".none") %>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+      <div class="form-group">
+        <div class="mt-10 mb-30">
+          <%= f.input :category_id, label: t(".category"), collection: options,
+            selected: params[:category_id], include_blank: t(".none") %>
+        </div>
+      </div>
+      <div class="form-group form_product">
+        <%= f.input :name, label: t(".product_name") %>
+      </div>
+      <div class="form-group">
+        <%= f.input :price, label: t(".product_price") %>
+      </div>
+      <div class="form-group form_product">
+        <%= f.input :description, label: t(".product_description") %>
+      </div>
+      <div class="form-group">
+        <%= f.input :image_url, as: :file,
+          :input_html => {
+            :multiple => true, name: "product[images_attributes][][image_url]"
+          },
+          label: t(".product_images") %>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-md-offset-4 col-md-6 mb-20">
-      <%= f.input :name, label: t(".product_name") %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-md-offset-4 col-md-6 mb-20">
-      <%= f.input :price, label: t(".product_price") %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-md-offset-4 col-md-6 mb-20">
-      <%= f.input :description, label: t(".product_description") %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-md-offset-4 col-md-6 mb-20">
-      <%= f.input :image_url, as: :file,
-        :input_html => {
-          :multiple => true, name: "product[images_attributes][][image_url]"
-        },
-        label: t(".product_images") %>
+    <div class="col-md-offset-1 col-md-4">
+      <%= f.simple_fields_for :feature do |ff| %>
+        <div class="form-group form_product">
+          <%= ff.input :screen, label: t("products.show.screen") %>
+        </div>
+        <div class="form-group form_product">
+          <%= ff.input :camera, label: t("products.show.camera") %>
+        </div>
+        <div class="form-group form_product">
+          <%= ff.input :cpu, label: t("products.show.cpu") %>
+        </div>
+        <div class="form-group form_product">
+          <%= ff.input :ram, label: t("products.show.ram") %>
+        </div>
+        <div class="form-group form_product">
+          <%= ff.input :rom, label: t("products.show.rom") %>
+        </div>
+        <div class="form-group form_product">
+          <%= ff.input :pin, label: t("products.show.pin") %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="form-group">

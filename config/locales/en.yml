@@ -5,7 +5,7 @@ en:
   buy_product_failed: "An error has occurred while buy product!"
   buy_product_success: "You have just bought success some product"
   can_not_delete_comment: "Can not delete comment."
-  cancel_failed: "An error has occurred while canceling!"
+  cancel_failed: "An error has occurred!"
   cancel_success: "This order has been cancelled, thank you!"
   comment_added: "Your comment was successfully added!"
   comment_deleted: "Comment deleted!"
@@ -31,6 +31,10 @@ en:
   update_success: "Update Successful!"
   user_could_not_be_deleted: "User could not be deleted."
   user_deleted: "User deleted."
+  comming_soon: "Comming soon"
+  going_on: "Going on"
+  ended: "Ended"
+  delivered_success: "Change status to delivered success"
 
   admin:
     categories:
@@ -61,6 +65,7 @@ en:
         name: "Name"
         parent_category: "Parent Category"
         search: "Search"
+        display: "Display"
       new:
         new_category: "New Category"
         create: "Create"
@@ -125,6 +130,9 @@ en:
       new:
         add_product: "Add product"
         create: "Create"
+      show:
+        people_ratings: "people ratings"
+        review: "reviews"
     promotions:
       form:
         add_product: "Add product"
@@ -169,6 +177,9 @@ en:
       show:
         order_no: "Order No."
         name: "Name product"
+        delivered: "Delivered"
+        cancel: "Cancel the order"
+        confirm: "Confirm paid this order"
     dashboards:
       index:
         new_order: "New Order"
@@ -176,6 +187,9 @@ en:
         view_details: "View Details"
         popular_product: "Most popular product"
         like_most: "Most favourite product"
+        number_user: "Total number of users"
+        number_product: "Total number of products"
+        number_order: "Total number of orders"
     charts:
       index:
         charts: "Charts"
@@ -183,6 +197,7 @@ en:
         revenue_by_month: "Revenue by month"
         rating_product: "Average rating by product"
         most_order: "Top 10 user has the most orders"
+        order_status: "Status of orders"
   comments:
     comment:
       are_you_sure: "Are you sure?"
@@ -239,6 +254,7 @@ en:
         charts: "Charts"
         dashboard: "Dashboard"
         product: "Products"
+        promotion: "Promotions"
         settings: "Settings"
         table: "Tables"
         user: "Users"
@@ -262,6 +278,7 @@ en:
       total: "Total "
       user_list: "User list"
       vietnam: "Vietnamese"
+      other_category: "Other category"
     footer:
       contact: "Contact "
       info: "info"
@@ -276,6 +293,15 @@ en:
       products: "Products"
       related: "Related"
       review: "REVIEW"
+      basic_props: "Properties basic"
+      screen: "Screen"
+      camera: "Camera"
+      cpu: "CPU"
+      ram: "RAM"
+      rom: "ROM"
+      pin: "Pin"
+      promotion: "Promotion: "
+      likes: "people likes this product"
   shared:
     cart:
       amount: "Total Price"

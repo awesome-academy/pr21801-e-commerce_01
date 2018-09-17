@@ -31,6 +31,10 @@ vi:
   update_success: "Cập nhật thành công!"
   user_could_not_be_deleted: "Không thể xóa người dùng."
   user_deleted: "Người dùng đã bị xóa."
+  comming_soon: "Sắp diễn ra"
+  going_on: "Đang diễn ra"
+  ended: "Đã kết thúc"
+  delivered_success: "Đã thay đổi thành công sang trạng thái Delivered"
 
   admin:
     categories:
@@ -62,6 +66,7 @@ vi:
         search: "Tìm"
         search_user: "Tìm kiếm"
         sure: "Bạn chắc chứ?"
+        display: "Hiển thị"
       new:
         new_category: "Tạo mới danh mục"
         create: "Tạo mới"
@@ -123,6 +128,9 @@ vi:
       new:
         add_product: "Thêm sản phẩm"
         create: "Tạo"
+      show:
+        people_ratings: "lượt đánh gía"
+        review: "nhận xét"
     promotions:
       form:
         add_product: "Thêm sản phẩm"
@@ -167,6 +175,9 @@ vi:
       show:
         order_no: "Đơn hàng số"
         name: "Tên sản phẩm"
+        delivered: "Xác nhận"
+        cancel: "Tiến hành hủy đơn hàng"
+        confirm: "Xác nhận đơn hàng này đã thanh toán"
     dashboards:
       index:
         new_order: "Đơn hàng mới"
@@ -174,6 +185,9 @@ vi:
         view_details: "Xem chi tiết"
         popular_product: "Sản phẩm được mua nhiều nhất"
         like_most: "Sản phẩm được yêu thích nhất"
+        number_user: "Tổng số lượng người dùng"
+        number_product: "Tổng số lượng sản phẩm"
+        number_order: "Tổng số lượng đơn hàng"
     charts:
       index:
         charts: "Biểu đồ"
@@ -181,6 +195,7 @@ vi:
         revenue_by_month: "Doanh thu theo tháng"
         rating_product: "Đánh gía trung bình theo sản phẩm"
         most_order: "Top 10 người dùng có nhiều đơn hàng nhất"
+        order_status: "Trạng thái các đơn hàng"
   comments:
     comment:
       are_you_sure: "Bạn đã chắc chắn?"
@@ -246,6 +261,7 @@ vi:
         charts: "Biểu đồ"
         dashboard: "Tổng quan"
         product: "Sản phẩm"
+        promotion: "Chương trình khuyến mãi"
         settings: "Tùy chọn"
         table: "Bảng dữ liệu"
         user: "Người dùng"
@@ -269,6 +285,7 @@ vi:
       total: "Tổng tiền"
       user_list: "Danh sách người dùng"
       vietnam: "Tiếng_Việt"
+      other_category: "Hãng khác"
     footer:
       contact: "Thông tin "
       info: "liên lạc"
@@ -283,6 +300,15 @@ vi:
       products: "tương tự"
       related: "Sản phẩm"
       review: "ĐÁNH GIÁ"
+      basic_props: "Thông số cơ bản"
+      screen: "Màn hình"
+      camera: "Camera"
+      cpu: "CPU"
+      ram: "RAM"
+      rom: "Bộ nhớ trong"
+      pin: "Pin"
+      promotion: "Chương trình khuyến mãi: "
+      likes: "người thích sản phẩm này"
   shared:
     cart:
       amount: "Thành tiền"
@@ -423,3 +449,27 @@ vi:
   time:
     formats:
       date_month_year: "%e %m %Y, lúc %H:%M"
+  date:
+    month_names:
+      -
+      - Tháng 1
+      - Tháng 2
+      - Tháng 3
+      - Tháng 4
+      - Tháng 5
+      - Tháng 6
+      - Tháng 7
+      - Tháng 8
+      - Tháng 9
+      - Tháng 10
+      - Tháng 11
+      - Tháng 12
+    order:
+      - :year
+      - :month
+      - :day
+  social_share_button:
+    share_to: "Chia sẻ qua %{name}"
+    twitter: "Twitter"
+    pinterest: "Pinterest"
+    reddit: "Reddit"
