@@ -38,6 +38,9 @@ en:
         description: "Description"
         status: "Status"
         delete: "Delete Category"
+        parent_category: "Parent category"
+        name: "Name"
+        edit: "Edit"
       edit:
         edit_category: "Edit Category"
         update: "Update"
@@ -109,6 +112,7 @@ en:
         likes: "Likes"
         name: "Product name"
         or: "Or"
+        order: "Order"
         price: "Price"
         product_list: "Product list"
         product_name: "Product name"
@@ -116,8 +120,8 @@ en:
         you_sure: "You sure?"
         ascending: "ascending"
         descending: "descending"
-        sort_by: "Sort by"
-        filter: "Filter"
+        sort: "Sort by"
+        edit: "Edit"
       new:
         add_product: "Add product"
         create: "Create"
@@ -153,6 +157,32 @@ en:
         name_or_email_cont: "Name or email contains..."
         user_list: "User list"
         you_sure: "You sure?"
+        created_at: "Created at"
+    orders:
+      index:
+        order: "Order"
+        user: "User"
+        from_date: "From date"
+        to_date: "To date"
+        status: "Select status"
+        filter: "Filter"
+      show:
+        order_no: "Order No."
+        name: "Name product"
+    dashboards:
+      index:
+        new_order: "New Order"
+        new_user: "New User"
+        view_details: "View Details"
+        popular_product: "Most popular product"
+        like_most: "Most favourite product"
+    charts:
+      index:
+        charts: "Charts"
+        revenue_by_week: "Revenue by week"
+        revenue_by_month: "Revenue by month"
+        rating_product: "Average rating by product"
+        most_order: "Top 10 user has the most orders"
   comments:
     comment:
       are_you_sure: "Are you sure?"
@@ -276,6 +306,10 @@ en:
       login_with_google: "login with Google"
       or: "or"
       sign_up: "Sign up"
+      phone: "Phone"
+      address: "Address"
+      password: "Password"
+      password_confirm: "Password Confirmation"
     product:
       add: "Add To Cart"
       featured: "Featured "
@@ -309,6 +343,7 @@ en:
       date: "Date"
       total: "Total"
       status: "Status"
+      user: "User"
     show:
       order_date: "Order date"
       order_detail: "Oder Details"
@@ -322,3 +357,6 @@ en:
       message_for_customer: "Products you have just bought, thank you!"
       signature: "--93 Mobile Store--"
       quantity: "Quantity: "
+  time:
+    formats:
+      date_month_year: "%e %m %Y, at %H:%M"

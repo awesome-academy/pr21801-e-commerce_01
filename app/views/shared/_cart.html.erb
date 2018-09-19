@@ -37,7 +37,7 @@
                 </td>
                 <td class="text-center">
                   <%= link_to cart_path(cart_item["product_id"]), method: :delete,
-                    remote: true, data: {confirm: t("categories.index.sure")},
+                    remote: true, data: {confirm: t("admin.categories.index.sure")},
                       class: "remove-item-#{cart_item['product_id']}" do %>
                     <i class="fa fa-close"></i>
                   <% end %>

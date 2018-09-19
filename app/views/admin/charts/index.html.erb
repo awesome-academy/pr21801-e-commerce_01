@@ -1,0 +1,61 @@
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="page-header title"><%= t ".charts" %></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t ".revenue_by_week" %>
+      </div>
+      <div class="panel-body">
+        <div class="flot-chart">
+          <%= line_chart  @revenue_by_week, thousands: "," %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t ".revenue_by_month" %>
+      </div>
+      <div class="panel-body">
+        <div class="flot-chart">
+          <%= area_chart @revenue_by_month, thousands: "," %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t ".rating_product" %>
+      </div>
+      <div class="panel-body">
+        <div class="flot-chart">
+          <%= pie_chart @rating_product %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t ".most_order" %>
+      </div>
+      <div class="panel-body">
+        <div class="flot-chart">
+          <%= column_chart @order_by_user %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

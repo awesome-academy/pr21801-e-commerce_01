@@ -75,6 +75,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
+    chartkick (3.0.1)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     closure_tree (6.6.0)
@@ -140,9 +141,13 @@ GEM
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    groupdate (4.0.1)
+      activesupport (>= 4.2)
     hashie (3.5.7)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
+    i18n-js (3.0.11)
+      i18n (>= 0.6.6, < 2)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -310,6 +315,7 @@ DEPENDENCIES
   cancancan (~> 2.0)
   capybara (~> 2.13)
   carrierwave!
+  chartkick
   closure_tree
   coffee-rails (~> 4.2)
   config
@@ -317,6 +323,8 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-rails (~> 4.7, >= 4.7.0.4)
+  groupdate
+  i18n-js
   jbuilder (~> 2.5)
   jquery-rails
   jquery-slick-rails

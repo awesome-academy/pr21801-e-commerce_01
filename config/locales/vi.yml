@@ -38,11 +38,14 @@ vi:
         description: "Mô tả"
         status: "Trạng thái"
         delete: "Xóa danh mục"
+        parent_category: "Danh mục cha"
+        name: "Tên danh mục"
+        edit: "Chỉnh sửa"
       edit:
         edit_category: "Chỉnh sửa danh mục"
         update: "Cập nhật"
       form:
-        category: "Chọn danh mục"
+        category: "Chọn danh mục cha"
         category_description: "Mô tả danh mục:"
         category_name: "Tên danh mục:"
         status: "Trạng thái"
@@ -110,11 +113,13 @@ vi:
         likes: "Lượt thích"
         name: "Tên sản phẩm"
         or: "Hoặc"
+        order: "Số lượng bán ra"
         price: "Gía"
         product_list: "Danh sách các sản phẩm"
         product_name: "Tên sản phẩm"
         sort: "Sắp xếp:"
         you_sure: "Bạn chắc chứ?"
+        edit: "Sửa"
       new:
         add_product: "Thêm sản phẩm"
         create: "Tạo"
@@ -150,6 +155,32 @@ vi:
         name_or_email_cont: "Tên hoặc email có chứa..."
         user_list: "Danh sách người dùng"
         you_sure: "Bạn chắc chứ?"
+        created_at: "Ngày tạo"
+    orders:
+      index:
+        order: "Đơn hàng"
+        user: "Người mua hàng"
+        from_date: "Từ ngày"
+        to_date: "Đến ngày"
+        status: "Trạng thái đơn hàng"
+        filter: "Lọc"
+      show:
+        order_no: "Đơn hàng số"
+        name: "Tên sản phẩm"
+    dashboards:
+      index:
+        new_order: "Đơn hàng mới"
+        new_user: "Người dùng mới"
+        view_details: "Xem chi tiết"
+        popular_product: "Sản phẩm được mua nhiều nhất"
+        like_most: "Sản phẩm được yêu thích nhất"
+    charts:
+      index:
+        charts: "Biểu đồ"
+        revenue_by_week: "Doanh thu theo tuần"
+        revenue_by_month: "Doanh thu theo tháng"
+        rating_product: "Đánh gía trung bình theo sản phẩm"
+        most_order: "Top 10 người dùng có nhiều đơn hàng nhất"
   comments:
     comment:
       are_you_sure: "Bạn đã chắc chắn?"
@@ -167,6 +198,7 @@ vi:
       user:
         unauthenticated: "Bạn cần phải đăng nhập trước khi sử dụng chức năng này"
         invalid: "Tên đăng nhập hoặc mật khẩu không đúng"
+        not_found_in_database: "Tài khoản hay mật khẩu không hợp lệ"
     registrations:
       edit:
         are_you_sure: "Bạn chắc chắn chứ?"
@@ -182,6 +214,8 @@ vi:
         signup: "Đăng ký"
         unhappy: "Bạn cảm thấy không hài lòng?"
         update: "Cập nhật"
+      user:
+        signed_up: "Chào mừng bạn đến với 93 Mobile Store"
     sessions:
       new:
         name: "Tên đăng nhập"
@@ -279,6 +313,10 @@ vi:
       login_with_google: "đăng nhập qua Google"
       or: "hoặc"
       sign_up: "Đăng ký"
+      phone: "Số điện thoại"
+      address: "Địa chỉ"
+      password: "Mật khẩu"
+      password_confirm: "Xác nhận mật khẩu"
     product:
       add: "Thêm vào giỏ hàng"
       featured: "Sản phẩm "
@@ -308,10 +346,11 @@ vi:
   orders:
     index:
       order_list: "Danh sách các đơn hàng"
-      number_order: "Số đơn hàng"
+      number_order: "Đơn hàng số"
       date: "Ngày"
       total: "Tổng tiền"
       status: "Tình trạng"
+      user: "Khách hàng"
     show:
       order_date: "Ngày mua hàng"
       order_detail: "Chi tiết đơn hàng"
@@ -363,3 +402,24 @@ vi:
           one: "<b>Tìm thấy 1 %{entry_name} phù hợp!"
           other: "<b>Tìm thấy %{count}</b> %{entry_name} phù hợp"
           zero: "Không có %{entry_name} nào phù hợp!"
+  unauthorized:
+    manage:
+      all: "Bạn không có quyền truy cập vào trang này"
+  errors:
+    messages:
+      not_saved:
+        one: ! "Đã xảy ra 1 lỗi khi lưu người dùng:"
+        other: ! "Đã xảy ra %{count} lỗi khi lưu người dùng:"
+      blank: "không được phép để trống"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "Mật khẩu quá ngắn (ít nhất phải có %{count} ký tự)"
+            password_confirmation:
+              confirmation: "Mật khẩu không trùng nhau"
+  time:
+    formats:
+      date_month_year: "%e %m %Y, lúc %H:%M"

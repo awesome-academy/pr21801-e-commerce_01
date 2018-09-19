@@ -11,13 +11,14 @@ $(document).on('turbolinks:load', function () {
   });
 
   $('.rating-symbol').on('click', function() {
+    var locale = I18n.locale;
     var input = $(this).closest('.rating').find('input:hidden');
     var product_id = input.data('id');
     var rate_id = input.data('rate-id');
     var current_star = input.data('star');
     var star = input.val();
     var rating_method = current_star == 0 ? 'POST' : 'PUT';
-    var rating_url = current_star == 0 ? '/ratings' : '/ratings/' + rate_id;
+    var rating_url = current_star == 0 ? '/' + locale + '/ratings' : '/' + locale + '/ratings/' + rate_id;
     $.ajax({
       url: rating_url,
       method: rating_method,
@@ -39,10 +40,11 @@ $(document).on('turbolinks:load', function () {
   });
 
   $('.cart_table').on('change', '.input', function(){
+    var locale = I18n.locale;
     var quantity = $(this).val();
     var product_id = $(this).data('id');
     $.ajax({
-      url: '/carts/' + product_id,
+      url: '/' + locale + '/carts/' + product_id,
       method: 'PUT',
       data: {quantity: quantity}
     });
@@ -89,5 +91,8 @@ $(document).on('turbolinks:load', function () {
     regexp = new RegExp($(this).data('id'), 'g');
     $('.fields').append($(this).data('fields').replace(regexp, time));
     event.preventDefault();
+
+  $('.input-daterange').datepicker({
+    format: 'yyyy-mm-dd'
   });
 });

@@ -25,6 +25,18 @@
                 class: "form-control" %>
             </div>
             <div class="form-group">
+              <span class="fa fa-phone"></span>
+              <%= f.label :phone, t(".phone") %>:<br/>
+              <%= f.text_field :phone, autocomplete: "phone",
+                class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <span class="fa fa-address-card"></span>
+              <%= f.label :address, t(".address") %>:<br/>
+              <%= f.text_field :address, autocomplete: "address",
+                class: "form-control" %>
+            </div>
+            <div class="form-group">
               <span class="fa fa-eye"></span>
               <%= f.label :password, t("devise.sessions.new.password") %>
               <% if @minimum_password_length %>
@@ -36,6 +48,14 @@
               <%= f.password_field :password, autocomplete: "off",
                 class: "form-control" %>
             </div>
+            <div class="form-group">
+              <span class="fa fa-eye"></span>
+              <%= f.label :password_confirmation,
+                t(".password_confirm") %>
+              <%= f.password_field :password_confirmation, autocomplete: "off",
+                class: "form-control" %>
+            </div>
+
             <%= f.submit t(".sign_up"),
               class: "btn btn-success btn-block" %>
           </form>

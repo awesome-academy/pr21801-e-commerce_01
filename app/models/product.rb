@@ -20,15 +20,13 @@ class Product < ApplicationRecord
   scope :get_product, ->{
     select :id, :name, :price, :description, :average_rating, :category_id
   }
-  scope :like_most, ->{
-    joins(:likes).group("product_id").order("count(user_id) DESC")
-      .limit Settings.product.limit
-  }
+  scope :like_most, ->{order "likes_count DESC"}
   scope :hot_product, ->{
     joins(:order_details).group("product_id").order("sum(quantity) DESC")
       .limit Settings.product.hot
   }
   scope :by_category, -> (category_id){where(id: category_id)}
+  scope :by_average_rating, ->{group(:average_rating).count}
 
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
