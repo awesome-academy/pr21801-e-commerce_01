@@ -3,7 +3,9 @@
     <h2 class="text-center"><%= t ".user_list" %></h2>
     <div class="mb-5">
       <h3><%= t ".export" %></h3>
-      <%= link_to t(".export"), admin_users_path(format: "csv"),
+      <%= link_to t("admin.products.index.csv"), admin_users_path(format: "csv"),
+        class: "btn btn-sm btn-info" %>
+      <%= link_to t("admin.products.index.excel"), admin_users_path(format: "xls"),
         class: "btn btn-sm btn-info" %>
     </div>
     <%= search_form_for @q, url: admin_users_path do |f| %>

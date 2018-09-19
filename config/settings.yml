@@ -13,7 +13,7 @@ show_limit:
 product:
   featured: 12
   hot: 5
-  limit: 10
+  limit: 8
   validates:
     price_maximum: 8
 ratings:
@@ -29,4 +29,7 @@ filters:
   min_default: 0
   max_default: 1000000
   step: 500000
-
+show_more: 1
+import:
+  header: 1
+  row: 2

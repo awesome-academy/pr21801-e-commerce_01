@@ -1,4 +1,3 @@
-<body id="home">
   <div class="clearfix"></div>
   <div class="hom-slider">
     <div class="container">
@@ -82,14 +81,18 @@
           <li>
             <div class="row">
               <% if @products.any? %>
-              <%= render partial: "shared/product", collection: @products %>
-            <% else %>
-              <h2 class="title mt-30"><%= t "shared.filters.not_found_product" %></h2>
-            <% end %>
+                <div class="featured-item">
+                  <%= render partial: "shared/product", collection: @products %>
+                </div>
+                <div class="text-center">
+                  <%= link_to t(".load_more"), root_path(@products, page: @products.current_page + Settings.show_more), id: "load-more-posts", remote: true, class: "btn btn-default" %>
+                </div>
+              <% else %>
+                <h2 class="title mt-30"><%= t "shared.filters.not_found_product" %></h2>
+              <% end %>
             </div>
           </li>
         </ul>
       </div> <!-- end feature-product -->
     </div> <!-- end container(213) -->
   </div> <!-- end container-fullwidth(212) -->
-</body>

@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     controllers: {omniauth_callbacks: "users/omniauth_callbacks",
       registrations: "registrations"}
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
-
     concern :paginatable do
       get "(page/:page)", action: :index, on: :collection, as: ""
     end
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :categories, only: :show
     resources :ratings
-    resources :products, only: :show do
+    resources :products, only: [:index, :show] do
       resources :comments, only: [:create, :destroy]
       resource :like, module: :products
     end
@@ -23,7 +22,9 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :categories, concerns: :paginatable
       resources :images
-      resources :products, concerns: :paginatable
+      resources :products, concerns: :paginatable do
+        collection { post :import }
+      end
       resources :users, concerns: :paginatable
     end
   end

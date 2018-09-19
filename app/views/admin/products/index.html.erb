@@ -1,24 +1,61 @@
 <div class="container_fullwidth">
   <div class="container">
+    <h2 class="title mb-5"><%= t ".product_list" %></h2>
+    <%= link_to t(".add_product"), new_admin_product_path,
+      class: "btn btn-lg btn-success add_product" %>
+    <%= t ".or" %>
+    <button class="import_form btn btn-default"><%= t".import" %></button>
+    <div class="import_product">
+      <%= form_tag import_admin_products_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag t(".btn_import"), class: "btn btn-success" %>
+      <% end %>
+    </div>
+    <div class="export_product">
+      <%= t ".download" %>
+      <%= link_to t(".csv"), admin_products_path(format: "csv") %> |
+      <%= link_to t(".excel"), admin_products_path(format: "xls") %>
+    </div>
+    <%= search_form_for @q, url: admin_products_path do |f| %>
+      <div class="input-group col-md-12 mt-30 mb-5">
+        <%= f.label :name_cont, t(".product_name") %>
+        <%= f.search_field :name_cont %>
+        <br/>
+        <%= f.label :category_name_cont, t(".category_name") %>
+        <%= f.search_field :category_name_cont %>
+      </div>
+      <div class="field">
+        <%= t ".sort" %>
+        <%= f.sort_fields do |s| %>
+          <%= s.sort_select %>
+        <% end %>
+      </div>
+      <%= button_tag type: "submit", class: "btn btn-default" do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+    <% end %>
+    <div class="text-center">
+      <%= paginate @products %><br>
+      <%= page_entries_info @products %>
+    </div>
     <table class="table table-bordered mt-5" >
-      <h3 class="text-center mb-5"><%= t ".product_list" %></h4>
-      <%= link_to t(".add_product"),
-        new_admin_product_path,
-        class: "btn btn-lg btn-success" %>
       <thead>
         <tr class="row bold">
-          <th class="text-center col-md-3"><%= t ".images" %></th>
-          <th class="text-center col-md-2"><%= t ".name" %></th>
-          <th class="text-center col-md-2"><%= t ".category" %></th>
-          <th class="text-center col-md-1"><%= t ".price" %></th>
-          <th class="text-center col-md-2"><em class="fa fa-cog"></em></th>
+          <th class="col-md-1"><%= t ".images" %></th>
+          <th class="col-md-3"><%= sort_link @q, :name, t(".name") %></th>
+          <th><%= sort_link @q, :category_name, t(".category") %></th>
+          <th><%= t ".average_rating" %></th>
+          <th><%= sort_link @q, :likes_count, t(".likes") %></th>
+          <th><%= sort_link @q, :price, t(".price") %></th>
+          <th><%= t(".order") %></th>
+          <th><em class="fa fa-cog"></em></th>
         </tr>
       </thead>
       <tbody>
         <% @products.each do |product| %>
           <tr class="row">
-            <td class="text-center col-md-3">
-              <div class="slick_slide" align="center" style="max-width: 200px; max-height: 200px">
+            <td class="text-center col-md-1">
+              <div class="slick_slide thumbnail_products" align="center">
                 <% product.images.each do |i| %>
                   <div>
                     <div>
@@ -26,17 +63,22 @@
                         method: :delete %>
                     </div>
                     <%= image_tag i.image_url_url,
-                      style: "max-width: 200px; max-height: 200px" %>
+                      class: "thumbnail_products" %>
                   </div>
                 <% end %>
               </div>
             </td>
-            <td class="col-md-2"><%= product.name %></td>
-            <td class="col-md-2"><%= product.category.name %></td>
-            <td class="text-right col-md-2">
-              <%= format_price product.price %>
+            <td class="col-md-3"><%= product.name %></td>
+            <td><%= product.category_name %></td>
+            <td class="text-center">
+              <input type="hidden" data-id="<%= product.id %>" class="rating"
+                  data-filled="fa fa-star fa-1x" data-empty="fa fa-star-o fa-1x"
+                  value="<%= product.average_rating %>" disabled="disabled" />
             </td>
-            <td class="text-center col-md-2">
+            <td class="text-center"><%= product.likes_count %></td>
+            <td class="text-right"><%= format_price product.price %></td>
+            <td class="text-center"><%= count_order product %></td>
+            <td class="text-center">
               <%= link_to t(".edit"), edit_admin_product_path(product,
                 category_id: product.category),
                 class: "btn btn-sm btn-info" %>
@@ -48,5 +90,8 @@
         <% end %>
       </tbody>
     </table>
+    <div class="text-center">
+      <%= paginate @products %><br>
+    </div>
   </div>
 </div>

@@ -7,4 +7,12 @@ module ApplicationHelper
   def order_status order, type
     result = link_to order.status, order_path(order.id), class: type
   end
+
+  def count_order product
+    total_quantity = 0
+    product.order_details.each do |item|
+      total_quantity += item.quantity
+    end
+    total_quantity
+  end
 end

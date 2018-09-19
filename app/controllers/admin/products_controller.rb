@@ -3,7 +3,15 @@ class Admin::ProductsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @products = Product.all
+    @q = Product.all.ransack params[:q]
+    @products = @q.result.includes(:images, :category, :order_details)
+      .page(params[:page]).per(Settings.product.limit)
+    @q.build_sort if @q.sorts.empty?
+    respond_to do |format|
+      format.html
+      format.csv {send_data @products.to_csv, filename:"products-#{Date.today}.csv"}
+      format.xls {send_data @products.to_csv(col_sep: "\t")}
+    end
   end
 
   def new
@@ -42,6 +50,15 @@ class Admin::ProductsController < ApplicationController
       flash[:danger] = t "delete_product_failed"
     end
     redirect_back fallback_location: admin_products_url
+  end
+
+  def import
+    if params[:file].present?
+      Product.import(params[:file])
+      redirect_to admin_products_path, notice: t("import_success")
+    else
+      redirect_to admin_products_path, notice: t("import_failed")
+    end
   end
 
   private

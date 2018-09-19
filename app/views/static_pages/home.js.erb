@@ -1,0 +1,7 @@
+$('.featured-item').append('<%= j render(partial: "shared/product", collection: @products) %>');
+
+<% if @products.last_page? %>
+  $('#load-more-posts').hide();
+<% else %>
+  $('#load-more-posts').attr('href', '<%= root_path(@products, page: (@products.current_page + Settings.show_more)) %>');
+<% end %>
