@@ -1,6 +1,6 @@
 class Admin::ProductsController < Admin::ApplicationController
   before_action :get_product, only: [:edit, :update, :destroy]
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :slug
 
   def index
     @q = Product.all.ransack params[:q]
@@ -65,7 +65,7 @@ class Admin::ProductsController < Admin::ApplicationController
   private
 
   def get_product
-    redirect_to root_url unless @product = Product.find_by(id: params[:id])
+    redirect_to root_url unless @product = Product.friendly.find_by_slug(params[:id])
   end
 
   def product_params

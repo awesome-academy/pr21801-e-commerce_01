@@ -9,16 +9,18 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.name %></td>
-        <td><%= category.parent.name if category.parent.present? %></td>
+        <td><%= link_to category.name, admin_category_path(category) %></td>
+        <td><%= link_to category.parent.name,
+          admin_category_path(category.parent) if category.parent.present? %></td>
         <td align="center">
           <%= link_to t("admin.products.index.add_product"), new_admin_product_path(category_id: category.id), class: "btn btn-info btn-rounded btn-sm" %>
           <%= link_to t("admin.categories.show.new"),
             new_admin_category_path(parent_id: category.id),
               class: "btn btn-success btn-rounded btn-sm my-0" %>
           <%= link_to t(".edit"), edit_admin_category_path(category,
-            parent_id: category.id), class: "btn btn-warning btn-rounded btn-sm my-0" %>
-          <%= link_to t(".delete"), admin_category_path(category.id),
+            parent_id: category.parent_id),
+            class: "btn btn-warning btn-rounded btn-sm my-0" %>
+          <%= link_to t(".delete"), admin_category_path(category),
             method: :delete, data: {confirm: t("admin.categories.index.sure"),
               id: category.id}, class: "btn btn-danger btn-rounded btn-sm
                 my-0 destroy" %>

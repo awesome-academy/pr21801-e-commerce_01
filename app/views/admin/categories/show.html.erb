@@ -30,15 +30,15 @@
             <% end %>
             <li><strong><%= @category.name %></strong></li>
             <p class="new-category">
-              <%= link_to t(".edit"), edit_admin_category_path(parent_id: @category),
-                class: "btn btn-warning btn-rounded btn-sm" %>
+              <%= link_to t(".edit"), edit_admin_category_path(parent_id: @category.parent_id),
+                class: "btn btn-warning btn-rounded btn-sm new-category" %>
             </p>
             <p class="new-category">
               <%= link_to t(".new"), new_admin_category_path(parent_id: @category.id),
                 class: "btn btn-success btn-rounded btn-sm new-category" %>
             </p>
             <p class="new-category">
-              <%= link_to t(".add_product"), new_admin_product_path,
+              <%= link_to t(".add_product"), new_admin_product_path(category_id: @category.id),
                 class: "btn btn-primary btn-rounded btn-sm new-category" %>
             </p>
           </ol>
