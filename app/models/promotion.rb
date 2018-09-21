@@ -1,5 +1,5 @@
 class Promotion < ApplicationRecord
-  has_many :promotion_details
+  has_many :promotion_details, dependent: :destroy
 
   accepts_nested_attributes_for :promotion_details, allow_destroy: true
 
