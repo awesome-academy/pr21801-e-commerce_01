@@ -1,11 +1,14 @@
 class Category < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   has_many :products, dependent: :destroy
   has_many :children, class_name: Category.name, foreign_key: "parent_id",
     dependent: :destroy
   belongs_to :parent, class_name: Category.name, optional: true
   validates :name, presence: true, uniqueness: true,
     length: {maximum: Settings.categories.maximum}
-  scope :get_category, -> {select(:id, :name).limit(Settings.categories.limit)}
+  scope :get_category, -> {select(:id, :name, :slug).limit(Settings.categories.limit)}
   scope :roots, -> parent_id {where(parent_id: parent_id)}
   scope :by_id, -> category_id {where(id: category_id)}
   scope :ordered_by_name, -> {order(name: :asc)}
@@ -13,5 +16,9 @@ class Category < ApplicationRecord
 
   def descendents
     self.children | self.children.map(&:descendents).flatten
+  end
+
+  def should_generate_new_friendly_id?
+    name_changed? || super
   end
 end

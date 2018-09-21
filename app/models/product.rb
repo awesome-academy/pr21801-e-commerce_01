@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   belongs_to :category
   has_many :likes
   has_many :ratings
@@ -18,7 +21,7 @@ class Product < ApplicationRecord
     numericality: {only_integer: true, greater_than: 0}
 
   scope :get_product, ->{
-    select :id, :name, :price, :description, :average_rating, :category_id
+    select :id, :name, :price, :likes_count, :average_rating, :category_id, :slug
   }
   scope :like_most, ->{order "likes_count DESC"}
   scope :hot_product, ->{
@@ -61,5 +64,9 @@ class Product < ApplicationRecord
     when ".xlsx" then Roo::Excelx.new(file.path)
     else raise file.original_filename
     end
+  end
+
+  def should_generate_new_friendly_id?
+    name_changed? || super
   end
 end

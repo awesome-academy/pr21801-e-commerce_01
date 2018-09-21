@@ -139,6 +139,8 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     groupdate (4.0.1)
@@ -323,6 +325,7 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-rails (~> 4.7, >= 4.7.0.4)
+  friendly_id (~> 5.1.0)
   groupdate
   i18n-js
   jbuilder (~> 2.5)

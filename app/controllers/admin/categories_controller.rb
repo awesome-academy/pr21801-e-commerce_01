@@ -1,7 +1,7 @@
 class Admin::CategoriesController < Admin::ApplicationController
   before_action :get_category, only: [:show, :edit, :update, :destroy]
   before_action :load_roots, only: [:show, :destroy]
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :slug
 
   def index
     @search =  Category.ransack params[:q]
@@ -14,7 +14,12 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def show
-    @products = @category.products.get_product
+    products = Product.by_category((@category.children + [@category])
+      .map(&:products).flatten.pluck(:id))
+    @q = products.get_product.ransack params[:q]
+    @products = @q.result.includes(:images, :category, :order_details)
+      .page params[:page]
+    @q.build_sort if @q.sorts.empty?
   end
 
   def edit; end
@@ -23,7 +28,7 @@ class Admin::CategoriesController < Admin::ApplicationController
     @category = Category.new category_params
     if @category.save
       flash[:success] = t "add_success_category"
-      redirect_to admin_category_url @category
+      redirect_to admin_categories_url
     else
       flash[:danger] = t "add_failed_category"
       render :new
@@ -65,7 +70,7 @@ class Admin::CategoriesController < Admin::ApplicationController
   private
 
   def get_category
-    redirect_to root_url unless @category = Category.find_by(id: params[:id])
+    redirect_to root_url unless @category = Category.friendly.find_by_slug(params[:id])
   end
 
   def category_params
@@ -78,7 +83,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   def message_category
     flash[:warning] = t "delete_warning"
-    render :show
+    redirect_to admin_categories_url
   end
 
   def delete_category

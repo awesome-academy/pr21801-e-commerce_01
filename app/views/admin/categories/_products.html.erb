@@ -1,27 +1,51 @@
 <% content_for :head do %>
   <meta name="turbolinks-cache-control" content="no-cache">
 <% end %>
-
+<%= search_form_for @q, url: admin_category_path(@category) do |f| %>
+  <div class="input-group col-md-12 mt-30 mb-5">
+    <%= f.label :name_cont, t("admin.products.index.product_name") %>
+    <%= f.search_field :name_cont %>
+    <br/>
+    <%= f.label :category_name_cont, t("admin.products.index.category_name"), class: "mt-10" %>
+    <%= f.search_field :category_name_cont %>
+  </div>
+  <div class="field">
+    <strong><%= t "admin.products.index.sort" %></strong>
+    <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+    <% end %>
+  </div>
+  <%= button_tag type: "submit", class: "btn btn-default" do %>
+    <i class="fa fa-search"></i>
+    <%= t "admin.orders.index.filter" %>
+  <% end %>
+<% end %>
+<div class="text-center">
+  <%= paginate @products %><br>
+  <%= page_entries_info @products %>
+</div>
 <table class="table table-bordered mt-5" >
-  <h2 class="page-header title"><%= t ".product_list" %></h2>
   <thead>
     <tr class="row bold">
-      <th class="text-center col-md-1"><%= t ".images" %></th>
-      <th class="text-center col-md-3"><%= t ".name" %></th>
-      <th class="text-center"><%= t ".price" %></th>
-      <th class="text-center"><%= t ".description" %></th>
-      <th class="text-center"><em class="fa fa-cog"></em></th>
+      <th class="col-md-1"><%= t "admin.products.index.images" %></th>
+      <th class="col-md-2"><%= sort_link @q, :name, t("admin.products.index.name") %></th>
+      <th><%= t "admin.products.index.category" %></th>
+      <th><%= t "admin.products.index.average_rating" %></th>
+      <th><%= sort_link @q, :likes_count, t("admin.products.index.likes") %></th>
+      <th><%= sort_link @q, :price, t("admin.products.index.price") %></th>
+      <th class="col-md-1"><%= t("admin.products.index.order") %></th>
+      <th><em class="fa fa-cog"></em></th>
     </tr>
   </thead>
   <tbody>
     <% @products.each do |product| %>
       <tr class="row">
-        <td class="text-center">
+        <td class="text-center col-md-1">
           <div class="slick_slide thumbnail_products" align="center">
             <% product.images.each do |i| %>
               <div>
                 <div>
-                  <%= link_to t(".delete"), admin_image_path(i),
+                  <%= link_to t("admin.products.index.delete"), admin_image_path(i),
                     method: :delete %>
                 </div>
                 <%= image_tag i.image_url_url,
@@ -30,19 +54,26 @@
             <% end %>
           </div>
         </td>
-        <td><%= product.name %></td>
-        <td class="text-right">
-          <%= format_price product.price %>
-        </td>
-        <td><%= product.description %></td>
+        <td class="col-md-2"><%= link_to product.name, product_path(product) %></td>
+        <td><%= product.category_name %></td>
         <td class="text-center">
-          <%= link_to t(".edit"), edit_admin_product_path(product, category_id: product.category),
+          <input type="hidden" data-id="<%= product.id %>" class="rating"
+              data-filled="fa fa-star fa-1x" data-empty="fa fa-star-o fa-1x"
+              value="<%= product.average_rating %>" disabled="disabled" />
+        </td>
+        <td class="text-center"><%= product.likes_count %></td>
+        <td class="text-right"><%= format_price product.price %></td>
+        <td class="text-center"><%= count_order product %></td>
+        <td class="text-center">
+          <%= link_to t("admin.products.index.edit"),
+            edit_admin_product_path(product, category_id: product.category_id),
             class: "btn btn-sm btn-info" %>
-          <%= link_to t(".delete"), admin_product_path(product),
-            method: :delete, data: {confirm: t(".you_sure")},
+          <%= link_to t("admin.products.index.delete"), admin_product_path(product),
+            method: :delete, data: {confirm: t("admin.products.index.you_sure")},
             class: "btn btn-sm btn-danger" %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
