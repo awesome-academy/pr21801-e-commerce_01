@@ -23,4 +23,4 @@
 //= require jquery.sequence-min
 //= require jquery.carouFredSel-6.2.1-packed
 //= require bootstrap-rating
-//= require_tree .
+//= require ecommerce

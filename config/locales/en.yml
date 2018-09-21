@@ -176,6 +176,17 @@ en:
       continue_shopping: "Continue shopping"
       home: "Home"
   layouts:
+    admin:
+      admin_header:
+        addtion: "Addtions"
+        category: "Categories"
+        charts: "Charts"
+        dashboard: "Dashboard"
+        product: "Products"
+        settings: "Settings"
+        table: "Tables"
+        user: "Users"
+        user_profile: "User Profile"
     header:
       address: "Handico Tower, Pham Hung, Me Tri, Nam Tu Liem, Ha Noi"
       checkout: "CheckOut"

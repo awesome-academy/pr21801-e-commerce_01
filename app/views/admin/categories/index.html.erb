@@ -1,24 +1,31 @@
-<div class="container_fullwidth">
-  <h2 class="title"><%= t ".list" %></h2>
-  <section class="panel">
-    <div class="nav search-row text-center">
-      <%= search_form_for @search, url: admin_categories_path do |f|%>
-        <div class="display-category"><%= t ".display_category" %></div>
-        <%= select_tag :limit, options_from_collection_for_select(
-          Settings.show_limit, :second, :second, selected: params[:limit] ||
-            Settings.show_limit.limit), id: "show-limit"%>
-      <% end %>
-      <%= form_tag admin_categories_path, method: :get, id: :search_category do %>
-        <%= text_field_tag :search, params[:search], placeholder: t(".search") %>
-        <%= submit_tag t(".search_user"), name: nil %>
-        <div class="panel-body">
-          <% if @categories.present? %>
-            <div id="category"><%= render "category" %></div>
-          <% else %>
-            <% flash[:danger] = t(".not_found_categories") %>
-          <% end %>
-        </div>
-      <% end %>
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 mt-30">
+        <h2 class="page-header title"><%= t ".list" %></h2>
+      </div>
     </div>
-  </section>
+    <section class="panel">
+      <div class="nav search-row text-center">
+        <%= search_form_for @search, url: admin_categories_path do |f|%>
+          <div class="display-category"><%= t ".display_category" %></div>
+          <%= select_tag :limit, options_from_collection_for_select(
+            Settings.show_limit, :second, :second, selected: params[:limit] ||
+              Settings.show_limit.show_15), id: "show-limit"%>
+        <% end %>
+        <%= form_tag admin_categories_path, method: :get, id: :search_category do %>
+          <%= text_field_tag :search, params[:search], placeholder: t(".search") %>
+          <%= submit_tag t(".search_user"), name: nil %>
+          <div class="panel-body">
+            <% if @categories.present? %>
+              <div id="category"><%= render "category" %></div>
+            <% else %>
+              <% flash[:danger] = t(".not_found_categories") %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </div>
 </div>
+

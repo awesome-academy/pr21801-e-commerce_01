@@ -1,12 +1,9 @@
 class Admin::ApplicationController < ActionController::Base
-  include Admin::OrdersHelper
-
   layout "dashboard"
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
   before_action :authenticate_user!
-  # load_and_authorize_resource
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get "static_pages/about"
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
-    controllers: {omniauth_callbacks: "users/omniauth_callbacks",
-      registrations: "registrations"}
+  controllers: {omniauth_callbacks: "users/omniauth_callbacks",
+    registrations: "registrations"}
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     concern :paginatable do
       get "(page/:page)", action: :index, on: :collection, as: ""
@@ -26,6 +26,10 @@ Rails.application.routes.draw do
         collection { post :import }
       end
       resources :users, concerns: :paginatable
+      get "/dashboard", to: "dashboards#index"
     end
   end
+  match "*.path", to: redirect("/#{I18n.default_locale}/%{path}"), :via => [:get, :post]
+  match "", to: redirect("/#{I18n.default_locale}"), :via => [:get, :post]
+  match "*path" => redirect("/"), via: :get
 end

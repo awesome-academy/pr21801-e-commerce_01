@@ -10,6 +10,7 @@ body {
 .mt-15{margin-top:15px;}
 .mt-20{margin-top:20px;}
 .mt-30{margin-top:30px;}
+.mt-50{margin-top:50px;}
 .mb-0{margin-bottom:0px;}
 .mb-5{margin-bottom:5px;}
 .mb-10{margin-bottom:10px;}
@@ -71,6 +72,14 @@ tr.table-order th{
   padding: 10px;
   border-radius: 5px;
   width: auto;
+}
+
+.mess_dasboard{
+  padding: 10px;
+  border-radius: 5px;
+  width: auto;
+  font-size: 18px;
+  text-align: center;
 }
 
 .usermenu li a.pd-gg {
