@@ -36,6 +36,15 @@ class Admin::PromotionsController < ApplicationController
     end
   end
 
+  def destroy
+    if @promotion.destroy
+      flash[:success] = t "promotion_deleted"
+    else
+      flash[:danger] = t "delete_promotion_failed"
+    end
+    redirect_to admin_promotions_url
+  end
+
   private
 
   def load_products
