@@ -13,14 +13,31 @@
           value="<%= product.average_rating %>" disabled="disabled" />
       <% end %>
     </div>
-    <div class="offer">- %20</div>
+    <% product.promotion_details.each do |i| %>
+      <% if Time.zone.today.between?(i.start_date, i.end_date) %>
+        <div class="offer">- <%= i.promotion.percent %>%</div>
+      <% end %>
+    <% end %>
     <div class="thumbnail">
       <%= image_tag product.images.first.image_url.url if product.images.any? %>
     </div>
     <div class="productname">
       <%= link_to product.name, product_path(product) %>
     </div>
-    <h3 class="price"><%= format_price product.price %></h3>
+    <% product.promotion_details.each do |i| %>
+      <% if Time.zone.today.between?(i.start_date, i.end_date) %>
+        <span class="price">
+          <%= format_price sale_price_partial(product, i) %>
+        </span>
+        <span>
+        <h5 class="oldprice"><%= format_price product.price %></h5>
+        </span>
+      <% else %>
+        <span class="price">
+          <%= format_price product.price %>
+        </span>
+      <% end %>
+    <% end %>
     <div class="button_group">
       <%= button_to t(".add"), carts_path(product_id: product.id),
         method: :post, remote: true, class: "button add-cart" %>

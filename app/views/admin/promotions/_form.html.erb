@@ -1,0 +1,30 @@
+<div class="container">
+  <%= simple_form_for [:admin, @promotion] do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10 mb-20">
+        <%= f.input :content, label: t(".promotion_content") %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10 mb-20">
+        <%= f.input :percent, input_html: {min: "1", max: "99"},
+          label: t(".sale_percent") %>
+      </div>
+    </div>
+    <%= f.simple_fields_for :promotion_details do |builder| %>
+      <div class="fields">
+        <%= render "promotion_detail", f: builder %>
+      </div>
+    <% end %>
+    <div class="col-md-offset-2 col-md-10 mb-20">
+      <%= link_to_add_fields t(".add_product"), f, :promotion_details,
+        {class: "btn btn-primary"} %>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10 mb-30">
+        <%= f.submit yield(:button_text), class: "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+</div>

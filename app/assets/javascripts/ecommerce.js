@@ -75,4 +75,19 @@ $(document).on('turbolinks:load', function () {
     centerMode: true,
     focusOnSelect: true
   });
+
+  $('.filter').hide();
+  $('select.input').change(function(){
+    var sort = $('select.input-sort').val();
+    $('input.value-sort').val(sort);
+    $('.filter').click();
+  });
+
+  $('form').on('click', '.add_fields', function(event) {
+    var regexp, time;
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    $('.fields').append($(this).data('fields').replace(regexp, time));
+    event.preventDefault();
+  });
 });

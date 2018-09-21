@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resources :products, concerns: :paginatable do
         collection { post :import }
       end
+      resources :promotions
       resources :users, concerns: :paginatable
       get "/dashboard", to: "dashboards#index"
     end
