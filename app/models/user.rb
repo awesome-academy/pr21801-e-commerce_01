@@ -9,6 +9,10 @@ class User < ApplicationRecord
   has_many :orders
 
   validates_presence_of :name
+  validates_presence_of :phone
+  validates_presence_of :address
+
+  scope :new_user, -> time{where("created_at > ?", "#{time}")}
 
   def self.from_omniauth access_token
     data = access_token.info

@@ -1,13 +1,12 @@
-<div class="container_fullwidth">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <ol class="breadcrumb title mb-30">
-        <li><%= link_to t("layouts.header.home"), root_url %></li>
-        <li><%= link_to t("orders.index.order_list"), orders_path %></li>
-        <li class="active"><%= t ".order_detail" %></li>
-      </ol>
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="page-header title"><%= t "orders.show.order_details" %></h2>
+      </div>
     </div>
-    <div class="col-md-8 col-md-offset-2">
+
+    <div class="col-md-12">
       <div class="btn-order-status">
         <% case @order.status %>
           <% when Settings.order_status.pending %>
@@ -18,13 +17,13 @@
             <button class="btn btn-danger" disabled="disabled"><%= @order.status %></button>
         <% end %>
       </div>
-      <%= t "admin.orders.index.user" %>: <strong><%= @order.user_name %></strong><br/>
-      <%= t "admin.orders.show.order_no" %> <strong><%= "##{@order.id}" %></strong>
+      <%= t "admin.orders.index.user" %>: <strong><%= @order.user.name %></strong><br/>
+      <%= t ".order_no" %> <strong><%= "##{@order.id}" %></strong>
       <table class="table table-bordered table-hover">
         <thead>
           <tr class="table-order">
             <th></th>
-            <th><%= sort_link @search, :name, t("admin.categories.products.name") %></th>
+            <th><%= sort_link @search, :name, t(".name") %></th>
             <th><%= sort_link @search, :price, t("shared.cart.price") %></th>
             <th><%= sort_link @search, :quantity, t("shared.cart.quantity") %></th>
             <th><%= sort_link @search, :created_at, t("orders.show.order_date") %></th>
@@ -33,7 +32,7 @@
         <tbody>
           <% @items.each_with_index do |item, index| %>
             <tr class="table-order">
-              <td><%= index + 1 %></td>
+              <td><%= link_to index + 1, product_path(item.product_id) %></td>
               <td><%= link_to item.product.name, product_path(item.product_id) %></td>
               <td><%= format_price item.product.price %></td>
               <td><%= item.quantity %></td>
@@ -42,13 +41,6 @@
           <% end %>
         </tbody>
       </table>
-      <% if @order.pending? %>
-        <%= form_for @order do |f| %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          <%= f.hidden_field :status, value: :canceled %>
-          <%= f.submit t(".cancel"), data: {confirm: t(".you_sure")}, class: "btn btn-danger" %>
-        <% end %>
-      <% end %>
       <div class="modal-footer">
         <h3 class="payment"><%= t "shared.cart.total" %>
           <span class="total_price"><%= format_price @order.total %></span>

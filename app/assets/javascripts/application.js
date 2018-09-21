@@ -15,6 +15,9 @@
 //= require rails-ujs
 //= require jquery.slick
 //= require turbolinks
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require jquery-1.10.2.min
 //= require jquery.easing.1.3
 //= require jquery.elevatezoom

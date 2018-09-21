@@ -2,7 +2,88 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12 mt-30">
-        <h2 class="page-header title"></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-offset-2 col-lg-4 col-md-6">
+    <div class="panel panel-yellow">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="fa fa-shopping-cart fa-5x"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge"><%= @new_order %></div>
+            <div><%= t ".new_order" %></div>
+          </div>
+        </div>
+      </div>
+      <a href="#">
+        <div class="panel-footer">
+          <span class="pull-left">
+            <%= link_to admin_orders_path do %>
+              <%= t ".view_details" %>
+              <i class="fa fa-arrow-circle-right"></i>
+            <% end %>
+          </span>
+
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="fa fa-user fa-5x"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge"><%= @new_user %></div>
+            <div><%= t ".new_user" %></div>
+          </div>
+        </div>
+      </div>
+      <a href="#">
+        <div class="panel-footer">
+          <span class="pull-left">
+            <%= link_to admin_users_path do %>
+              <%= t ".view_details" %>
+              <i class="fa fa-arrow-circle-right"></i>
+            <% end %>
+          </span>
+
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-4 text-center">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <%= t ".popular_product" %>
+      </div>
+      <div class="panel-body">
+        <div class="productname"><%= link_to @popular_product.name, @popular_product %></div>
+        <div class="thum-image"><%= link_to image_tag(
+          @popular_product.images.first.image_url_url), @popular_product %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 text-center">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <%= t ".like_most" %>
+      </div>
+      <div class="panel-body">
+        <div class="productname"><%= link_to @favourite_product.name,
+          @favourite_product %></div>
+        <div class="thum-image"><%= link_to image_tag(
+          @favourite_product.images.first.image_url_url), @favourite_product %></div>
       </div>
     </div>
   </div>

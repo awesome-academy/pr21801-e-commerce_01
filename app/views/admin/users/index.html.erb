@@ -1,7 +1,7 @@
 <div id="page-wrapper">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-12 mt-30">
+      <div class="col-lg-12">
         <h2 class="page-header title"><%= t ".user_list" %></h2>
       </div>
     </div>
@@ -22,6 +22,12 @@
           <% end %>
         </div>
       </div>
+      <div class="text-center">
+        <div class="display-category"><%= t "admin.categories.index.display_category" %></div>
+        <%= select_tag :limit, options_from_collection_for_select(
+          Settings.show_limit, :second, :second, selected: params[:limit] ||
+          Settings.show_limit.show_15), id: "show-limit"%>
+      </div>
     <% end %>
     <div class="text-center">
       <%= paginate @users %><br>
@@ -33,6 +39,9 @@
         <tr class="bold">
           <th><%= sort_link @q, :name, t(".name") %></th>
           <th><%= sort_link @q, :email, t(".email") %></th>
+          <th><%= t "shared.sign_up.phone" %></th>
+          <th><%= t "shared.sign_up.address" %></th>
+          <th><%= sort_link @q, :created_at, t(".created_at") %></th>
           <th><%= t ".action" %></th>
         </tr>
       </thead>
@@ -41,6 +50,9 @@
           <tr>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
+            <td><%= user.phone %></td>
+            <td><%= user.address %></td>
+            <td><%= l user.created_at, format: :date_month_year %></td>
             <% unless user.role? %>
               <td class="text-center">
                 <%= link_to t(".delete"), admin_user_path(user),

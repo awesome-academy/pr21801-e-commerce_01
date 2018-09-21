@@ -44,22 +44,18 @@
             <%= t ".dashboard" %>
           <% end %>
         </li>
-        <li>
-          <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <%= t ".charts" %>
-            <span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-            <li>
-              <a href="#"></a>
-            </li>
-            <li>
-              <a href="#"></a>
-            </li>
-          </ul>
+        <li><%= link_to admin_charts_path do %>
+            <i class="active fa fa-bar-chart-o fa-fw"></i>
+            <%= t ".charts" %>
+          <% end %>
         </li>
         <li>
           <a href="#"><i class="fa fa-table fa-fw"></i> <%= t ".table" %>
             <span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
+            <li>
+              <%= link_to t("admin.orders.index.order"), admin_orders_path %>
+            </li>
             <li>
               <%= link_to t(".category"), admin_categories_path %>
             </li>

@@ -1,4 +1,6 @@
 class Admin::ApplicationController < ActionController::Base
+  include Admin::OrdersHelper
+
   layout "dashboard"
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?

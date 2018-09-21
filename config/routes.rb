@@ -28,6 +28,8 @@ Rails.application.routes.draw do
       resources :promotions
       resources :users, concerns: :paginatable
       get "/dashboard", to: "dashboards#index"
+      resources :orders, only: [:index, :show]
+      resources :charts, only: :index
     end
   end
   match "*.path", to: redirect("/#{I18n.default_locale}/%{path}"), :via => [:get, :post]

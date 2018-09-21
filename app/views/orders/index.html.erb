@@ -15,27 +15,22 @@
         <thead>
           <tr class="table-order">
             <th><%= t ".number_order" %></th>
-            <th><%= sort_link @search, :created_at, t(".date") %></th>
-            <th><%= sort_link @search, :total, t(".total") %></th>
-            <th><%= sort_link @search, :status, t(".status") %></th>
+            <th><%= sort_link @search, :user_name, t(".user") %></th>
+            <th><%= sort_link @search, :created_at, t("orders.index.date") %></th>
+            <th><%= sort_link @search, :total, t("orders.index.total") %></th>
+            <th><%= sort_link @search, :status, t("orders.index.status") %></th>
           </tr>
         </thead>
         <tbody>
-          <% @orders.each_with_index do |order, index| %>
+          <% @orders.each do |order| %>
             <tr class="table-order">
-              <td><%= link_to index + 1, order_path(order.id) %></td>
-              <td><%= link_to l(order.created_at, format: :short),
-                order_path(order.id) %></td>
-              <td><%= format_price order.total %></td>
-              <% case order.status %>
-                <% when Settings.order_status.pending %>
-                  <td><%= order_status order, "btn btn-warning" %></td>
-                <% when Settings.order_status.delivered %>
-                  <td><%= order_status order, "btn btn-success" %></td>
-                <% when Settings.order_status.canceled %>
-                  <td><%= order_status order, "btn btn-danger" %></td>
-              <% end %>
-            </tr>
+            <td><%= link_to "##{order.id}", order_path(order.id) %></td>
+            <td><%= order.user_name %></td>
+            <td><%= link_to l(order.created_at, format: :date_month_year),
+              order_path(order.id) %></td>
+            <td><%= format_price order.total %></td>
+            <%= render "shared/order_status", order: order %>
+          </tr>
           <% end %>
         </tbody>
       </table>

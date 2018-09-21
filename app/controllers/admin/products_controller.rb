@@ -5,7 +5,7 @@ class Admin::ProductsController < Admin::ApplicationController
   def index
     @q = Product.all.ransack params[:q]
     @products = @q.result.includes(:images, :category, :order_details)
-      .page(params[:page]).per(Settings.product.limit)
+      .page(params[:page]).per params[:limit]
     @q.build_sort if @q.sorts.empty?
 
     respond_to do |format|
