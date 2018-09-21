@@ -67,9 +67,11 @@
         <%= t ".popular_product" %>
       </div>
       <div class="panel-body">
-        <div class="productname"><%= link_to @popular_product.name, @popular_product %></div>
+        <div class="productname"><%= link_to @popular_product.name,
+          @popular_product if @popular_product %></div>
         <div class="thum-image"><%= link_to image_tag(
-          @popular_product.images.first.image_url_url), @popular_product %></div>
+          @popular_product.images.first.image_url_url),
+          @popular_product if @popular_product  %></div>
       </div>
     </div>
   </div>
@@ -81,9 +83,10 @@
       </div>
       <div class="panel-body">
         <div class="productname"><%= link_to @favourite_product.name,
-          @favourite_product %></div>
+          @favourite_product if @favourite_product  %></div>
         <div class="thum-image"><%= link_to image_tag(
-          @favourite_product.images.first.image_url_url), @favourite_product %></div>
+          @favourite_product.images.first.image_url_url),
+          @favourite_product if @favourite_product %></div>
       </div>
     </div>
   </div>
