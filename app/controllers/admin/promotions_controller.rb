@@ -1,4 +1,4 @@
-class Admin::PromotionsController < ApplicationController
+class Admin::PromotionsController < Admin::ApplicationController
   load_and_authorize_resource
   before_action :load_products, only: [:new, :edit]
 

@@ -27,12 +27,6 @@
                           <div class="dropdown">
                             <%= link_to current_user.name, admin_dashboard_path,
                               class: "user dropbtn" %>
-                            <ul class="dropdown-menu">
-                              <li>
-                                <%= link_to t(".promotion_list"),
-                                  admin_promotions_path, class: "btn btn-lg" %>
-                              </li>
-                            </ul>
                           </div>
                         <% else %>
                           <div class="dropdown">
@@ -109,7 +103,7 @@
                   <li class="dropdown-white">
                     <%= link_to t(".home"), root_path %>
                   </li>
-                  <% @all_categories.each do |category| %>
+                  <% @main_categories.each do |category| %>
                     <% if category.children.present? %>
                       <li class="dropdown">
                         <%= link_to category.name, category,
@@ -129,6 +123,18 @@
                     <% else %>
                       <li class="dropdown-white"><%= link_to category.name, category %></li>
                     <% end %>
+                  <% end %>
+                  <% if @all_categories.size > Settings.categories.limit %>
+                    <li class="dropdown">
+                      <a class="dropdown-toggle" href="#"><%= t ".other_category" %></a>
+                      <div class="dropdown-menu mega-menu">
+                        <ul class="mega-menu-links">
+                          <% @other_categories.each do |category| %>
+                            <li><%= link_to category.name, category %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    </li>
                   <% end %>
                 </ul>
               </div> <!-- end collapse -->

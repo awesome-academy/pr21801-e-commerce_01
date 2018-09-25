@@ -24,13 +24,20 @@
               <div class="slider-for">
                 <% @product.images.each do |i| %>
                   <div class="preview-small">
+                    <% if @product.promotion_details.present? %>
+                      <% @product.promotion_details.each do |i| %>
+                        <% if Time.zone.today.between?(i.start_date, i.end_date) %>
+                          <div class="offer"><%= i.promotion.percent %>%</div>
+                        <% end %>
+                      <% end %>
+                    <% end %>
                     <%= image_tag i.image_url_url %>
                   </div>
                 <% end %>
               </div>
               <div class="slider-nav">
                 <% @product.images.each do |i| %>
-                  <div class="thum-image"><%= image_tag i.image_url_url %></div>
+                  <div class="thum-image-admin"><%= image_tag i.image_url_url %></div>
                 <% end %>
               </div>
             </div>
@@ -42,13 +49,17 @@
                 <input type="hidden" data-id="<%= @product.id %>" class="rating"
                   data-filled="fa fa-star fa-1x" data-empty="fa fa-star-o fa-1x"
                   value="<%= @product.average_rating %>" disabled="disabled" />
-                <a class="review_num" href="#">
-                  <%= pluralize(@comments.count, "Review") %>
-                </a>
+                <a><%= pluralize(@comments.count, "Review") %></a>
               </p>
-              <p>
-                <%= @product.description %>
-              </p>
+              <% if @product.promotion_details.present? %>
+                <% @product.promotion_details.each do |i| %>
+                  <% if Time.zone.today.between?(i.start_date, i.end_date) %>
+                    <hr class="border" />
+                    <div class="promotion">
+                      <%= pluralize(t(".promotion"), i.promotion.content) %></div>
+                  <% end %>
+                <% end %>
+              <% end %>
               <hr class="border">
               <div class="price">
                 <%= t "layouts.header.price" %>
@@ -73,6 +84,10 @@
                   <div id="like_form_<%= @product.id %>" class="like_form">
                     <%= render "shared/like_form", product: @product %>
                   </div>
+                  <a class="likes_count">
+                    <%= @product.likes_count %>
+                  </a>
+                  <%= t ".likes" %>
                 </div>
                 <div class="button_group">
                   <%= social_share_button_tag(@product.name,
@@ -100,15 +115,21 @@
             </div>
             <div class="tab-content-wrap">
               <div class="tab-content" id="Descraption">
-                <p>
-                  <%= @product.description %>
-                </p>
+                <h3><%= t ".basic_props" %></h3>
+                <%= render "shared/feature", product: @product %>
               </div>
               <div class="tab-content" id="Reviews">
                 <div class="clearfix">
                 </div>
                 <% if user_signed_in? %>
-                  <div class="commentform">
+                  <div class="rating">
+                    <input type="hidden" data-id="<%= @product.id %>"
+                      data-star="<%= star(@product) %>" value="<%= star(@product) %>"
+                      data-rate-id="<%= @product.ratings.nil? ? "" : rate(@product) %>"
+                      class="rating"
+                      data-filled="fa fa-star fa-2x" data-empty="fa fa-star-o fa-2x" />
+                  </div>
+                  <div class="commentform mt-10">
                     <%= render "comments/form", parent_id: nil,
                       button_text: t(".post") %>
                   </div>

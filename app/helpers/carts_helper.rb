@@ -35,4 +35,12 @@ module CartsHelper
       end
     end
   end
+
+  def sale_price_partial product, i
+    product.price.to_i * (1 - (i.promotion.percent.to_f)/100)
+  end
+
+  def sale_price_show product, percent
+    product.price.to_i * (1 - (percent.to_f)/100)
+  end
 end

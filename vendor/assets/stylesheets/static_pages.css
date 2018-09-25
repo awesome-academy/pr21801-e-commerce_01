@@ -1327,6 +1327,19 @@ ul.dropdown-menu > li > a:hover {
   padding: 5px;
 }
 
+.new {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  z-index: 99;
+  padding: 10px;
+  font-size: 18px;
+  color: #fff;
+  background: #f7544a;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
 .offer {
   position: absolute;
   right: 15px;

@@ -1,0 +1,30 @@
+<% if product.feature.present? %>
+  <table class="table table-hover mt-5" >
+    <tbody>
+      <tr>
+        <td><%= t "products.show.screen" %>:</td>
+        <td><%= product.feature.screen %></td>
+      </tr>
+      <tr>
+        <td><%= t "products.show.camera" %>:</td>
+        <td><%= product.feature.camera %></td>
+      </tr>
+      <tr>
+        <td><%= t "products.show.cpu" %>:</td>
+        <td><%= product.feature.cpu %></td>
+      </tr>
+      <tr>
+        <td><%= t "products.show.ram" %>:</td>
+        <td><%= product.feature.ram %></td>
+      </tr>
+      <tr>
+        <td><%= t "products.show.rom" %>:</td>
+        <td><%= product.feature.rom %></td>
+      </tr>
+      <tr>
+        <td><%= t "products.show.pin" %>:</td>
+        <td><%= product.feature.pin %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

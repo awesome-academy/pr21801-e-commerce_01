@@ -61,17 +61,51 @@
       </a>
     </div>
   </div>
+
   <div class="col-lg-4 text-center">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t ".number_user" %>
+      </div>
+      <div class="panel-body">
+        <div class="huge"><%= @number_user %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 text-center">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t ".number_product" %>
+      </div>
+      <div class="panel-body">
+        <div class="huge"><%= @number_product %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 text-center">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t "nuber_order" %>
+      </div>
+      <div class="panel-body">
+        <div class="huge"><%= @number_order %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-lg-offset-2 text-center">
     <div class="panel panel-info">
       <div class="panel-heading">
         <%= t ".popular_product" %>
       </div>
       <div class="panel-body">
         <div class="productname"><%= link_to @popular_product.name,
-          @popular_product if @popular_product %></div>
-        <div class="thum-image"><%= link_to image_tag(
+          admin_product_path(@popular_product) if @popular_product %></div>
+        <div class="thum-image-dashboard"><%= link_to image_tag(
           @popular_product.images.first.image_url_url),
-          @popular_product if @popular_product  %></div>
+          admin_product_path(@popular_product) if @popular_product %></div>
       </div>
     </div>
   </div>
@@ -83,10 +117,10 @@
       </div>
       <div class="panel-body">
         <div class="productname"><%= link_to @favourite_product.name,
-          @favourite_product if @favourite_product  %></div>
-        <div class="thum-image"><%= link_to image_tag(
+          admin_product_path(@favourite_product) if @favourite_product %></div>
+        <div class="thum-image-dashboard"><%= link_to image_tag(
           @favourite_product.images.first.image_url_url),
-          @favourite_product if @favourite_product %></div>
+          admin_product_path(@favourite_product) if @favourite_product %></div>
       </div>
     </div>
   </div>

@@ -4,9 +4,9 @@ class Admin::OrdersController < Admin::ApplicationController
 
   def index
     @search = Order.order(created_at: :desc).ransack params[:q]
-    @orders = @search.result.page(params[:page]).per params[:limit]
+    @orders = @search.result
     respond_to do |format|
-      format.html
+      format.html {@orders = @orders.page(params[:page]).per params[:limit]}
       format.csv {send_data @orders.to_csv, filename:"orders-#{Date.today}.csv"}
       format.xls {send_data @orders.to_csv(col_sep: "\t")}
     end
@@ -17,7 +17,21 @@ class Admin::OrdersController < Admin::ApplicationController
     @items = @search.result
   end
 
+  def update
+    if @order.update_attributes order_params
+      flash[:success] = t "cancel_success"
+      redirect_to orders_path
+    else
+      flash[:danger] = t "cancel_failed"
+    end
+  end
+
   private
+
+  def order_params
+    params.require(:order).permit(:status, :total,
+      order_details_attributes: [:id, :product_id, :quantity, :price])
+  end
 
   def get_order
     redirect_to orders_path unless @order = Order.find_by(id: params[:id])
