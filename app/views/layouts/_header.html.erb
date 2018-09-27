@@ -27,12 +27,6 @@
                           <div class="dropdown">
                             <%= link_to current_user.name, admin_dashboard_path,
                               class: "user dropbtn" %>
-                            <ul class="dropdown-menu">
-                              <li>
-                                <%= link_to t(".promotion_list"),
-                                  admin_promotions_path, class: "btn btn-lg" %>
-                              </li>
-                            </ul>
                           </div>
                         <% else %>
                           <div class="dropdown">
@@ -88,11 +82,16 @@
             <div class="header_bottom">
               <ul class="option">
                 <li id="search" class="search">
-                  <form>
-                    <input class="search-submit" type="submit" value="">
-                    <input class="search-input" placeholder="<%= t ".search" %>"
-                      type="text" value="" name="search">
-                  </form>
+                  <%= form_tag search_path, method: :get, id: "livesearch_form" do %>
+                    <%= submit_tag "", class: "search-submit" %>
+                    <%= text_field_tag :search, params[:search],
+                      class: "search-input dropdown-toggle", placeholder: t(".search"),
+                      "data-toggle": "dropdown", "aria-hidden": :true,
+                      autocomplete: :off, required: true, id: "livesearch_input" %>
+                    <ul class="dropdown-menu list_search">
+                      <div id="livesearch_dom"></div>
+                    </ul>
+                  <% end %>
                 </li>
                 <li class="option-cart">
                   <a href="#" class="cart-icon" data-toggle="modal"
@@ -109,7 +108,7 @@
                   <li class="dropdown-white">
                     <%= link_to t(".home"), root_path %>
                   </li>
-                  <% @all_categories.each do |category| %>
+                  <% @main_categories.each do |category| %>
                     <% if category.children.present? %>
                       <li class="dropdown">
                         <%= link_to category.name, category,
@@ -129,6 +128,18 @@
                     <% else %>
                       <li class="dropdown-white"><%= link_to category.name, category %></li>
                     <% end %>
+                  <% end %>
+                  <% if @all_categories.size > Settings.categories.limit %>
+                    <li class="dropdown">
+                      <a class="dropdown-toggle" href="#"><%= t ".other_category" %></a>
+                      <div class="dropdown-menu mega-menu">
+                        <ul class="mega-menu-links">
+                          <% @other_categories.each do |category| %>
+                            <li><%= link_to category.name, category %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    </li>
                   <% end %>
                 </ul>
               </div> <!-- end collapse -->

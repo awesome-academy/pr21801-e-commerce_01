@@ -1,0 +1,21 @@
+<% if items.blank? %>
+  <li>
+    <%= link_to search_path(params[:search]),
+      class: "btn btn-default btn-block" do %>
+      <%= "No results for #{params[:search]}" %>
+    <% end %>
+  </li>
+<% else %>
+  <div class="scrollable-menu">
+    <% items.each do |item| %>
+      <%= render "products/search_item", product: item %>
+    <% end %>
+  </div>
+  <li class="divider"></li>
+  <li>
+    <%= link_to search_path(params[:search]),
+      class: "btn btn-default btn-block" do %>
+      <%= "See more #{items.size} for #{params[:search]}" %>
+    <% end %>
+  </li>
+<% end %>

@@ -1,8 +1,8 @@
 <% case order.status %>
   <% when Settings.order_status.pending %>
-    <td><%= order_status order, "btn btn-warning" %></td>
+    <td><%= order_status_dashboard order, "btn btn-warning" %></td>
   <% when Settings.order_status.delivered %>
-    <td><%= order_status order, "btn btn-success" %></td>
+    <td><%= order_status_dashboard order, "btn btn-success" %></td>
   <% when Settings.order_status.canceled %>
-    <td><%= order_status order, "btn btn-danger" %></td>
+    <td><%= order_status_dashboard order, "btn btn-danger" %></td>
 <% end %>

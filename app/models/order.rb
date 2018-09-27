@@ -7,18 +7,22 @@ class Order < ApplicationRecord
   delegate :name, to: :user, prefix: true
 
   scope :all_order, ->{select :id, :user_id, :created_at, :status, :total}
-  scope :new_order, -> time{where("created_at > ?", "#{time}")}
-  scope :by_user, -> {group(:user_id).order("count_all desc").count.first(10)}
+  scope :new_order, -> (day_ago, time){where("created_at BETWEEN ? AND ?",
+    "#{day_ago}", "#{time}")}
+  scope :by_user, -> {
+    joins(:user).group(:name).order("count_all desc").count.first Settings.top_order
+  }
   scope :revenue_by_week, -> {group_by_week(:created_at).sum(:total)}
   scope :revenue_by_month, -> {group_by_month(:created_at).sum(:total)}
+  scope :group_by_status, -> {group(:status).count}
 
   enum status: {pending: 0, delivered: 1, canceled: 2}
 
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
-      csv << column_names
+      csv << attributes = %w{id name total status}
       all.each do |order|
-        csv << order.attributes.values_at(*column_names)
+        csv << order.attributes.merge(order.user.attributes).values_at(*attributes)
       end
     end
   end

@@ -29,8 +29,12 @@ class OrdersController < ApplicationController
 
   def update
     if @order.update_attributes order_params
-      flash[:success] = t "cancel_success"
-      redirect_to orders_path
+      if params[:order][:status] == Settings.order_status.delivered
+        flash[:success] = t "delivered_success"
+      else
+        flash[:success] = t "cancel_success"
+      end
+      redirect_to admin_order_path @order
     else
       flash[:danger] = t "cancel_failed"
     end

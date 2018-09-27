@@ -10,9 +10,10 @@ Rails.application.routes.draw do
       get "(page/:page)", action: :index, on: :collection, as: ""
     end
 
+    get "search(/:search)", to: "searches#index", as: :search
     resources :carts
     resources :orders
-    resources :categories, only: :show
+    resources :categories, only: [:index, :show]
     resources :ratings
     resources :products, only: [:index, :show] do
       resources :comments, only: [:create, :destroy]
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
     end
 
     namespace :admin do
+      resources :create_forms
       resources :categories, concerns: :paginatable
       resources :images
       resources :products, concerns: :paginatable do
@@ -28,7 +30,7 @@ Rails.application.routes.draw do
       resources :promotions
       resources :users, concerns: :paginatable
       get "/dashboard", to: "dashboards#index"
-      resources :orders, only: [:index, :show]
+      resources :orders, only: [:index, :show, :update]
       resources :charts, only: :index
     end
   end

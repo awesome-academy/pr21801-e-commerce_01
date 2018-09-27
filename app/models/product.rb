@@ -7,13 +7,15 @@ class Product < ApplicationRecord
   has_many :ratings
   has_many :comments, dependent: :destroy
   has_many :order_details
-  has_many :images
+  has_many :images, dependent: :destroy
   has_many :promotion_details
+  has_one :feature, dependent: :destroy
 
   delegate :name, to: :category, prefix: true
 
   accepts_nested_attributes_for :images, allow_destroy: true,
     reject_if: proc { |attributes| attributes["image_url"].blank? }
+  accepts_nested_attributes_for :feature, allow_destroy: true
 
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true,
@@ -21,7 +23,8 @@ class Product < ApplicationRecord
     numericality: {only_integer: true, greater_than: 0}
 
   scope :get_product, ->{
-    select :id, :name, :price, :likes_count, :average_rating, :category_id, :slug
+    select(:id, :name, :price, :likes_count, :average_rating, :category_id,
+    :slug, :created_at).order("average_rating DESC")
   }
   scope :like_most, ->{order "likes_count DESC"}
   scope :hot_product, ->{
@@ -33,9 +36,10 @@ class Product < ApplicationRecord
 
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
-      csv << column_names
+      csv << attributes = %w{id image_url name price description created_at
+        likes_count average_rating screen camera cpu ram rom pin}
       all.each do |product|
-        csv << product.attributes.values_at(*column_names)
+        csv << product.attributes.merge(product.feature.attributes).values_at(*attributes)
       end
     end
   end
@@ -53,6 +57,10 @@ class Product < ApplicationRecord
       images.each do |image|
         product.images.build(remote_image_url_url: image)
       end
+      # byebug
+      # feature = Feature.new
+      product.build_feature(screen: row["screen"], camera: row["camera"],
+        cpu: row["cpu"], ram: row["ram"], rom: row["rom"], pin: row["pin"])
       product.save
     end
   end

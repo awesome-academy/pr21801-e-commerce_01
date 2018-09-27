@@ -26,11 +26,14 @@ module ApplicationHelper
       data: {id: id, fields: fields.gsub("\n", "")}
   end
 
-  def sale_price_partial product, i
-    product.price.to_i * (1 - (i.promotion.percent.to_f)/100)
-  end
-
-  def sale_price_show product, percent
-    product.price.to_i * (1 - (percent.to_f)/100)
+  def status_promotion promotion
+    pd = promotion.promotion_details.first
+    if Time.zone.today.between?(pd.start_date, pd.end_date)
+      status = t "going_on"
+    elsif Time.zone.today < pd.start_date
+      status = t "comming_soon"
+    elsif pd.end_date < Time.zone.today
+      status = t "ended"
+    end
   end
 end

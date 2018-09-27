@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
     @q = Product.ransack params[:q]
     @products = @q.result.get_product.includes(:images).page(params[:page])
       .per(Settings.product.limit)
+    @product_promotions = Promotion.first(Settings.slide)
     respond_to do |format|
       format.html
       format.js
